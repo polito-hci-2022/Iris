@@ -9,7 +9,16 @@ Politecnico di Torino
 - Michele Pistan
 - Michele Veronesi
 
-First of all, install packets on client and server folder using
+First of all, install NodeJS 16.x.x
+
+Unix system (included WSL)
+```
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash 
+nvm install 16.18.0
+```
+
+Then, install packets on client and server folder using
 ```console
 npm install
 ```
