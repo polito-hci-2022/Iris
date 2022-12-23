@@ -11,7 +11,6 @@ import Memory from './components/Memory';
 import CastleStory from './components/CastleStory';
 import CastleTest from './components/CastleTest';
 
-
 const Stack = createNativeStackNavigator();
 
 function App() {
