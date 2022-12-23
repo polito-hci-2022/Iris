@@ -10,6 +10,7 @@ Politecnico di Torino
 - Michele Veronesi
 
 First of all, install NodeJS 16.x.x
+
 Unix system (included WSL)
 ```
 sudo apt install curl
