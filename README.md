@@ -9,7 +9,9 @@ Politecnico di Torino
 - Michele Pistan
 - Michele Veronesi
 
-First of all, install packets on client and server folder using
+First of all, install NodeJS 16.x.x
+
+Then, install packets on client and server folder using
 ```console
 npm install
 ```
