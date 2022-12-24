@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './components/Homescreen';
+import Home from './components/Home';
 import StudyTime from './components/StudyTime';
 import Play from './components/Play';
 import Translate from './components/Translate';
@@ -17,7 +17,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="StudyTime" component={StudyTime} />
         <Stack.Screen name="Play" component={Play} />
         <Stack.Screen name="Translate" component={Translate} />
