@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Translate from './Translate';
 import { Icon } from "@iconify/react";
 import styles from '../styles';
+import HomeButton from './buttons/HomeButton';
 
 const StudyTime  = ({navigation}) => {  
     return (
@@ -12,19 +13,7 @@ const StudyTime  = ({navigation}) => {
         <View style={{flex: 0.5}}>
           <Text>Study Time</Text>
           <View style={styles.backgroundCompact}>
-          <TouchableOpacity 
-                  title="Home"
-                  onPress={() => navigation.navigate('Home')}
-                  style={styles.buttonHome}>
-                  <Icon style={{
-                    resizeMode:"contain",
-                    height: 100,
-                    width:100,
-                  }}
-                  icon="mdi:home"
-                  />
-                  <Text>Home</Text>
-              </TouchableOpacity>
+            <HomeButton navigation={navigation}/>
           </View>
         </View>
         <View style={{flex:0.5}}>
