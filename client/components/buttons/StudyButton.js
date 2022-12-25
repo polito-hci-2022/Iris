@@ -21,6 +21,5 @@ const StudyButton  = ({navigation}) => {
       <Text>Study</Text>
   </TouchableOpacity>
   );
-
 }
 export default StudyButton;
