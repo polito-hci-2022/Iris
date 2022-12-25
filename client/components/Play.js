@@ -5,6 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Icon } from "@iconify/react";
 import styles from '../styles';
+import HomeButton from './buttons/HomeButton'
+import MemoryButton from './buttons/MemoryButton';
+import CastleButton from './buttons/CastleButton';
 
 const Play  = ({navigation}) => {  
     return (
@@ -12,54 +15,18 @@ const Play  = ({navigation}) => {
         <View style={{flex: 0.5}}>
           <Text>Play</Text>
           <View style={styles.backgroundCompact}>
-          <TouchableOpacity 
-                  title="Home"
-                  onPress={() => navigation.navigate('Home')}
-                  style={styles.buttonHome}>
-                  <Icon style={{
-                    resizeMode:"contain",
-                    height: 100,
-                    width:100,
-                  }}
-                  icon="mdi:home"
-                  />
-                  <Text>Home</Text>
-              </TouchableOpacity>
+          <HomeButton navigation={navigation}/>
         </View>
         </View>
         <View style={{flex:0.5}}>
         <Text> Games </Text>
         <View style={{flexDirection:'row'}}>
-        <TouchableOpacity 
-                  title="Memory"
-                  onPress={() => navigation.navigate('Memory')}
-                  style={styles.buttonCastleTest}>
-                  <Icon style={{
-                    resizeMode:"contain",
-                    height: 100,
-                    width:100,
-                  }}
-                  icon="mdi:puzzle"
-                  />
-                  <Text>Memory</Text>
-                </TouchableOpacity>
+          <MemoryButton navigation={navigation}/>
         </View>
         </View>
         <View style={{flex: 1}}>
         <Text>Stories</Text>
-        <TouchableOpacity 
-                  title="The Castle"
-                  onPress={() => navigation.navigate('CastleStory')}
-                  style={styles.buttonCastleTest}>
-                  <Icon style={{
-                    resizeMode:"contain",
-                    height: 100,
-                    width:100,
-                  }}
-                  icon="mdi:castle"
-                  />
-                  <Text>The Castle</Text>
-                </TouchableOpacity>
+          <CastleButton navigation={navigation}/>
         </View>
       </View>   
       

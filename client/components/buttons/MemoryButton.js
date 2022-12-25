@@ -5,22 +5,22 @@ import styles from '../../styles';
 import { Icon } from "@iconify/react";
 
 
-const HomeButton  = ({navigation}) => {  
+const MemoryButton  = ({navigation}) => {  
   return (
     <TouchableOpacity 
-                  title="Home"
-                  onPress={() => navigation.navigate('Home')}
-                  style={styles.buttonHome}>
+                  title="Memory"
+                  onPress={() => navigation.navigate('Memory')}
+                  style={styles.buttonCastleTest}>
                   <Icon style={{
                     resizeMode:"contain",
                     height: 100,
                     width:100,
                   }}
-                  icon="mdi:home"
+                  icon="mdi:puzzle"
                   />
-                  <Text>Home</Text>
-              </TouchableOpacity>
+                  <Text>Memory</Text>
+                </TouchableOpacity>
   );
 
 }
-export default HomeButton;
+export default MemoryButton;

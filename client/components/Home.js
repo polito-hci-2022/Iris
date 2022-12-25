@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Icon } from "@iconify/react";
 import styles from '../styles';
+import PlayButton from './buttons/PlayButton';
+import StudyButton from './buttons/StudyButton';
 
 const image = { uri: "https://reactjs.org/logo-og.png"}
 
@@ -14,32 +16,8 @@ const HomeScreen = ({navigation}) => {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <View style={styles.background}/>
           <View style={styles.bottom}>
-            <TouchableOpacity 
-              title="Play"
-              onPress={() => navigation.navigate('Play')}
-              style={styles.buttonPlay}>
-              <Icon style={{
-                resizeMode:"contain",
-                height: 100,
-                width:100,
-              }}
-              icon="mdi:puzzle"
-              />
-              <Text>Play</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-              title="Study"
-              onPress={() => navigation.navigate('StudyTime')}
-              style={styles.buttonStudy}>
-              <Icon style={{
-                resizeMode:"contain",
-                height: 100,
-                width:100,
-              }}
-              icon="arcticons:dictionaryformids"
-              />
-              <Text>Study</Text>
-            </TouchableOpacity>
+            <PlayButton navigation={navigation}/>
+            <StudyButton navigation={navigation}/>
           </View>
         </View>
       </SafeAreaView>

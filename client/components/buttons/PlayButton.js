@@ -5,22 +5,22 @@ import styles from '../../styles';
 import { Icon } from "@iconify/react";
 
 
-const HomeButton  = ({navigation}) => {  
+const PlayButton  = ({navigation}) => {  
   return (
     <TouchableOpacity 
-                  title="Home"
-                  onPress={() => navigation.navigate('Home')}
-                  style={styles.buttonHome}>
-                  <Icon style={{
-                    resizeMode:"contain",
-                    height: 100,
-                    width:100,
-                  }}
-                  icon="mdi:home"
-                  />
-                  <Text>Home</Text>
-              </TouchableOpacity>
+              title="Play"
+              onPress={() => navigation.navigate('Play')}
+              style={styles.buttonPlay}>
+              <Icon style={{
+                resizeMode:"contain",
+                height: 100,
+                width:100,
+              }}
+              icon="mdi:puzzle"
+              />
+              <Text>Play</Text>
+            </TouchableOpacity>
   );
 
 }
-export default HomeButton;
+export default PlayButton;
