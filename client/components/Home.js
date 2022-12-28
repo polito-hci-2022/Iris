@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react";
 import styles from '../styles';
 import PlayButton from './buttons/PlayButton';
 import StudyButton from './buttons/StudyButton';
+import Model from './models/model';
 
 const image = { uri: "https://reactjs.org/logo-og.png"}
 
@@ -14,7 +15,9 @@ const HomeScreen = ({navigation}) => {
     return (
       <SafeAreaView>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <View style={styles.background}/>
+          <View style={styles.background}>
+            <Model/>
+          </View>
           <View style={styles.bottom}>
             <PlayButton navigation={navigation}/>
             <StudyButton navigation={navigation}/>
