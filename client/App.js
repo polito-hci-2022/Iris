@@ -10,6 +10,7 @@ import Backpack from './components/Backpack';
 import Memory from './components/Memory';
 import CastleStory from './components/CastleStory';
 import CastleTest from './components/CastleTest';
+import ResultTranslate from './components/ResultTranslate'
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="StudyTime" component={StudyTime} />
         <Stack.Screen name="Play" component={Play} />
         <Stack.Screen name="Translate" component={Translate} />
+        <Stack.Screen name="ResultTranslate" component={ResultTranslate} />
         <Stack.Screen name="Backpack" component={Backpack} />
         <Stack.Screen name="CastleTest" component={CastleTest} />
         <Stack.Screen name="CastleStory" component={CastleStory} />

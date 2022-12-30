@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useLoader } from '@react-three/fiber'
@@ -8,7 +7,7 @@ import styles from '../../styles'
 
 function Tiger() {
   const gltf = useLoader(GLTFLoader, tiger)
-  return <primitive object={gltf.scene} position={[0,-5,0]} scale={4} />
+  return <primitive object={gltf.scene} position={[0,-5,0]} scale={3} />
 }
 
 function Box() {
@@ -24,8 +23,8 @@ function Model() {
   return (
     <>
     <div style={{width:"50vw", height:"35vh",  position: 'absolute',
-        bottom: -5,
-        right: 20}}>
+
+        left: 20}}>
         <Canvas camera={{position: [0, 2, 15]}}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />

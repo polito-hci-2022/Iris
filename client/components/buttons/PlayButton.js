@@ -5,12 +5,12 @@ import styles from '../../styles';
 import { Icon } from "@iconify/react";
 
 
-const PlayButton  = ({navigation}) => {  
+const PlayButton  = ({navigation, style}) => {  
   return (
     <TouchableOpacity 
               title="Play"
               onPress={() => navigation.navigate('Play')}
-              style={styles.buttonPlay}>
+              style={style}>
               <Icon style={{
                 resizeMode:"contain",
                 height: 100,

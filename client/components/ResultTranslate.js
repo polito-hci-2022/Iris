@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StudyButton from './buttons/StudyButton';
@@ -8,7 +8,7 @@ import { Keyboard, TextInput, StyleSheet } from "react-native";
 import styles from '../styles';
 import ModelCompact from './models/ModelCompact';
 
-const BoxKeyboard = () => {
+const BoxKeyboard = ({text}) => {
   const [keyboardStatus, setKeyboardStatus] = useState(undefined);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const BoxKeyboard = () => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder='Click here…'
+        placeholder={text}
         onSubmitEditing={Keyboard.dismiss}
       />
       <Text style={styles.status}>{keyboardStatus}</Text>
@@ -37,7 +37,7 @@ const BoxKeyboard = () => {
 }
 
 
-const Translate  = ({navigation}) => {  
+const Translate  = ({navigation, text}) => {  
     return (
       <View style={{ flex: 1}}>
         <View style={{flex: 0.7}}>
@@ -67,13 +67,14 @@ const Translate  = ({navigation}) => {
           </View>
         </View>
         <View style={{flex:0.5}}>
-            <BoxKeyboard />
+            <BoxKeyboard text={"Home"}/>
+            <BoxKeyboard text={"Casa"}/>
             <Button onPress={() => navigation.navigate('ResultTranslate', {
-              text:'home'
+              text:text
             })} title="Translate"></Button>
         </View>
         <View style={{flex: 1}}>
-        
+          <ImageBackground source={require('../assets/home.png')} style={{flex:1}}/>
         </View>
       </View>
     );
