@@ -21,6 +21,7 @@
     "@react-navigation/native": "6.0.10",
     "@react-navigation/native-stack": "6.6.1",
     "@react-navigation/stack": "6.2.1",
+    "@react-three/drei": "^9.48.5",
     "@react-three/fiber": "^8.9.1",
     "expo": "~47.0.8",
     "expo-status-bar": "~1.4.2",

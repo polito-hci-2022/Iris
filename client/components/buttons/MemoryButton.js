@@ -9,7 +9,7 @@ const MemoryButton  = ({navigation}) => {
   return (
     <TouchableOpacity 
                   title="Memory"
-                  onPress={() => navigation.navigate('Memory')}
+                  onPress={() => navigation.navigate('TutorialMemoryChoice')}
                   style={styles.buttonCastleTest}>
                   <Icon style={{
                     resizeMode:"contain",

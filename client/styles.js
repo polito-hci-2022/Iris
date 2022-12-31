@@ -162,7 +162,8 @@ const styles = StyleSheet.create({
       height: 50,
       backgroundColor: 'transparent',
       backgroundImage: ` url(${require('./assets/home.png')})`, 
-    }
+    },
+    
   })
 
   export default styles;

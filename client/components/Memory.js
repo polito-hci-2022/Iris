@@ -2,15 +2,17 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Card from './Card';
+import Card from './game/Card';
 import PlayButton from './buttons/PlayButton';
 import styles from '../styles';
 import ModelCompact from './models/ModelCompact';
+import Game from './game/Game';
+import { FlatList } from 'react-native';
 
 const Memory  = ({navigation}) => {  
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <View style={{flex: 0.7}}>
+      <View style={{flex: 0.5}}>
           <Text>Memory</Text>
           <View style={styles.backgroundCompact}>
           <View style={{
@@ -36,12 +38,11 @@ const Memory  = ({navigation}) => {
             <PlayButton style={styles.buttonStudyCompact} navigation={navigation}/>
           </View>
         </View>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <View style={{flex:1}}>
+        <View style={{flexDirection:'row'}}>
+          <Game navigation={navigation}></Game>
+        </View>
+        </View>
       </View>
     );
   }
