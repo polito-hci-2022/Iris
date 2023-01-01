@@ -163,7 +163,26 @@ const styles = StyleSheet.create({
       backgroundColor: 'transparent',
       backgroundImage: ` url(${require('./assets/home.png')})`, 
     },
-    
+    buttonLose: {
+      width: 125,
+      height: 125,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+      borderRadius: 100,
+      backgroundColor: "white",
+      marginLeft: 20,
+    },
+    buttonWin: {
+      width: 125,
+      height: 125,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+      borderRadius: 100,
+      backgroundColor: "green",
+      marginLeft: 20,
+    },
   })
 
   export default styles;

@@ -5,7 +5,8 @@ import styles from '../../styles';
 import { Icon } from "@iconify/react";
 
 
-const PlayButton  = ({navigation, style}) => {  
+const PlayButton  = ({navigation, style, word}) => {  
+  word={data:``};
   return (
     <TouchableOpacity 
               title="Play"

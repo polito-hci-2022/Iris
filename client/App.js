@@ -13,6 +13,8 @@ import CastleTest from './components/CastleTest';
 import ResultTranslate from './components/ResultTranslate'
 import TutorialMemory from './components/TutorialMemory'
 import TutorialMemoryChoice from './components/TutorialMemoryChoice'
+import Test1 from './components/Test1'
+import Test2 from './components/Test2'
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +33,8 @@ function App() {
         <Stack.Screen name="Memory" component={Memory} />
         <Stack.Screen name="TutorialMemory" component={TutorialMemory} />
         <Stack.Screen name="TutorialMemoryChoice" component={TutorialMemoryChoice} />
+        <Stack.Screen name="Test1" component={Test1} />
+        <Stack.Screen name="Test2" component={Test2} />
       </Stack.Navigator>
     </NavigationContainer>
   );

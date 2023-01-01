@@ -9,7 +9,7 @@ const CastleTestButton  = ({navigation}) => {
   return (
     <TouchableOpacity 
     title="Castle Test"
-    onPress={() => navigation.navigate('CastleTest')}
+    onPress={() => navigation.navigate('Test1')}
     style={styles.buttonCastleTest}>
     <Icon style={{
       resizeMode:"contain",

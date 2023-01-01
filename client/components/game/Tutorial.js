@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
 import { Ionicons, FontAwesome, Entypo } from '@expo/vector-icons'; // 6.2.2
 
-import Score from './game/Score';
-import Card from './game/Card';
+import Score from './Score';
+import Card from './Card';
 
-import helpers from './game/helpers';
+import helpers from './helpers';
 
 export default class Game extends React.Component {
 

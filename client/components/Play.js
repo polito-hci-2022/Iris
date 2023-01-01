@@ -10,7 +10,8 @@ import MemoryButton from './buttons/MemoryButton';
 import CastleButton from './buttons/CastleButton';
 import ModelCompact from './models/ModelCompact';
 
-const Play  = ({navigation}) => {  
+const Play  = ({navigation}) => { 
+  
     return (
         <View style={{ flex: 1}}>
         <View style={{flex: 0.7}}>

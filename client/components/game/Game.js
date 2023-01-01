@@ -12,8 +12,6 @@ export default class Game extends React.Component {
   
 
   constructor(props) {
-
-    console.log(props.navigation)
     super(props);
     this.renderCards = this.renderCards.bind(this);
     this.resetCards = this.resetCards.bind(this);
