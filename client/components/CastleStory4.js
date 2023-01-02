@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CastleModelR from './models/CastleModelR'
 import CastleStory3 from './CastleStory3';
+import CastleStoryFinal from './CastleStoryFinal'
 import HomeButton from './buttons/HomeButton'
 import styles from '../styles'
 import { render } from 'react-dom';
@@ -22,7 +23,7 @@ function CastleStory4 ({navigation}) {
             <HomeButton navigation={navigation}/>
           </View>
         </View>
-        <Button onPress={() => navigation.navigate(CastleStory3)}>
+        <Button onPress={() => navigation.navigate(CastleStoryFinal)}>
           <Text>Next</Text>
         </Button>
         <Pressable onPress={() => setPosition([0,35,25])}>

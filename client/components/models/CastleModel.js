@@ -9,7 +9,7 @@ import styles from '../../styles'
 function Castle() {
   const gltf = useLoader(GLTFLoader, tiger)
   
-  return <primitive object={gltf.scene}  position={[0,0,0]} scale={1} />
+  return <primitive object={gltf.scene} position={[0,0,0]} scale={1} />
 }
 
 function Box() {
@@ -26,7 +26,9 @@ function CastleModel({positio}) {
         <>
         <div style={{   
             width:'100%',
-            height: 400, }}>
+            height: 400, 
+            position: 'absolute'
+            }}>
         <Canvas camera={{position: positio}} >
             <ambientLight intensity={0.5} />
             <spotLight intensity={0.8} position={[300, 300, 400]} />

@@ -3,6 +3,7 @@ import { Button, View, Text, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CastleModel from './models/CastleModel'
+import Model from './models/Model';
 import CastleStory2 from './CastleStory2';
 import HomeButton from './buttons/HomeButton'
 import styles from '../styles'
@@ -17,7 +18,9 @@ function CastleStory ({navigation}) {
       <View style={{ flex: 1}}>
         <View style={{flex: 1}}>
           <Text>Study Time</Text>
+          <Model/>
           <View style={styles.backgroundNoImage}>
+          
           <CastleModel positio={position}/>
             <HomeButton navigation={navigation}/>
           </View>

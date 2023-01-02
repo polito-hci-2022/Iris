@@ -2,12 +2,12 @@ import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import tiger from './tiger.glb'
+import tiger from './rabbit.glb'
 import styles from '../../styles'
 
-function Tiger() {
+function Rabbit() {
   const gltf = useLoader(GLTFLoader, tiger)
-  return <primitive object={gltf.scene} position={[0,-5,0]} scale={4} />
+  return <primitive object={gltf.scene} position={[0,-5,0]} scale={3} />
 }
 
 function Box() {
@@ -20,25 +20,25 @@ function Box() {
 }
 
 
-function Model() {
+function RabbitModel() {
       return (
         <>
         <div style={{
             width:"50vw", 
-            height:"35vh",  
+            height:"45vh",  
             flexDirection: "vertical",
             position: 'absolute',
             bottom: 10,
-            right: 20,
+            left: 20,
             zIndex: 999}}>
             <Canvas camera={{position: [0, 2, 15]}}>
             <ambientLight intensity={0.5} />
             <spotLight intensity={0.8} position={[300, 300, 400]} />
-            <Suspense fallback={<Box/>}><Tiger /></Suspense>
+            <Suspense fallback={<Box/>}><Rabbit /></Suspense>
           </Canvas>                                                 
         </div>
         </>
       );
 }
 
-export default Model;
+export default RabbitModel;

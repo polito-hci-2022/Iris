@@ -12,6 +12,7 @@ import CastleStory from './components/CastleStory';
 import CastleStory2 from './components/CastleStory2';
 import CastleStory3 from './components/CastleStory3';
 import CastleStory4 from './components/CastleStory4';
+import CastleStoryFinal from './components/CastleStoryFinal';
 import CastleTest from './components/CastleTest';
 import ResultTranslate from './components/ResultTranslate'
 import TutorialMemory from './components/TutorialMemory'
@@ -36,7 +37,7 @@ function App() {
         <Stack.Screen name="CastleStory2" component={CastleStory2} />
         <Stack.Screen name="CastleStory3" component={CastleStory3} />
         <Stack.Screen name="CastleStory4" component={CastleStory4} />
-
+        <Stack.Screen name="CastleStoryFinal" component={CastleStoryFinal} />
         <Stack.Screen name="Memory" component={Memory} />
         <Stack.Screen name="TutorialMemory" component={TutorialMemory} />
         <Stack.Screen name="TutorialMemoryChoice" component={TutorialMemoryChoice} />

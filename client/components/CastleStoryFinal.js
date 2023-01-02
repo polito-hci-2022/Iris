@@ -2,14 +2,16 @@ import * as React from 'react';
 import { Button, View, Text, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CastleModelL from './models/CastleModelL'
-import CastleStoryFinal from './CastleStoryFinal'
+import CastleModel from './models/CastleModel'
+import Model from './models/Model';
+import RabbitModel from './models/RabbitModel';
+import CastleStory2 from './CastleStory2';
 import HomeButton from './buttons/HomeButton'
 import styles from '../styles'
 import { render } from 'react-dom';
 
-function CastleStory3 ({navigation}) { 
-  const [position, setPosition] = React.useState([25,15,30]);
+function CastleStoryFinal ({navigation}) { 
+  const [position, setPosition] = React.useState([0,30,40]);
   React.useEffect(() => {
     setPosition(position);
   }, [position]);
@@ -18,12 +20,13 @@ function CastleStory3 ({navigation}) {
         <View style={{flex: 1}}>
           <Text>Study Time</Text>
           <View style={styles.backgroundNoImage}>
-          
-          <CastleModelL positio={position}/>
+          <Model/>
+          <RabbitModel/>
+          <CastleModel positio={position}/>
             <HomeButton navigation={navigation}/>
           </View>
         </View>
-        <Button onPress={() => navigation.navigate(CastleStoryFinal)}>
+        <Button onPress={() => navigation.navigate(CastleStory2)}>
           <Text>Next</Text>
         </Button>
         <Pressable onPress={() => setPosition([0,35,25])}>
@@ -38,4 +41,4 @@ function CastleStory3 ({navigation}) {
    
   }
 
-export default CastleStory3;
+export default CastleStoryFinal;
