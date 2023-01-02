@@ -5,8 +5,11 @@ const styles = StyleSheet.create({
       width:'100%',
       height: 400,
       backgroundColor: 'transparent',
-      marginLeft: 20,
       backgroundImage: ` url(${require('./assets/back.jpg')})`, 
+    },
+    backgroundNoImage: {
+      width:'100%',
+      height: 400,
     },
     backgroundCompact: {
         width:'100%',
@@ -182,6 +185,31 @@ const styles = StyleSheet.create({
       borderRadius: 100,
       backgroundColor: "green",
       marginLeft: 20,
+    },
+
+    buttonLeft: {
+      width: 75,
+      height: 75,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+      borderRadius: 100,
+      backgroundColor: "grey",
+      position: 'absolute',
+      bottom: 20,
+      left: 200
+    },
+    buttonRight: {
+      width: 75,
+      height: 75,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+      borderRadius: 100,
+      backgroundColor: "grey",
+      position: 'absolute',
+      bottom: 20,
+      right: 200
     },
   })
 
