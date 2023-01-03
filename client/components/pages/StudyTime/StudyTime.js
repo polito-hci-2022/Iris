@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Button, View, Text, TouchableOpacity } from 'react-native';
-import styles from '../../styles';
-import HomeButton from '../buttons/HomeButton';
-import TranslateButton from '../buttons/TranslateButton';
-import CastleTestButton from '../buttons/CastleTestButton';
-import BackpackButton from '../buttons/BackpackButton';
-import ModelCompact from '../models/ModelCompact';
+import styles from '../../../styles';
+import HomeButton from '../../buttons/HomeButton';
+import TranslateButton from '../../buttons/TranslateButton';
+import CastleTestButton from '../../buttons/CastleTestButton';
+import BackpackButton from '../../buttons/BackpackButton';
+import ModelCompact from '../../models/ModelCompact';
 
 const StudyTime  = ({navigation}) => {  
     return (

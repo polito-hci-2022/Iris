@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Button, View, Text, SafeAreaView, Image, ImageBackground, useState } from 'react-native';
-import styles from '../../styles';
-import HomeButton from '../buttons/HomeButton'
-import ModelCompact from '../models/ModelCompact';
-import Game from '../game/Game';
+import styles from '../../../styles';
+import HomeButton from '../../buttons/HomeButton'
+import ModelCompact from '../../models/ModelCompact';
+import Game from '../../game/Game';
 
 const Play  = ({navigation}) => {  
     return (

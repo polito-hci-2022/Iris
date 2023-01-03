@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Button, View, Text, SafeAreaView, Image, ImageBackground } from 'react-native';
-import styles from '../../styles';
-import HomeButton from '../buttons/HomeButton'
-import ModelCompact from '../models/ModelCompact';
-import YesButton from '../buttons/YesButton';
-import NoButton from '../buttons/NoButton';
+import styles from '../../../styles';
+import HomeButton from '../../buttons/HomeButton'
+import ModelCompact from '../../models/ModelCompact';
+import YesButton from '../../buttons/YesButton';
+import NoButton from '../../buttons/NoButton';
 
 const Play  = ({navigation}) => {  
     return (

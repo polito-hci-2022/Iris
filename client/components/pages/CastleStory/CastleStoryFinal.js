@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Button, View, Text, Pressable } from 'react-native';
-import CastleModel from '../models/CastleModel'
-import Model from '../models/Model';
-import RabbitModel from '../models/RabbitModel';
+import { Button, View, Text, Pressable, TouchableOpacity  } from 'react-native';
+import CastleModel from '../../models/CastleModel'
+import Model from '../../models/Model';
+import RabbitModel from '../../models/RabbitModel';
 import CastleStory2 from './CastleStory2';
-import HomeButton from '../buttons/HomeButton'
-import styles from '../../styles'
+import HomeButton from '../../buttons/HomeButton'
+import styles from '../../../styles'
 
 function CastleStoryFinal ({navigation}) { 
   const [position, setPosition] = React.useState([0,30,35]);

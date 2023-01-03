@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
-import StudyButton from '../buttons/StudyButton';
+import StudyButton from '../../buttons/StudyButton';
 import { useState, useEffect } from "react";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
-import styles from '../../styles';
-import ModelCompact from '../models/ModelCompact';
+import styles from '../../../styles';
+import ModelCompact from '../../models/ModelCompact';
 
 const BoxKeyboard = () => {
   const [keyboardStatus, setKeyboardStatus] = useState(undefined);

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Button, View, Text, SafeAreaView, Image, ImageBackground, Pressable, Modal } from 'react-native';
-import styles from '../../styles';
-import HomeButton from '../buttons/HomeButton'
-import ModelCompact from '../models/ModelCompact';
+import styles from '../../../styles';
+import HomeButton from '../../buttons/HomeButton'
+import ModelCompact from '../../models/ModelCompact';
 
 const Test2  = ({navigation}) => {
     const [lose, setLose] = React.useState("false");

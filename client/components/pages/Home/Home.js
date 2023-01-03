@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Button, View, Text, SafeAreaView} from 'react-native';
-import styles from '../../styles';
-import PlayButton from '../buttons/PlayButton';
-import StudyButton from '../buttons/StudyButton';
-import Model from '../models/Model';
+import styles from '../../../styles';
+import PlayButton from '../../buttons/PlayButton';
+import StudyButton from '../../buttons/StudyButton';
+import Model from '../../models/Model';
 
 
 const image = { uri: "https://reactjs.org/logo-og.png"}

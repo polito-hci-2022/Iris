@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Button, View, Text, ImageBackground } from 'react-native';
-import StudyButton from '../buttons/StudyButton';
+import StudyButton from '../../buttons/StudyButton';
 import { useState, useEffect } from "react";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
-import styles from '../../styles';
-import ModelCompact from '../models/ModelCompact';
+import styles from '../../../styles';
+import ModelCompact from '../../models/ModelCompact';
 
 const BoxKeyboard = ({text}) => {
   const [keyboardStatus, setKeyboardStatus] = useState(undefined);
@@ -72,7 +72,7 @@ const Translate  = ({navigation, text}) => {
             })} title="Translate"></Button>
         </View>
         <View style={{flex: 1}}>
-          <ImageBackground source={require('../../assets/home.png')} style={{flex:1}}/>
+          <ImageBackground source={require('../../../assets/home.png')} style={{flex:1}}/>
         </View>
       </View>
     );

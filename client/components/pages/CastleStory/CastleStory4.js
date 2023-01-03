@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Button, View, Text, Pressable } from 'react-native';
-import CastleModelR from '../models/CastleModelR'
+import { Button, View, Text, Pressable, TouchableOpacity  } from 'react-native';
+import CastleModelR from '../../models/CastleModelR'
 import CastleStoryFinal from './CastleStoryFinal'
-import HomeButton from '../buttons/HomeButton'
-import styles from '../../styles'
+import HomeButton from '../../buttons/HomeButton'
+import styles from '../../../styles'
 
 function CastleStory4 ({navigation}) { 
   const [position, setPosition] = React.useState([-25,15,30]);

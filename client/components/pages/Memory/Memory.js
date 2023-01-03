@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
-import PlayButton from '../buttons/PlayButton';
-import styles from '../../styles';
-import ModelCompact from '../models/ModelCompact';
-import Game from '../game/Game';
+import PlayButton from '../../buttons/PlayButton';
+import styles from '../../../styles';
+import ModelCompact from '../../models/ModelCompact';
+import Game from '../../game/Game';
 
 const Memory  = ({navigation}) => {  
     return (
