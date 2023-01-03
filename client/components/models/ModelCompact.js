@@ -2,8 +2,7 @@ import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import tiger from './tiger.glb'
-import styles from '../../styles'
+import tiger from './glbFile/tiger.glb'
 
 function Tiger() {
   const gltf = useLoader(GLTFLoader, tiger)

@@ -1,14 +1,10 @@
 import * as React from 'react';
 import { Button, View, Text, SafeAreaView, Image, ImageBackground } from 'react-native';
-import { StyleSheet, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Icon } from "@iconify/react";
-import styles from '../styles';
-import HomeButton from './buttons/HomeButton'
-import MemoryButton from './buttons/MemoryButton';
-import CastleButton from './buttons/CastleButton';
-import ModelCompact from './models/ModelCompact';
+import styles from '../../styles';
+import HomeButton from '../buttons/HomeButton'
+import MemoryButton from '../buttons/MemoryButton';
+import CastleButton from '../buttons/CastleButton';
+import ModelCompact from '../models/ModelCompact';
 
 const Play  = ({navigation}) => { 
   

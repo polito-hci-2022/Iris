@@ -1,13 +1,9 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Card from './game/Card';
-import PlayButton from './buttons/PlayButton';
-import styles from '../styles';
-import ModelCompact from './models/ModelCompact';
-import Game from './game/Game';
-import { FlatList } from 'react-native';
+import PlayButton from '../buttons/PlayButton';
+import styles from '../../styles';
+import ModelCompact from '../models/ModelCompact';
+import Game from '../game/Game';
 
 const Memory  = ({navigation}) => {  
     return (

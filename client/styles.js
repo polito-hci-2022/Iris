@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         height: 200,
         backgroundColor: 'transparent',
         backgroundImage: ` url(${require('./assets/back.jpg')})`, 
-      },
+    },
     top: {
       position: 'absolute',
       top: 100
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         right: 20
-      },
+    },
     bottom: {
       flexDirection: "row",
       borderWidth: 5,
@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
       borderBottomLeftRadius: 25,
       right: -10
     },
-    
     rightArrowOverlap: {
       position: "absolute",
       backgroundColor: "#eeeeee",
@@ -127,29 +126,26 @@ const styles = StyleSheet.create({
       right: -20
     
     },
-    
     /*Arrow head for recevied messages*/
     leftArrow: {
-        position: "absolute",
-        backgroundColor: "#0078fe",
-        //backgroundColor:"red",
-        width: 20,
-        height: 25,
-        bottom: 0,
-        borderBottomRightRadius: 25,
-        left: -10
+      position: "absolute",
+      backgroundColor: "#0078fe",
+      //backgroundColor:"red",
+      width: 20,
+      height: 25,
+      bottom: 0,
+      borderBottomRightRadius: 25,
+      left: -10
     },
-    
     leftArrowOverlap: {
-        position: "absolute",
-        backgroundColor: "#eeeeee",
-        //backgroundColor:"green",
-        width: 20,
-        height: 35,
-        bottom: -6,
-        borderBottomRightRadius: 18,
-        left: -20
-    
+      position: "absolute",
+      backgroundColor: "#eeeeee",
+      //backgroundColor:"green",
+      width: 20,
+      height: 35,
+      bottom: -6,
+      borderBottomRightRadius: 18,
+      left: -20
     },
     input: {
       padding: 10,
@@ -186,7 +182,6 @@ const styles = StyleSheet.create({
       backgroundColor: "green",
       marginLeft: 20,
     },
-
     buttonLeft: {
       width: 75,
       height: 75,
@@ -211,6 +206,80 @@ const styles = StyleSheet.create({
       bottom: 20,
       right: 200
     },
-  })
+    buttonTest: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 4,
+      backgroundColor: 'black',
+    },
+    textTest: {
+      fontSize: 16,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      letterSpacing: 0.25,
+      color: 'white',
+    },
+    container: {
+      flex: 1,
+      alignSelf: 'stretch',
+      backgroundColor: '#fff'
+    },
+    rowTest: {
+      flex: 1,
+      flexDirection: 'row'
+    },
+    bodyTest: {
+      flex: 18,
+      justifyContent: 'space-between',
+      padding: 0,
+      marginTop: 0
+    },
+    centeredView: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 22
+    },
+    modalView: {
+      margin: 20,
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 35,
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5
+    },
+    buttonOpen: {
+      backgroundColor: "#F194FF",
+    },
+    buttonClose: {
+      backgroundColor: "#2196F3",
+    },
+    textStyle: {
+      color: "white",
+      fontWeight: "bold",
+      textAlign: "center"
+    },
+    modalText: {
+      marginBottom: 15,
+      textAlign: "center"
+    },
+    buttonStudyCompact: {
+      width: 75,
+      height: 75,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+      borderRadius: 100,
+      backgroundColor: "grey",
+    },
+    
+})
 
-  export default styles;
+export default styles;

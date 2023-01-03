@@ -1,15 +1,11 @@
 import * as React from 'react';
 import { Button, View, Text, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Translate from './Translate';
-import { Icon } from "@iconify/react";
-import styles from '../styles';
-import HomeButton from './buttons/HomeButton';
-import TranslateButton from './buttons/TranslateButton';
-import CastleTestButton from './buttons/CastleTestButton';
-import BackpackButton from './buttons/BackpackButton';
-import ModelCompact from './models/ModelCompact';
+import styles from '../../styles';
+import HomeButton from '../buttons/HomeButton';
+import TranslateButton from '../buttons/TranslateButton';
+import CastleTestButton from '../buttons/CastleTestButton';
+import BackpackButton from '../buttons/BackpackButton';
+import ModelCompact from '../models/ModelCompact';
 
 const StudyTime  = ({navigation}) => {  
     return (

@@ -2,23 +2,23 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './components/Home';
-import StudyTime from './components/StudyTime';
-import Play from './components/Play';
-import Translate from './components/Translate';
-import Backpack from './components/Backpack';
-import Memory from './components/Memory';
-import CastleStory from './components/CastleStory';
-import CastleStory2 from './components/CastleStory2';
-import CastleStory3 from './components/CastleStory3';
-import CastleStory4 from './components/CastleStory4';
-import CastleStoryFinal from './components/CastleStoryFinal';
-import CastleTest from './components/CastleTest';
-import ResultTranslate from './components/ResultTranslate'
-import TutorialMemory from './components/TutorialMemory'
-import TutorialMemoryChoice from './components/TutorialMemoryChoice'
-import Test1 from './components/Test1'
-import Test2 from './components/Test2'
+import Home from './components/pages/Home';
+import StudyTime from './components/pages/StudyTime';
+import Play from './components/pages/Play';
+import Translate from './components/pages/Translate';
+import Backpack from './components/pages/Backpack';
+import Memory from './components/pages/Memory';
+import CastleStory from './components/pages/CastleStory';
+import CastleStory2 from './components/pages/CastleStory2';
+import CastleStory3 from './components/pages/CastleStory3';
+import CastleStory4 from './components/pages/CastleStory4';
+import CastleStoryFinal from './components/pages/CastleStoryFinal';
+import CastleTest from './components/pages/CastleTest';
+import ResultTranslate from './components/pages/ResultTranslate'
+import TutorialMemory from './components/pages/TutorialMemory'
+import TutorialMemoryChoice from './components/pages/TutorialMemoryChoice'
+import Test1 from './components/pages/Test1'
+import Test2 from './components/pages/Test2'
 
 const Stack = createNativeStackNavigator();
 

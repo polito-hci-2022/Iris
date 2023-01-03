@@ -1,13 +1,11 @@
 import React, { StrictMode, Suspense, useState } from 'react'
-import * as ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import tiger from './castle.glb'
-import styles from '../../styles'
+import castle from './glbFile/castle.glb'
 
 function Castle() {
-  const gltf = useLoader(GLTFLoader, tiger)
+  const gltf = useLoader(GLTFLoader, castle)
   
   return <primitive object={gltf.scene}  position={[25,0,0]} scale={1} />
 }

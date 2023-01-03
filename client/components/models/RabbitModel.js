@@ -2,11 +2,10 @@ import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import tiger from './rabbit.glb'
-import styles from '../../styles'
+import rabbit from './glbFile/rabbit.glb'
 
 function Rabbit() {
-  const gltf = useLoader(GLTFLoader, tiger)
+  const gltf = useLoader(GLTFLoader, rabbit)
   return <primitive object={gltf.scene} position={[0,-5,0]} scale={3} />
 }
 

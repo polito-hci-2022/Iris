@@ -1,14 +1,10 @@
 import * as React from 'react';
 import { Button, View, Text, Pressable, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CastleModel from './models/CastleModel'
+import CastleModel from '../models/CastleModel'
 import CastleStory3 from './CastleStory3';
 import CastleStory4 from './CastleStory4';
-
-import HomeButton from './buttons/HomeButton'
-import styles from '../styles'
-import { render } from 'react-dom';
+import HomeButton from '../buttons/HomeButton'
+import styles from '../../styles'
 
 function CastleStory2 ({navigation}) { 
   const [position, setPosition] = React.useState([0,35,50]);
@@ -20,7 +16,6 @@ function CastleStory2 ({navigation}) {
         <View style={{flex: 1}}>
           <Text>Study Time</Text>
           <View style={styles.backgroundNoImage}>
-
           <CastleModel positio={position}/>
           <TouchableOpacity style={styles.buttonLeft} onPress={() => navigation.navigate(CastleStory3)}>
             <Text>Left</Text>
@@ -31,16 +26,9 @@ function CastleStory2 ({navigation}) {
             <HomeButton navigation={navigation}/>
           </View>
         </View>
-        <Button onPress={() => navigation.navigate(CastleStory3)}>
+        <TouchableOpacity onPress={() => navigation.navigate(CastleStory3)}>
           <Text>Next</Text>
-        </Button>
-        <Button onPress={() => navigation.navigate(CastleStory4)}>
-          <Text>Next</Text>
-        </Button>
-        <Pressable onPress={() => setPosition([0,35,25])}>
-          <Text>Right</Text>
-        </Pressable>
-        
+        </TouchableOpacity>
       </View>
     );
    
