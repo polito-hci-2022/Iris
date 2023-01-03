@@ -23,15 +23,15 @@ function Box() {
 function Model() {
       return (
         <>
-        <div style={{
+        <div style={{ 
             width:"50vw", 
             height:"35vh",  
             flexDirection: "vertical",
             position: 'absolute',
             bottom: 10,
             right: 20,
-            zIndex: 999}}>
-            <Canvas camera={{position: [0, 2, 15]}}>
+            zIndex: 999}}> {/*spazio occupato dal modello*/ }
+            <Canvas camera={{position: [0, 2, 15]}}> 
             <ambientLight intensity={0.5} />
             <spotLight intensity={0.8} position={[300, 300, 400]} />
             <Suspense fallback={<Box/>}><Tiger /></Suspense>

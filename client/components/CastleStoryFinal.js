@@ -11,7 +11,7 @@ import styles from '../styles'
 import { render } from 'react-dom';
 
 function CastleStoryFinal ({navigation}) { 
-  const [position, setPosition] = React.useState([0,30,40]);
+  const [position, setPosition] = React.useState([0,30,35]);
   React.useEffect(() => {
     setPosition(position);
   }, [position]);
@@ -24,6 +24,7 @@ function CastleStoryFinal ({navigation}) {
           <RabbitModel/>
           <CastleModel positio={position}/>
             <HomeButton navigation={navigation}/>
+            
           </View>
         </View>
         <Button onPress={() => navigation.navigate(CastleStory2)}>
