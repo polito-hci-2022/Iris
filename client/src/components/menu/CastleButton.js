@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, View, Text } from 'react-bootstrap';
 import { Icon } from "@iconify/react";
 import { Link } from 'react-router-dom';
 
 
-const CastleButton  = () => {  
+const CastleButton  = (props) => { 
+
   return (
-    <Link to={'/castlestory'}>
-      <Button 
-    title="The Castle"
-    style={buttonCastleTest}>
+    <Button 
+      title="The Castle"
+      style={buttonCastleTest}
+      onClick={() => props.navigation('/CastleStory')}>
     <Icon style={{
       resizeMode:"contain",
       height: 50,
@@ -18,9 +19,7 @@ const CastleButton  = () => {
     icon="mdi:castle"
     />
     <h3>The Castle</h3>
-  </Button>
-    </Link>
-    
+  </Button> 
   );
 
 }

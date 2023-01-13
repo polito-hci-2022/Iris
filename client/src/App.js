@@ -1,14 +1,20 @@
 import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
 import Home from './pages/Menu/Home'
 import PlayMenu from "./pages/Menu/PlayMenu";
 import StudyMenu from "./pages/Menu/StudyMenu";
 import Translate from "./pages/Translate/Translate";
 import ResultTranslate from "./pages/Translate/ResultTranslate"
 import 'bootstrap/dist/css/bootstrap.min.css'
- 
+import CastleStory from "./pages/CastleStory/CastleStory";
+import CastleStory2 from "./pages/CastleStory/CastleStory2";
+import CastleStory3 from "./pages/CastleStory/CastleStory3";
+import CastleStory4 from "./pages/CastleStory/CastleStory4";
+import CastleStoryFinal from "./pages/CastleStory/CastleStoryFinal";
 
 export default function App() {
+  const navigate = useNavigate()
+
   return (
     <div>
       {/* Routes nest inside one another. Nested route paths build upon
@@ -17,10 +23,15 @@ export default function App() {
       <Routes>
         <Route path="/" >
           <Route index element={<Home />} />
-          <Route path="/play" element={<PlayMenu />} />
+          <Route path="/play" element={<PlayMenu navigation={navigate} />} />
           <Route path="/studytime" element={<StudyMenu />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
+          <Route path="/CastleStory" element={<CastleStory />} />
+          <Route path="/CastleStory2" element={<CastleStory2 />} />
+          <Route path="/CastleStory3" element={<CastleStory3 />} />
+          <Route path="/CastleStory4" element={<CastleStory4 />} />
+          <Route path="/CastleStoryFinal" element={<CastleStoryFinal />} />
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
