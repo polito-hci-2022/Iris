@@ -6,6 +6,7 @@ import CastleTestButton from '../../components/menu/CastleTestButton';
 import BackpackButton from '../../components/menu/BackpackButton';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
+import RoundButton from '../../components/common/RoundButton';
 
 const StudyMenu = ({ navigation }) => {
   return (
@@ -15,20 +16,20 @@ const StudyMenu = ({ navigation }) => {
           <h1>Study Time</h1>
           <Bubble text="Right here, there are the assigned homeworks, I'm here to help you!" />
           <IrisModel scale={2} top={150} left={0} />
-          <HomeButton navigation={navigation} />
+          <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
         </Col>
       </Row>
       <Row>
         <h2> Exercises </h2>
         <Col md="auto">
-          <TranslateButton style={buttonTranslate} iconStyle={iconStyle}/>
-          <BackpackButton style={buttonBackpack} iconStyle={iconStyle}/>
+          <RoundButton dimension={75} link={"/translate"} title={"Translate"} text={"Translate"} />
+          <RoundButton dimension={75} link={"/backpackS"} title={"Backpack"} text={"Backpack"} />
         </Col>
       </Row>
       <Row>
         <Col>
           <h2>Test</h2>
-          <CastleTestButton style={buttonCastleTest} iconStyle={iconStyle}/>
+          <RoundButton dimension={75} link={"/castleStoryTest"} title={"Castle"} text={"Castle Story Test"} />
         </Col>
       </Row>
     </Container>

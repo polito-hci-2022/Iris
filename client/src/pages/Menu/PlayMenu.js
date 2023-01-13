@@ -5,6 +5,7 @@ import MemoryButton from '../../components/menu/MemoryButton';
 import CastleButton from '../../components/menu/CastleButton';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
+import RoundButton from '../../components/common/RoundButton';
 
 const PlayMenu = ({ navigation }) => {
 
@@ -19,19 +20,21 @@ const PlayMenu = ({ navigation }) => {
         <Col>
           <Bubble text="In this page you can find a lot of funny games!" />
           <IrisModel scale={3} top={175} left={0} />
-          <HomeButton navigation={navigation} />
+          <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
+
         </Col>
       </Row>
       <Row>
         <Col>
           <h2> Games </h2>
-          <MemoryButton style={buttonMemory} iconStyle={iconStyle}/>
+          <RoundButton dimension={75} link={"/tutorialMemoryChoice"} title={"Memory"} text={"Memory"} />
         </Col>
       </Row>
       <Row>
         <Col>
           <h2>Stories</h2>
-          <CastleButton style={buttonCastle} iconStyle={iconStyle}/>
+          <RoundButton dimension={75} link={"/castleStory"} title={"Castle"} text={"Castle Story"} />
+
         </Col>
       </Row>
     </Container>

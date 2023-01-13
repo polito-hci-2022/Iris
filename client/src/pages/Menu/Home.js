@@ -21,7 +21,7 @@ function Home() {
               <Col></Col>
               <Col>
                 <RoundButton dimension={125} top={125} left={125} link={"/play"} title={"Play"} text={"Play"} />
-                <StudyButton style={buttonStudy} iconStyle={iconStyle}/>
+                <RoundButton dimension={125} top={125} left={125} link={"/studyTime"} title={"Study"} text={"Study"} />
               </Col>
               <Col></Col>
             </Row>

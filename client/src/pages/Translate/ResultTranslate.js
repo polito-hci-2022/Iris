@@ -7,7 +7,7 @@ import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import home from './home.png'
 import Figure from 'react-bootstrap/Figure';
-
+import RoundButton from '../../components/common/RoundButton';
 
 
 
@@ -18,7 +18,7 @@ const Translate = ({ navigation, text }) => {
       <Row>
         <Bubble text="Right here, the result!" />
         <IrisModel scale={2} top={150} left={0} />
-        <StudyButton style={buttonStudyCompact} iconStyle={iconStyle} />
+        <RoundButton dimension={75} link={"/studyTime"} title={"Back"} text={"Back"} />
       </Row>
       <Row>
         <h1>CASA - HOME</h1>
