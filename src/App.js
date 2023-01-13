@@ -5,8 +5,8 @@ import PlayMenu from "./pages/Menu/PlayMenu";
 import StudyMenu from "./pages/Menu/StudyMenu";
 import Translate from "./pages/Translate/Translate";
 import ResultTranslate from "./pages/Translate/ResultTranslate"
+import 'bootstrap/dist/css/bootstrap.min.css'
  
-
 
 export default function App() {
   return (
@@ -21,9 +21,6 @@ export default function App() {
           <Route path="/studytime" element={<StudyMenu />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
-
-
-
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
