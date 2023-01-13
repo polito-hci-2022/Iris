@@ -9,8 +9,41 @@ import Memory from "./pages/Memory/Memory";
 import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import API from './API'
 
 export default function App() {
+
+  const [memory, setMemory] = React.useState();
+  const [test, setTest] = React.useState();
+  const [page, setPage] = React.useState();
+
+  React.useEffect(() => {
+    const checkMemory = async () => {
+      let row = await API.getMemory();
+      setMemory(row[0].memory)
+    }
+    checkMemory()
+  })
+
+  
+  React.useEffect(() => {
+    const checkPage = async () => {
+      let row = await API.getPageCastleStory();
+      setPage(row[0].pageCastleStory)
+    }
+    checkPage()
+  })
+
+  
+  React.useEffect(() => {
+    const checkTest = async () => {
+      let row = await API.getTest();
+      setTest(row[0].test)
+    }
+    checkTest()
+  })
+
+
   return (
     <div>
       {/* Routes nest inside one another. Nested route paths build upon
@@ -25,7 +58,7 @@ export default function App() {
           <Route path="/resultTranslate" element={<ResultTranslate />} />
           <Route path="/memory" element={<Memory />} />
           
-          <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice />} />
+          <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory}/>} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

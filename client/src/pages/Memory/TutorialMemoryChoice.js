@@ -4,12 +4,18 @@ import IrisModel from '../../models/IrisModel';
 import RoundButton from '../../components/common/RoundButton';
 import Bubble from '../../components/common/Bubble'
 
-const TutorialMemoryChoice  = ({navigation}) => {  
+let text="";
+
+const TutorialMemoryChoice  = ({memory}) => { 
+  if(memory === 1)
+    text= "You already did the memory, you want to do the tutorial?"
+  else
+    text="You are new here, do you need the tutorial? "
     return (
         <Container>
 
           <h1>Play</h1>
-          <Bubble text={"Do you need the tutorial?"}/>
+          <Bubble text={text}/>
           <IrisModel scale={3} top={175} left={0} />
           <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
 
