@@ -10,7 +10,8 @@ function Card(props) {
     return (
         <div className='card'>
             <div className={props.flipped ? "flipped" : ""}>
-              {props.card.type === "image" ? <Image className={`front ${props.card.matched ? "matched" : ''}`} src={props.card.src} alt="card front" />
+              {props.card.type === "image" ?
+               <Image className={`front ${props.card.matched ? "matched" : ''}`} src={props.card.src} alt="card front" />
               : <div>
                   <a className={`front ${props.card.matched ? "matched" : ''}`} >{props.card.src}</a>
                 </div>}

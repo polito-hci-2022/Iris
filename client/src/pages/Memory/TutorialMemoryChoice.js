@@ -13,16 +13,12 @@ const TutorialMemoryChoice  = ({memory}) => {
     text="You are new here, do you need the tutorial? "
     return (
         <Container>
-
           <h1>Play</h1>
           <Bubble text={text}/>
           <IrisModel scale={3} top={175} left={0} />
           <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
-
-
           <RoundButton dimension={125} top={125} left={125} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
           <RoundButton dimension={125} top={125} left={125} link={"/Memory"} title={"No"} text={"No"} />
-
       </Container>   
     );
   }

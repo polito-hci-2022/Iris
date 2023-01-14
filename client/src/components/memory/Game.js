@@ -48,7 +48,7 @@ function Game() {
     setCards(shuffledCards);
     setTurn(0);
     setDisabled(false)
-    setStartFlip(true)
+    setStartFlip(true) /* preview griglia memory */
     setTimeout(() => {
       setStartFlip(false)
     }, 1000);

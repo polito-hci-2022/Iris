@@ -45,6 +45,61 @@ app.get("/api/test",(request, response) => {
     .catch(() => response.status(500).end());
 });
 
+app.post("/api/memory", (request, response) => {
+  dao
+    .addMemory()
+    .then(() => response.status(200).json({}).end())
+    .catch(() => response.status(500).end());
+});
+
+app.post("/api/page", (request, response) => {
+  dao
+    .addPageCastleStory()
+    .then(() => response.status(200).json({}).end())
+    .catch(() => response.status(500).end());
+});
+
+
+app.post("/api/test", (request, response) => {
+  dao
+    .addTest()
+    .then(() => response.status(200).json({}).end())
+    .catch(() => response.status(500).end());
+});
+
+app.delete("/api/memory", async (req, res) => {
+  const id = req.user?.id;
+  try {
+    await dao.deleteMemory();
+    res.status(200).json({}).end();
+  } catch (err) {
+    console.error(err);
+    res.status(503).json({ error: `Database error while updating ${id}.` });
+  }
+});
+
+app.delete("/api/pageCastleStory", async (req, res) => {
+  const id = req.user?.id;
+  try {
+    await dao.deletePageCastleStory();
+    res.status(200).json({}).end();
+  } catch (err) {
+    console.error(err);
+    res.status(503).json({ error: `Database error while updating ${id}.` });
+  }
+});
+
+app.delete("/api/test", async (req, res) => {
+  const id = req.user?.id;
+  try {
+    await dao.deleteTest();
+    res.status(200).json({}).end();
+  } catch (err) {
+    console.error(err);
+    res.status(503).json({ error: `Database error while updating ${id}.` });
+  }
+});
+
 // activate the server
 app.listen(port, () =>
   console.log(`Server started at http://localhost:${port}.`)

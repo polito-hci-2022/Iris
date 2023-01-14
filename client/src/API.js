@@ -26,7 +26,7 @@ function getJson(httpResponsePromise) {
 }
 
 
-function getMemory(code, user) {
+function getMemory() {
   return getJson(
     fetch("http://localhost:3001/api/memory",{
       method: 'GET',
@@ -39,7 +39,7 @@ function getMemory(code, user) {
   )
 }
 
-function getPageCastleStory(code, user) {
+function getPageCastleStory() {
   return getJson(
     fetch("http://localhost:3001/api/page",{
       method: 'GET',
@@ -52,7 +52,7 @@ function getPageCastleStory(code, user) {
   )
 }
 
-function getTest(code, user) {
+function getTest() {
   return getJson(
     fetch("http://localhost:3001/api/test",{
       method: 'GET',
@@ -65,7 +65,84 @@ function getTest(code, user) {
   )
 }
 
+function addMemory() {
+  return getJson(
+    fetch("http://localhost:3001/api/memory",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({}),
+    })
+  )
+}
+
+function addPageCastleStory() {
+  return getJson(
+    fetch("http://localhost:3001/api/pageCastleStory",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({}),
+    })
+  )
+}
+
+function addTest() {
+  return getJson(
+    fetch("http://localhost:3001/api/test",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({}),
+    })
+  )
+}
+
+const deleteMemory = async () => {
+  return getJson(
+    fetch("http://localhost:3001/api/memory",{
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify(),
+    })
+  )
+}
+
+const deletePageCastleStory = async () => {
+  return getJson(
+    fetch("http://localhost:3001/api/pageCastleStory",{
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify(),
+    })
+  )
+}
+
+const deleteTest = async () => {
+  return getJson(
+    fetch("http://localhost:3001/api/test",{
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify(),
+    })
+  )
+}
 
 
-const API = { getMemory, getPageCastleStory, getTest};
+const API = { getMemory, getPageCastleStory, getTest, addMemory, addPageCastleStory, addTest, deleteMemory, deletePageCastleStory, deleteTest};
 export default API;

@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Home from './pages/Menu/Home'
@@ -6,14 +7,13 @@ import StudyMenu from "./pages/Menu/StudyMenu";
 import Translate from "./pages/Translate/Translate";
 import ResultTranslate from "./pages/Translate/ResultTranslate"
 import Memory from "./pages/Memory/Memory";
+import TutorialMemory from "./pages/Memory/TutorialMemory";
 import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import API from './API'
 
 export default function App() {
 
-  const [memory, setMemory] = React.useState();
+  const [memory, setMemory] = React.useState(0);
   const [test, setTest] = React.useState();
   const [page, setPage] = React.useState();
 
@@ -21,6 +21,7 @@ export default function App() {
     const checkMemory = async () => {
       let row = await API.getMemory();
       setMemory(row[0].memory)
+      console.log(row);
     }
     checkMemory()
   })
@@ -44,6 +45,8 @@ export default function App() {
   })
 
 
+
+
   return (
     <div>
       {/* Routes nest inside one another. Nested route paths build upon
@@ -56,9 +59,9 @@ export default function App() {
           <Route path="/studytime" element={<StudyMenu />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
-          <Route path="/memory" element={<Memory />} />
-          
-          <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory}/>} />
+          <Route path="/memory" element={<Memory setMemory={setMemory} memory={memory}/>} />
+          <Route path="/tutorialMemory" element={<TutorialMemory setMemory={setMemory} memory={memory}/>} />
+          <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory} />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

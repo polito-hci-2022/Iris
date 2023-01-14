@@ -6,7 +6,8 @@ import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 import { Container } from 'react-bootstrap';
 
-const Memory  = ({navigation}) => {  
+const Memory  = () => { 
+
     return (
       <Container style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <h1>Memory</h1>
