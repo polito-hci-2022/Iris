@@ -1,5 +1,5 @@
 import { useEffect, useState, } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import Card from './Card.js'
 import './Game.css'
 import RoundButton from '../common/RoundButton.js';
@@ -54,10 +54,6 @@ function Tutorial(props) {
     setStep(step+1)
     let CARD
 
-    if(step===5){
-      navigate("/Memory")
-    }
-
    switch(step){
     case 0:
       CARD = cards.filter(card => card.id==1).map(card => card.matched=true)
@@ -90,7 +86,7 @@ function Tutorial(props) {
 
   return (
     <div className='container'>
-      <RoundButton dimension={75} left={250} title={"Next"} text={"Next"} onClick={() => next()}/>
+      <RoundButton dimension={75} left={250} title={"Next"} text={"Next"} onClick={step===5 ? navigate('/memory') : next}/>
       <div className="grid">
         {cards.map(card => (
           <Card
