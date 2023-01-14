@@ -1,254 +1,109 @@
-import React from 'react';
-import { StyleSheet, View, Button, Text } from 'react-native';
-import { Ionicons, FontAwesome, Entypo } from '@expo/vector-icons'; // 6.2.2
+import { useEffect, useState, } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Card from './Card.js'
+import './Game.css'
+import RoundButton from '../common/RoundButton.js';
 
-import Score from './Score';
-import Card from './Card';
-import Memory from '../../pages/Memory/Memory'
-import helpers from './helpers';
+const initialCards = [
+  { "src": "/images/bulbasaur.png", matched: false, type: "image", name:"bulbasaur", id: 1},
+  { "src": "/images/butterfree.png", matched: false, type: "image", name:"butterfree", id: 2 },
+  { "src": "/images/charmander.png", matched: false, type: "image", name:"charmander", id: 3   },
+  { "src": "/images/pidgeotto.png", matched: false, type: "image", name:"pidgeotto", id: 4   },
+  { "src": "/images/pikachu.png", matched: false, type: "image", name:"pikachu", id: 5 },
+  { "src": "/images/squirtle.png", matched: false, type: "image", name:"squirtle", id: 6  },
+];
 
-export default class Tutorial extends React.Component {
+const initialTextCards = [
+  { "src": "bulbasaur", matched: false, type: "text", name:"bulbasaur", id: 7},
+  { "src": "butterfree", matched: false, type: "text", name:"butterfree", id: 8 },
+  { "src": "charmander", matched: false, type: "text", name: "charmander", id: 9 },
+  { "src": "pidgeotto", matched: false, type: "text", name: "pidgeotto", id: 10  },
+  { "src": "pikachu", matched: false, type: "text", name: "pikachu", id: 11 },
+  { "src": "squirtle", matched: false, type: "text", name: "squirtle", id: 12},
+];
 
-  constructor(props) {
-    super(props);
-    this.renderCards = this.renderCards.bind(this);
-    this.step=0;
+function Tutorial(props) {
+  const [cards, setCards] = useState([]);
+  const [score, setScore] = useState(0);
+  const [step,setStep] = useState(0);
+  const [startFlip, setStartFlip] = useState(true);
 
-    let sources = {
-      'fontawesome': FontAwesome,
-      'entypo': Entypo,
-      'ionicons': Ionicons,
-      'null': Text
-    };
+  const navigate = useNavigate()
 
-    let cards = [
-      {
-        src: 'fontawesome',
-        name: 'heart',
-        color: 'red'
-      },
-      {
-        src: 'entypo',
-        name: 'feather',
-        color: '#7d4b12'
-      },
-      {
-        src: 'entypo',
-        name: 'flashlight',
-        color: '#f7911f'
-      },
-      {
-        src: 'entypo',
-        name: 'flower',
-        color: '#37b24d'
-      },
-      
-    ];
+  useEffect(() => {
+    setTimeout(() => {
+      setStartFlip(false)
+    }, 1000);
+    shuffleCards();
+  }, []);
 
-    let nameCards = [
-        {
-          src: 'null',
-          name: 'feather',
-          color: '#7d4b12'
-        },
-        {
-          src: 'null',
-          name: "flashlight",
-          color: '#f7911f'
-        },
-        {
-          src: 'null',
-          name: 'heart',
-          color: 'red'
-        },
-        {
-          src: 'null',
-          name: 'flower',
-          color: '#37b24d'
-        },
-        
-      ];
+  function shuffleCards() {
+    //setCards(null)
+    const shuffledCards = [...initialCards, ...initialTextCards]
+          .sort(() => Math.random() - 0.5)
 
-    let clone = JSON.parse(JSON.stringify(nameCards));
+    setCards(shuffledCards);
+    setStartFlip(true) /* preview griglia memory */
+    setTimeout(() => {
+      setStartFlip(false)
+    }, 3000);
+  }
 
-    this.cards = cards.concat(clone);
-    this.cards.map((obj) => {
-      let id = Math.random().toString(36).substring(7);
-      obj.id = id;
-      obj.src = sources[obj.src];
-      obj.is_open = false;
-    });
+  function next(){
 
-    this.state = {
-      current_selection: [],
-      selected_pairs: [],
-      score: 0,
-      cards: this.cards
+    setStep(step+1)
+    let CARD
+
+    if(step===5){
+      navigate("/Memory")
     }
-  
-  }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.body}>
-          { 
-            this.renderRows.call(this) 
-          }
-        </View>
-        <View style={styles.body}>
-          <Score score={this.state.score} />
-        </View>
-        <Button
-          onPress={() => this.next()}
-          title="Avanti"
-          color="#008CFA"
-          style={
-            {
-              position: 'absolute',
-            }
-          } 
-        />
-      </View>
-    );
-  }
-
-  next() {
-     //contatore per tenere traccia 2 coppie e poi mostra tutte le coppie girate
-     //switch per cambiare lo stato
-     if(this.step===5){
-        this.props.navigation.navigate(Memory)
-     }
-        //da fare il render del game component
-     switch(this.step){
-      case 0:
-        this.clickCard(0);
-        this.props.setMessage("Prima carta girata");
-        break;
-      case 1:
-        this.clickCard(6);
-        this.props.setMessage("Prima coppia trovata!");
-        this.setState({
-          score: this.state.score+=1
-        });
-        break;
-      case 2:
-        this.clickCard(1);
-        this.props.setMessage("Ora devi individuare la seconda coppia!");
-        break;
-      case 3:
-        this.clickCard(4);
-        this.props.setMessage("Seconda coppia trovata!");
-        this.setState({
-          score: this.state.score+=1
-        });
-        break;
-      case 4:
-        this.clickCard(2);
-        this.clickCard(3);
-        this.clickCard(5);
-        this.clickCard(7);
-        this.setState({
-          score: this.state.score+=2
-        });
-        this.props.setMessage("Adesso hai trovato tutte le coppie e hai vinto. Clicca su avanti per iniziare a giocare!");
-        break;
-      default:
-        break;
-     }
-     this.step+=1;
-
-  }
-
-  renderRows() {
-   
-    let contents = this.getRowContents(this.state.cards);
-    return contents.map((cards, index) => {
-      return (
-        <View key={index} style={styles.row}>
-          { this.renderCards(cards) }
-        </View>
-      );
-    });
-   
-  }
-
-
-  renderCards(cards) {
-    return cards.map((card, index) => {
-      return (
-        <Card 
-          key={index} 
-          src={card.src} 
-          name={card.name} 
-          color={card.color} 
-          is_open={card.is_open}
-          clickCard={() => {}} 
-        />
-      );
-    });
-  }
-
-
-  clickCard(id) {
-    let selected_pairs = this.state.selected_pairs;
-    let current_selection = this.state.current_selection;
-
-    let index = id;
-
-    let cards = this.state.cards;
-    if(cards[index].is_open == false && selected_pairs.indexOf(cards[index].name) === -1){
-      
-      cards[index].is_open = true;
-      
-      current_selection.push({ 
-        index: index,
-        name: cards[index].name
-      });
-
-      this.setState({
-        cards: cards,
-        current_selection: current_selection
-      });
-
-    }
-  
-  }
-
-
-  getRowContents(cards) {
-    let contents_r = [];
-    let contents = [];
-    let count = 0;
-    cards.forEach((item) => {
-      count += 1;
-      contents.push(item);
-      if(count == 4){
-        contents_r.push(contents)
-        count = 0;
-        contents = [];
-      }
-    });
-
-    return contents_r;
-  }
+   switch(step){
+    case 0:
+      CARD = cards.filter(card => card.id==1).map(card => card.matched=true)
+      props.setMessage("Prima carta girata");
+      break;
+    case 1:
+      CARD = cards.filter(card => card.id==7).map(card => card.matched=true)
+      props.setMessage("Prima coppia trovata!");
+      setScore(score+1)
+      break;
+    case 2:
+      CARD = cards.filter(card => card.id==6).map(card => card.matched=true)
+      props.setMessage("Ora devi individuare la seconda coppia!");
+      break;
+    case 3:
+      CARD = cards.filter(card => card.id==12).map(card => card.matched=true)
+      props.setMessage("Seconda coppia trovata!");
+      setScore(score+1)
+      break;
+    case 4:
+      CARD = cards.filter(card => card.matched==false).map(card => card.matched=true)
+      props.setMessage("Adesso hai trovato tutte le coppie e hai vinto. Clicca su avanti per iniziare a giocare!");
+      setScore(6)
+      break;
+    default:
+      break;
+   }
 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignSelf: 'stretch',
-    backgroundColor: '#fff'
-  },
-  row: {
-    flex: 1,
-    flexDirection: 'row'
-  },
-  body: {
-    flex: 18,
-    justifyContent: 'space-between',
-    padding: 0,
-    marginTop: 10
-  }
-});
+  return (
+    <div className='container'>
+      <RoundButton dimension={75} left={250} title={"Next"} text={"Next"} onClick={() => next()}/>
+      <div className="grid">
+        {cards.map(card => (
+          <Card
+            key={card.id}
+            card={card}
+            flipped={card.matched || startFlip}
+            matched={card.matched}
+          />
+        ))}
+      </div>
+      <p>Score: {score}</p>
+    </div>
+  );
+}
+
+export default Tutorial;

@@ -23,7 +23,7 @@ const dimension_icons = {
 
 
 
-const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text }) => {
+const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text ,onClick}) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
     
@@ -34,12 +34,13 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
         alignItems: "center",
         borderRadius: 100,
         backgroundColor: "grey",
-        position: position
+        position: position,
       }
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
         <Link to={link}>
         <Button
+            onClick={onClick}
             title={title}
             style={style}>
             <Icon style={{

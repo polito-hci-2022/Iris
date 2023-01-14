@@ -19,7 +19,7 @@ const TutorialMemoryChoice  = ({memory}) => {
           <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
           <RoundButton dimension={125} top={125} left={125} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
           <RoundButton dimension={125} top={125} left={125} link={"/Memory"} title={"No"} text={"No"} />
-      </Container>   
+        </Container>   
     );
   }
 

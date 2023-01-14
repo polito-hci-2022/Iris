@@ -1,7 +1,7 @@
 import { useEffect, useState, } from 'react';
 import { Container, } from 'react-bootstrap';
 import { matchRoutes } from 'react-router-dom';
-import Card from './Card.js'
+import CardGame from './CardGame.js'
 import './Game.css'
 
 const initialCards = [
@@ -24,7 +24,7 @@ const initialTextCards = [
 
 function Game() {
   const [cards, setCards] = useState([]);
-  const [turn, setTurn] = useState(0);
+  const [score, setScore] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(true);
@@ -46,7 +46,6 @@ function Game() {
     setChoiceOne(null)
     setChoiceTwo(null)
     setCards(shuffledCards);
-    setTurn(0);
     setDisabled(false)
     setStartFlip(true) /* preview griglia memory */
     setTimeout(() => {
@@ -57,15 +56,13 @@ function Game() {
 
   function handleChoice(card) {
     choiceOne ? (
-      choiceOne.id !== card.id &&
-      setChoiceTwo(card))
+      choiceOne.id !== card.id && setChoiceTwo(card))
       : setChoiceOne(card)
   }
 
   function resetTurn() {
     setChoiceOne(null)
     setChoiceTwo(null)
-    setTurn(prevTurn => prevTurn + 1)
     setDisabled(false)
   }
 
@@ -96,7 +93,7 @@ function Game() {
       <button onClick={shuffleCards}>New Game</button>
       <div className="grid">
         {cards.map(card => (
-          <Card
+          <CardGame
             key={card.id}
             card={card}
             handleChoice={handleChoice}
@@ -106,7 +103,7 @@ function Game() {
           />
         ))}
       </div>
-      <p>Turns: {turn}</p>
+      <p>Score: {score}</p>
     </div>
   );
 }

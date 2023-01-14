@@ -24,8 +24,7 @@ const TutorialMemory  = ({setMemory, memory}) => {
           <Bubble text={message}/>
           <IrisModel/>
           <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
-
-          
+          <Tutorial message={message} setMessage={setMessage} ></Tutorial>
         </Container>
     );
   }

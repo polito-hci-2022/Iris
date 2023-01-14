@@ -1,8 +1,12 @@
 import './Card.css';
 import { Image } from 'react-bootstrap';
 
-function Card(props) {
-    
+function CardGame(props) {
+
+    function handleChoice() {
+        if (!props.disabled)
+            props.handleChoice(props.card);
+    }
     return (
         <div className='card'>
             <div className={props.flipped ? "flipped" : ""}>
@@ -11,10 +15,10 @@ function Card(props) {
               : <div>
                   <a className={`front ${props.card.matched ? "matched" : ''}`} >{props.card.src}</a>
                 </div>}
-                <Image className='back' src="/images/card_back.png" alt="card back" />
+                <Image className='back' src="/images/card_back.png" alt="card back" onClick={() => handleChoice()} />
             </div>
         </div>
     );
 }
 
-export default Card;
+export default CardGame;
