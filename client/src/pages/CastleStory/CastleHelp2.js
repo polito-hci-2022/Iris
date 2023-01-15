@@ -5,8 +5,10 @@ import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 import SquareButton from '../../components/common/SquareButton';
+import HelpTile from '../../components/story/HelpTile';
 
-function CastleStory2(){
+function CastleHelp2(){
+    // 'You need to enter in the castle. Where do you go?'
     return (
       <Container fluid>
         <Row>
@@ -24,18 +26,50 @@ function CastleStory2(){
             />
           </Col>
           <Col>
-            <IrisModel
-              scale={3}
-              right={50}
-              bottom={50}
-              position='absolute'
+            <HelpTile 
+                text_en={'You need to enter'}
+                text_it={'Devi entrare'}
+                position='absolute'
+                width={100}
+                height={120}
+                bottom={300}
+                left={30}
             />
-            <Bubble
-              text='You need to enter in the castle. Where do you go?'
-              position='absolute'
-              orientation='right'
-              bottom={250}
-              right={10}
+            <HelpTile
+                text_en={'in the castle'}
+                text_it={'nel castello'}
+                position='absolute'
+                width={140}
+                height={120}
+                bottom={300}
+                left={150}
+            />
+            <HelpTile
+                text_en={'Right'}
+                text_it={'Destra'}
+                position='absolute'
+                width={100}
+                height={50}
+                bottom={230}
+                left={30}
+            />
+            <HelpTile
+                text_en={'Left'}
+                text_it={'Sinistra'}
+                position='absolute'
+                width={100}
+                height={80}
+                bottom={130}
+                left={30}
+            />
+            <HelpTile
+                text_en={'Where do you go?'}
+                text_it={'Dove vai?'}
+                position='absolute'
+                width={140}
+                height={150}
+                bottom={130}
+                left={150}
             />
             <SquareButton
               text='Left'
@@ -68,9 +102,9 @@ function CastleStory2(){
             />
             <RoundButton
               dimension={75}
-              text={'Help'}
+              text={'Done'}
               position={'absolute'}
-              link='/CastleHelp2'
+              link='/CastleStory2'
               right={10}
               bottom={150}
             />
@@ -89,4 +123,4 @@ function CastleStory2(){
    
 }
 
-export default CastleStory2;
+export default CastleHelp2;

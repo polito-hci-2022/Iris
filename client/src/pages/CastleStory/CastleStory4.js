@@ -60,7 +60,7 @@ function CastleStory4() {
               dimension={75}
               text={'Help'}
               position={'absolute'}
-              link=''
+              link='/CastleHelp4'
               right={10}
               bottom={150}
             />

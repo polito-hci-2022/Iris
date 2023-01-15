@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import CastleModel from '../../models/CastleModel'
-import IrisModel from '../../models/IrisModel';
-import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
+import HelpTile from '../../components/story/HelpTile';
 import RabbitModel from '../../models/RabbitModel'
 import SquareButton from '../../components/common/SquareButton';
 
-function CastleStory5() {
+function CastleHelp5() {
+    // Look! He is next to the door, we are arrived!
     return (
       <Container fluid>
         <Row>
             <Col>
-              <CastleModel position={[0,30,30]}/>
+            <CastleModel position={[0,30,30]}/>
               <RabbitModel
                 scale={0.8}
                 position={'absolute'}
@@ -27,26 +27,40 @@ function CastleStory5() {
               dimension={75}
               text={'Prev'}
               position={'absolute'}
-              link={'/CastleStory2'}
+              disabled={true}
               bottom={10}
               left={10}
             />
           </Col>
           <Col>
-            <IrisModel
-              scale={3}
-              right={50}
-              bottom={50}
-              position='absolute'
-            />
-            <Bubble
-              text='Look! He is next to the door, we are arrived!'
-              position='absolute'
-              orientation='right'
-              bottom={250}
-              right={10}
-            />
-            <SquareButton
+          <HelpTile
+            text_en={'We are arrived'}
+            text_it={'Siamo arrivati'}
+            position='absolute'
+            width={100}
+            height={120}
+            bottom={300}
+            left={30}
+          />
+          <HelpTile
+            text_en={'He is next to the door'}
+            text_it={'Lui è vicino alla porta'}
+            position='absolute'
+            width={140}
+            height={120}
+            bottom={300}
+            left={150}
+          />
+          <HelpTile
+            text_en={'Look!'}
+            text_it={"Guarda!"}
+            position='absolute'
+            width={100}
+            height={50}
+            bottom={230}
+            left={30}
+          />
+          <SquareButton
               text='Again'
               position='absolute'
               dimension={75}
@@ -68,9 +82,9 @@ function CastleStory5() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Help'}
+              text={'Done'}
               position={'absolute'}
-              link='/CastleHelp5'
+              link='/CastleStory5'
               right={10}
               bottom={150}
             />
@@ -88,4 +102,4 @@ function CastleStory5() {
     );
 }
 
-export default CastleStory5;
+export default CastleHelp5;
