@@ -6,6 +6,9 @@ import StudyMenu from "./pages/Menu/StudyMenu";
 import Translate from "./pages/Translate/Translate";
 import ResultTranslate from "./pages/Translate/ResultTranslate"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import TestDisclaimer from "./pages/Test/TestDisclaimer";
+import CastleTest from "./pages/Test/CastleTest";
+import TestReview from "./pages/Test/TestReview";
  
 
 export default function App() {
@@ -21,6 +24,9 @@ export default function App() {
           <Route path="/studytime" element={<StudyMenu />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
+          <Route path="/testDisclaimer" element={<TestDisclaimer />}/>
+          <Route path="/castleTest" element={<CastleTest />}/>
+          <Route path="/testReview" element={<TestReview />}/>
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
