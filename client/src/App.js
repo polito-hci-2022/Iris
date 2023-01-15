@@ -11,6 +11,7 @@ import CastleStory2 from "./pages/CastleStory/CastleStory2";
 import CastleStory3 from "./pages/CastleStory/CastleStory3";
 import CastleStory4 from "./pages/CastleStory/CastleStory4";
 import CastleStory5 from "./pages/CastleStory/CastleStory5";
+import CastleHelp1 from "./pages/CastleStory/CastleHelp1";
 
 export default function App() {
   const navigate = useNavigate()
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/CastleStory3" element={<CastleStory3 />} />
           <Route path="/CastleStory4" element={<CastleStory4 />} />
           <Route path="/CastleStory5" element={<CastleStory5 />} />
+          <Route path="/CastleHelp1" element={<CastleHelp1 />}/>
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
