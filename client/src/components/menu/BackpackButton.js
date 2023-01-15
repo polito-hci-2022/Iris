@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const BackpackButton  = ({ iconStyle, style }) => {  
   return (
-    <Link to={'/backpackS'}>
+    <Link to={'/backpack'}>
     <Button 
       title="The Backpack"
       style={style}>
