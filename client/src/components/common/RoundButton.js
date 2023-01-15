@@ -15,7 +15,6 @@ const dimension_icons = {
 const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
-    
     const partial_style = {
         width: dimension,
         height: dimension,
@@ -34,7 +33,7 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
             <Icon style={{
                   resizeMode:"contain",
                     height: dimension_icons[dimension],
-                    width:dimension_icons[dimension],
+                    width: dimension_icons[dimension],
             }}
             icon={icons[title]}
             />
@@ -44,8 +43,5 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
     );
 
 }
-
-
-
 
 export default RoundButton;
