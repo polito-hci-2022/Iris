@@ -58,7 +58,7 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
       alignSelf: 'flex-end',
       borderRadius: 20,
       zIndex: 999,
-      position: position
+      position: position,
     }
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (

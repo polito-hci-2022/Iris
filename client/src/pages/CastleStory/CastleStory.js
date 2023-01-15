@@ -33,15 +33,15 @@ function CastleStory () {
               text='Far far away, in a beautiful castle, there is a party for the princess birthday.'
               position='absolute'
               orientation='right'
-              bottom={150}
-              right={50}
+              bottom={250}
+              right={10}
             />
           </Col>
           <Col>
             <RoundButton
               dimension={75}
               position={'absolute'}
-              bottom={250}
+              bottom={300}
               right={10}
               title='Play'
               link='/play'
@@ -67,7 +67,6 @@ function CastleStory () {
         </Row>
       </Container>
     );
-   
 }
 
 export default CastleStory;
