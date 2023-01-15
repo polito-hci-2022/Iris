@@ -6,11 +6,11 @@ import StudyMenu from "./pages/Menu/StudyMenu";
 import Translate from "./pages/Translate/Translate";
 import ResultTranslate from "./pages/Translate/ResultTranslate"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CastleStory from "./pages/CastleStory/CastleStory";
+import CastleStory1 from "./pages/CastleStory/CastleStory1";
 import CastleStory2 from "./pages/CastleStory/CastleStory2";
 import CastleStory3 from "./pages/CastleStory/CastleStory3";
 import CastleStory4 from "./pages/CastleStory/CastleStory4";
-import CastleStoryFinal from "./pages/CastleStory/CastleStoryFinal";
+import CastleStory5 from "./pages/CastleStory/CastleStory5";
 
 export default function App() {
   const navigate = useNavigate()
@@ -27,11 +27,11 @@ export default function App() {
           <Route path="/studytime" element={<StudyMenu />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
-          <Route path="/CastleStory" element={<CastleStory />} />
+          <Route path="/CastleStory1" element={<CastleStory1 />} />
           <Route path="/CastleStory2" element={<CastleStory2 />} />
           <Route path="/CastleStory3" element={<CastleStory3 />} />
           <Route path="/CastleStory4" element={<CastleStory4 />} />
-          <Route path="/CastleStoryFinal" element={<CastleStoryFinal />} />
+          <Route path="/CastleStory5" element={<CastleStory5 />} />
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}

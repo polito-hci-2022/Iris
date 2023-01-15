@@ -20,14 +20,14 @@ function CastleStory2(){
               position={'absolute'}
               bottom={10}
               left={10}
-              link={'/CastleStory'}
+              link={'/CastleStory1'}
             />
           </Col>
           <Col>
             <IrisModel
               scale={3}
               right={50}
-              bottom={10}
+              bottom={50}
               position='absolute'
             />
             <Bubble
@@ -64,7 +64,7 @@ function CastleStory2(){
               right={10}
               title='Play'
               link='/play'
-              text='Play'
+              text='Exit'
             />
             <RoundButton
               dimension={75}
@@ -77,8 +77,8 @@ function CastleStory2(){
             <RoundButton
               dimension={75}
               text={'Next'}
+              disabled={true}
               position={'absolute'}
-              link='/CastleStory2'
               bottom={10}
               right={10}
             />

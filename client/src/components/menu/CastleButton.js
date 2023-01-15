@@ -10,7 +10,7 @@ const CastleButton  = (props) => {
     <Button 
       title="The Castle"
       style={buttonCastleTest}
-      onClick={() => props.navigation('/CastleStory')}>
+      onClick={() => props.navigation('/CastleStory1')}>
     <Icon style={{
       resizeMode:"contain",
       height: 50,

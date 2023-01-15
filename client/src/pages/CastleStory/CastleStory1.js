@@ -4,21 +4,12 @@ import CastleModel from '../../models/CastleModel'
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
-import RabbitModel from '../../models/RabbitModel'
 
-function CastleStory3 () {
+function CastleStory1() {
     return (
       <Container fluid>
         <Row>
-            <Col>
-              <CastleModel position={[-100,30,0]}/>
-              <RabbitModel
-                scale={1.5}
-                position={'absolute'}
-                top={50}
-                left={180}
-              />
-            </Col>
+            <Col><CastleModel position={[0,35,120]}/></Col>
         </Row>
         <Row>
           <Col>
@@ -26,7 +17,7 @@ function CastleStory3 () {
               dimension={75}
               text={'Prev'}
               position={'absolute'}
-              link={'/CastleStory2'}
+              disabled={true}
               bottom={10}
               left={10}
             />
@@ -39,7 +30,7 @@ function CastleStory3 () {
               position='absolute'
             />
             <Bubble
-              text='You meet a rabbit. He will show you the entry for the castle!'
+              text='Far far away, in a beautiful castle, there is a party for the princess birthday.'
               position='absolute'
               orientation='right'
               bottom={250}
@@ -68,7 +59,7 @@ function CastleStory3 () {
               dimension={75}
               text={'Next'}
               position={'absolute'}
-              link='/CastleStory5'
+              link='/CastleStory2'
               bottom={10}
               right={10}
             />
@@ -78,4 +69,4 @@ function CastleStory3 () {
     );
 }
 
-export default CastleStory3;
+export default CastleStory1;
