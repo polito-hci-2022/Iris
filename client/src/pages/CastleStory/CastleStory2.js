@@ -1,62 +1,71 @@
 import * as React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import CastleModel from '../../models/CastleModel'
 import IrisModel from '../../models/IrisModel';
-import PlayButton from '../../components/common/PlayButton';
 import Bubble from '../../components/common/Bubble'
-import ButtonStory from '../../components/story/ButtonStory';
-import { useNavigate } from "react-router-dom";
+import RoundButton from '../../components/common/RoundButton';
 
-function CastleStory2 () {
-    
-    const navigate = useNavigate()
-
+function CastleStory2(){
     return (
-
-    <Container fluid>
-
-      <Container >
-
-          <Container > <CastleModel position={[0,35,120]}/></Container>
-          <Container ></Container>
-        <Container >
-          <Bubble
-            text='Far far away, in a beautiful castle, there is a party for the princess birthday.'
-            position='relative'
-            orientation='left'/>
-          <IrisModel scale={4} left={0} top={0} position={'relative'}/>
-        </Container>
-        <Container >
-          <PlayButton
-            
-            position={'absolute'}
-            bottom={250}
-            right={10}
+      <Container fluid>
+        <Row>
+            <Col><CastleModel position={[0,35,120]}/></Col>
+        </Row>
+        <Row>
+          <Col>
+            <RoundButton
+              dimension={75}
+              text={'Prev'}
+              position={'absolute'}
+              bottom={10}
+              left={10}
+              link={'/CastleStory'}
             />
-          <ButtonStory
-            text={'Next'}
-            position={'absolute'}
-            onPress={() => navigate("/CastleStory3")}
-            bottom={10}
-            right={10}
+          </Col>
+          <Col>
+            <IrisModel
+              scale={3}
+              right={50}
+              bottom={10}
+              position='absolute'
             />
-          <ButtonStory
-            text={'Prev'}
-            position={'absolute'}
-            onPress={() => navigate("/CastleStory")}
-            bottom={10}
-            left={10}
-          />
-          <ButtonStory
-            text={'Help'}
-            position={'absolute'}
-            onPress={() => ("")}
-            right={10}
-            bottom={150}
-          />
-        </Container>
+            <Bubble
+              text='Far far away, in a beautiful castle, there is a party for the princess birthday.'
+              position='absolute'
+              orientation='right'
+              bottom={150}
+              right={50}
+            />
+          </Col>
+          <Col>
+            <RoundButton
+              dimension={75}
+              position={'absolute'}
+              bottom={250}
+              right={10}
+              title='Play'
+              link='/play'
+              text='Play'
+            />
+            <RoundButton
+              dimension={75}
+              text={'Help'}
+              position={'absolute'}
+              link=''
+              right={10}
+              bottom={150}
+            />
+            <RoundButton
+              dimension={75}
+              text={'Next'}
+              position={'absolute'}
+              link='/CastleStory2'
+              bottom={10}
+              right={10}
+            />
+          </Col>
+        </Row>
       </Container>
-    </Container>
     );
    
 }
