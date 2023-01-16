@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap';
 
 function HelpTile ({text_it, text_en, width, height, position, top, bottom, left, right}) {
@@ -15,12 +15,10 @@ function HelpTile ({text_it, text_en, width, height, position, top, bottom, left
     const vertical = top ? {top:top}:{bottom:bottom};
     const horizontal = right ? {right: right}:{left:left};
     const style = Object.assign({}, partial_style, vertical, horizontal)
+    useEffect(() => {translated===true ? setText(text_it):setText(text_en);}, [translated])
     return (
         <Button
-            onClick={() => { 
-                translated===true ? setText(text_it):setText(text_en);
-                setTranslated(!translated);}
-            }
+            onClick={() => {setTranslated(!translated);}}
             style={style}>
             {text}
         </Button>
