@@ -1,0 +1,23 @@
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-family: monospace;
+    font-size: 1.5rem;
+    background-color: black;
+    border: 2px solid white;
+    width: 10rem;
+    height: 4rem;
+}
+
+.grid {
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid div img {
+    width: 100%;
+}

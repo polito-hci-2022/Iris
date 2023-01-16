@@ -18,14 +18,22 @@ const icons = {
 
 const dimension_icons = {
     125: 75,
+<<<<<<< HEAD
     100: 50,
     75: 40
 }
 
 const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false }) => {
+=======
+    75: 50,
+}
+
+
+
+const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text ,onClick}) => {
+>>>>>>> feature/memory
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
-    
     const partial_style = {
         width: dimension,
         height: dimension,
@@ -34,7 +42,10 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
         borderRadius: 100,
         backgroundColor: "grey",
         position: position,
+<<<<<<< HEAD
         disabled: disabled,
+=======
+>>>>>>> feature/memory
       }
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
@@ -46,18 +57,20 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
             <Icon style={{
                   resizeMode:"contain",
                     height: dimension_icons[dimension],
+<<<<<<< HEAD
+                    width: dimension_icons[dimension],
+=======
                     width:dimension_icons[dimension],
+                    color: 'black'
+>>>>>>> feature/memory
             }}
             icon={icons[title]}
             />
-            <h3>{text}</h3>
+            <h5 style={{ color: 'black' }} >{text}</h5>
         </Button>
         </Link>
     );
 
 }
-
-
-
 
 export default RoundButton;
