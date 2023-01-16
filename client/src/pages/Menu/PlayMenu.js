@@ -5,8 +5,11 @@ import MemoryButton from '../../components/menu/MemoryButton';
 import CastleButton from '../../components/menu/CastleButton';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
+import { useNavigate } from "react-router-dom";
 
-const PlayMenu = ({ navigation }) => {
+const PlayMenu = ({navigation}) => {
+ 
+  const navigate = useNavigate()
 
   return (
     <Container style={{ flex: 1 }}>
@@ -19,7 +22,7 @@ const PlayMenu = ({ navigation }) => {
         <Col>
           <Bubble text="In this page you can find a lot of funny games!" />
           <IrisModel scale={3} top={175} left={0} />
-          <HomeButton navigation={navigation} />
+          <HomeButton navigation={navigate} />
         </Col>
       </Row>
       <Row>
@@ -31,7 +34,7 @@ const PlayMenu = ({ navigation }) => {
       <Row>
         <Col>
           <h2>Stories</h2>
-          <CastleButton style={buttonCastle} iconStyle={iconStyle}/>
+          <CastleButton style={buttonCastle} iconStyle={iconStyle} navigation={navigate}/>
         </Col>
       </Row>
     </Container>

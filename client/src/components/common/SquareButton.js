@@ -13,7 +13,7 @@ const dimension_icons = {
     75: 40
 }
 
-const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false }) => {
+const SquareButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
     const partial_style = {
@@ -21,7 +21,6 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
         height: dimension,
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 100,
         backgroundColor: "grey",
         position: position,
         disabled: disabled,
@@ -46,4 +45,4 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
 
 }
 
-export default RoundButton;
+export default SquareButton;

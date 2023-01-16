@@ -4,8 +4,12 @@ import RoundButton from "../../components/common/RoundButton";
 import StudyButton from "../../components/common/StudyButton";
 import IrisModel from "../../models/IrisModel";
 import Bubble from "../../components/common/Bubble";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Home() {
+
+  const navigate = useNavigate()
+
     return (
       <div>
        <Container fluid>
@@ -20,7 +24,7 @@ function Home() {
             <Row>
               <Col></Col>
               <Col>
-                <RoundButton dimension={125} top={125} left={125} link={"/play"} title={"Play"} text={"Play"} />
+                <RoundButton dimension={125} top={125} left={125} onClink={navigate("/play")} title={"Play"} text={"Play"} />
                 <StudyButton style={buttonStudy} iconStyle={iconStyle}/>
               </Col>
               <Col></Col>

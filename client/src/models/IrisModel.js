@@ -18,15 +18,20 @@ function Box() {
   )
 }
 
-function IrisModel({scale=1, top=10, left=10}) {
+function IrisModel({scale=1, position='absolute', top, bottom, left, right}) {
+      const vertical = top ? {top:top}:{bottom:bottom}
+      const horizontal = right ? {right:right}:{left:left}
+      const partial_style = { 
+        width:"50vw", 
+        height:"35vh",  
+        flexDirection: "vertical",
+        position: position,
+        zIndex: 999
+      }
+      const style = Object.assign({}, partial_style, vertical, horizontal)
       return (
         <>
-        <div style={{ 
-            width:"50vw", 
-            height:"35vh",  
-            flexDirection: "vertical",
-            position: 'relative',
-            zIndex: 999}}>
+        <div style={style}>
             <Canvas camera={{position: [0, 2, 15]}}> 
             <ambientLight intensity={0.5} />
             <spotLight intensity={0.8} position={[300, 300, 400]} />
