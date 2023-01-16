@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import CastleModel from '../../models/CastleModel'
-import IrisModel from '../../models/IrisModel';
-import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 import SquareButton from '../../components/common/SquareButton';
 import HelpTile from '../../components/story/HelpTile';

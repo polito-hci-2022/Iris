@@ -1,6 +1,4 @@
 import { useEffect, useState, } from 'react';
-import { Container, } from 'react-bootstrap';
-import { matchRoutes } from 'react-router-dom';
 import CardGame from './CardGame.js'
 import './Game.css'
 

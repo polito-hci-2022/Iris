@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PlayButton from '../../components/common/PlayButton';
 import IrisModel from '../../models/IrisModel';
 import Game from '../../components/memory/Game';
 import Bubble from '../../components/common/Bubble'

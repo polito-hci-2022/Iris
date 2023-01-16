@@ -1,9 +1,5 @@
 import * as React from 'react';
-import { Button, Container, Row, Col } from 'react-bootstrap';
-import HomeButton from '../../components/common/HomeButton';
-import TranslateButton from '../../components/menu/TranslateButton';
-import CastleTestButton from '../../components/menu/CastleTestButton';
-import BackpackButton from '../../components/menu/BackpackButton';
+import { Container, Row, Col } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
@@ -36,6 +32,7 @@ const StudyMenu = ({ navigation }) => {
   );
 }
 
+/*
 const buttonTranslate = {
   width: 75,
   height: 75,
@@ -74,5 +71,6 @@ const iconStyle={
   height: 50,
   width: 50,
 }
+*/
 
 export default StudyMenu;

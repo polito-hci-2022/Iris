@@ -1,8 +1,5 @@
 import * as React from 'react';
-import { Button, Container, ImageBackground, Row, Col } from 'react-bootstrap';
-import StudyButton from '../../components/common/StudyButton';
-import { useState, useEffect } from "react";
-import { Keyboard, TextInput } from "react-bootstrap";
+import { Container,  Row } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import home from './home.png'
@@ -28,6 +25,7 @@ const Translate = ({ navigation, text }) => {
   );
 }
 
+/*
 const iconStyle = {
   resizeMode: "contain",
   height: 50,
@@ -44,5 +42,6 @@ const buttonStudyCompact = {
   backgroundColor: "grey",
   marginLeft: 200,
 }
+*/
 
 export default Translate;

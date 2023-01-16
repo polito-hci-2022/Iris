@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Button, Container, View, Text } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Icon } from "@iconify/react";
-import { Link } from 'react-router-dom';
 
 
 const CastleButton  = (props) => { 

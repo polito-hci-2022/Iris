@@ -1,4 +1,4 @@
-import React, { StrictMode, Suspense, useState } from 'react'
+import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -10,6 +10,7 @@ function Castle() {
   return <primitive object={gltf.scene} position={[0,0,0]} scale={1} />
 }
 
+/*
 function Box() {
   return (
     <mesh scale={1}>
@@ -17,6 +18,7 @@ function Box() {
     </mesh>
   )
 }
+*/
 
 
 function CastleModel({position}) {

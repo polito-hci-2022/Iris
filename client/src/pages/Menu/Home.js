@@ -1,7 +1,6 @@
 import * as React from "react";
 import {Col, Container, Row} from "react-bootstrap"
 import RoundButton from "../../components/common/RoundButton";
-import StudyButton from "../../components/common/StudyButton";
 import IrisModel from "../../models/IrisModel";
 import Bubble from "../../components/common/Bubble";
 
@@ -30,6 +29,7 @@ function Home() {
     );
   }
 
+/*
 const buttonPlay = {
   width: 125,
   height: 125,
@@ -60,5 +60,6 @@ const iconStyle={
   height: 100,
   width:100,
 }
+*/
 
 export default Home;

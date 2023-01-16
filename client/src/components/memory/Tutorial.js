@@ -56,25 +56,25 @@ function Tutorial(props) {
 
    switch(step){
     case 0:
-      CARD = cards.filter(card => card.id==1).map(card => card.matched=true)
+      CARD = cards.filter(card => card.id===1).map(card => card.matched=true)
       props.setMessage("Prima carta girata");
       break;
     case 1:
-      CARD = cards.filter(card => card.id==7).map(card => card.matched=true)
+      CARD = cards.filter(card => card.id===7).map(card => card.matched=true)
       props.setMessage("Prima coppia trovata!");
       setScore(score+1)
       break;
     case 2:
-      CARD = cards.filter(card => card.id==6).map(card => card.matched=true)
+      CARD = cards.filter(card => card.id===6).map(card => card.matched=true)
       props.setMessage("Ora devi individuare la seconda coppia!");
       break;
     case 3:
-      CARD = cards.filter(card => card.id==12).map(card => card.matched=true)
+      CARD = cards.filter(card => card.id===12).map(card => card.matched=true)
       props.setMessage("Seconda coppia trovata!");
       setScore(score+1)
       break;
     case 4:
-      CARD = cards.filter(card => card.matched==false).map(card => card.matched=true)
+      CARD = cards.filter(card => card.matched===false).map(card => card.matched=true)
       props.setMessage("Adesso hai trovato tutte le coppie e hai vinto. Clicca su avanti per iniziare a giocare!");
       setScore(6)
       break;

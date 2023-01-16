@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import RoundButton from '../../components/common/RoundButton';
 import Bubble from '../../components/common/Bubble'

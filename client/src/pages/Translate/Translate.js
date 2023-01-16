@@ -1,8 +1,5 @@
 import * as React from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
-import StudyButton from '../../components/common/StudyButton';
-import { useState, useEffect } from "react";
-import { Keyboard, TextInput } from "react-bootstrap";
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import { Link } from 'react-router-dom';
@@ -32,7 +29,7 @@ const Translate = () => {
   );
 }
 
-
+/*
 const buttonStudyCompact = {
   width: 75,
   height: 75,
@@ -51,5 +48,6 @@ const iconStyle = {
   height: 50,
   width: 50,
 }
+*/
 
 export default Translate;

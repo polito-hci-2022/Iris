@@ -1,12 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
 import Home from './pages/Menu/Home'
 import PlayMenu from "./pages/Menu/PlayMenu";
 import StudyMenu from "./pages/Menu/StudyMenu";
 import Translate from "./pages/Translate/Translate";
 import ResultTranslate from "./pages/Translate/ResultTranslate"
-import 'bootstrap/dist/css/bootstrap.min.css'
 import CastleStory1 from "./pages/CastleStory/CastleStory1";
 import CastleStory2 from "./pages/CastleStory/CastleStory2";
 import CastleStory3 from "./pages/CastleStory/CastleStory3";
@@ -23,11 +22,12 @@ import TestReview from "./pages/Test/TestReview";
 import Memory from "./pages/Memory/Memory";
 import TutorialMemory from "./pages/Memory/TutorialMemory";
 import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
+import Exercise from "./pages/Exercise/Exercise"
 import API from './API'
  
 
 export default function App() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   
   const [memory, setMemory] = React.useState(0);
   const [test, setTest] = React.useState();
@@ -90,6 +90,7 @@ export default function App() {
           <Route path="/memory" element={<Memory setMemory={setMemory} memory={memory}/>} />
           <Route path="/tutorialMemory" element={<TutorialMemory setMemory={setMemory} memory={memory}/>} />
           <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory} />} />
+          <Route path="/backpack" element={<Exercise />}/>
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}

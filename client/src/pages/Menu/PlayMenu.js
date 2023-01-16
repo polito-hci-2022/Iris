@@ -1,8 +1,5 @@
 import * as React from 'react';
-import { Button, Container, Row, Col } from 'react-bootstrap';
-import HomeButton from '../../components/common/HomeButton'
-import MemoryButton from '../../components/menu/MemoryButton';
-import CastleButton from '../../components/menu/CastleButton';
+import { Container, Row, Col } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
@@ -42,6 +39,7 @@ const PlayMenu = ({ navigation }) => {
   );
 }
 
+/*
 const buttonMemory = {
   width: 75,
   height: 75,
@@ -69,6 +67,7 @@ const iconStyle={
   height: 50,
   width: 50,
 }
+*/
 
 
 export default PlayMenu;

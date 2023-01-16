@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Button, useState } from 'react';
-import HomeButton from '../../components/common/HomeButton'
+import { useState } from 'react';
 import RoundButton from '../../components/common/RoundButton';
 import IrisModel from '../../models/IrisModel';
 import Tutorial from '../../components/memory/Tutorial';
@@ -16,7 +15,7 @@ const TutorialMemory  = ({setMemory, memory}) => {
   }
   newMemory();
 
-  const [message,setMessage] = React.useState("Lo scopo del gioco è quello di trovare tutte le coppie nome-immagine. Clicca avanti per continuare!");
+  const [message, setMessage] = useState("Lo scopo del gioco è quello di trovare tutte le coppie nome-immagine. Clicca avanti per continuare!");
   
     return (
         <Container style={{ flex: 1}}>

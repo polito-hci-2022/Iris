@@ -22,7 +22,7 @@ const dimension_icons = {
     75: 40
 }
 
-const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false }) => {
+const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false, onClick }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
     
