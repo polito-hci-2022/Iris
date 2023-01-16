@@ -19,9 +19,11 @@ import CastleHelp3 from "./pages/CastleStory/CastleHelp3";
 import CastleHelp4 from "./pages/CastleStory/CastleHelp4";
 import CastleHelp5 from "./pages/CastleStory/CastleHelp5";
 =======
-import Exercise from "./pages/Exercise/Exercise";
+import TestDisclaimer from "./pages/Test/TestDisclaimer";
+import CastleTest from "./pages/Test/CastleTest";
+import TestReview from "./pages/Test/TestReview";
  
->>>>>>> feature/backpack
+>>>>>>> feature/test
 
 export default function App() {
   const navigate = useNavigate()
@@ -50,8 +52,10 @@ export default function App() {
           <Route path="/CastleHelp4" element={<CastleHelp4 />}/>
           <Route path="/CastleHelp5" element={<CastleHelp5 />}/>
 =======
-          <Route path="/backpack" element={<Exercise />} />
->>>>>>> feature/backpack
+          <Route path="/testDisclaimer" element={<TestDisclaimer />}/>
+          <Route path="/castleTest" element={<CastleTest />}/>
+          <Route path="/testReview" element={<TestReview />}/>
+>>>>>>> feature/test
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
