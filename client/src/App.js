@@ -20,10 +20,47 @@ import CastleHelp5 from "./pages/CastleStory/CastleHelp5";
 import TestDisclaimer from "./pages/Test/TestDisclaimer";
 import CastleTest from "./pages/Test/CastleTest";
 import TestReview from "./pages/Test/TestReview";
+import Memory from "./pages/Memory/Memory";
+import TutorialMemory from "./pages/Memory/TutorialMemory";
+import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
+import API from './API'
  
 
 export default function App() {
   const navigate = useNavigate()
+  
+  const [memory, setMemory] = React.useState(0);
+  const [test, setTest] = React.useState();
+  const [page, setPage] = React.useState();
+
+  React.useEffect(() => {
+    const checkMemory = async () => {
+      let row = await API.getMemory();
+      setMemory(row[0].memory)
+      console.log(row);
+    }
+    checkMemory()
+  })
+
+  
+  React.useEffect(() => {
+    const checkPage = async () => {
+      let row = await API.getPageCastleStory();
+      setPage(row[0].pageCastleStory)
+    }
+    checkPage()
+  })
+
+  
+  React.useEffect(() => {
+    const checkTest = async () => {
+      let row = await API.getTest();
+      setTest(row[0].test)
+    }
+    checkTest()
+  })
+
+
 
   return (
     <div>
@@ -50,6 +87,9 @@ export default function App() {
           <Route path="/testDisclaimer" element={<TestDisclaimer />}/>
           <Route path="/castleTest" element={<CastleTest />}/>
           <Route path="/testReview" element={<TestReview />}/>
+          <Route path="/memory" element={<Memory setMemory={setMemory} memory={memory}/>} />
+          <Route path="/tutorialMemory" element={<TutorialMemory setMemory={setMemory} memory={memory}/>} />
+          <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory} />} />
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
