@@ -17,6 +17,10 @@ import CastleHelp2 from "./pages/CastleStory/CastleHelp2";
 import CastleHelp3 from "./pages/CastleStory/CastleHelp3";
 import CastleHelp4 from "./pages/CastleStory/CastleHelp4";
 import CastleHelp5 from "./pages/CastleStory/CastleHelp5";
+import TestDisclaimer from "./pages/Test/TestDisclaimer";
+import CastleTest from "./pages/Test/CastleTest";
+import TestReview from "./pages/Test/TestReview";
+ 
 
 export default function App() {
   const navigate = useNavigate()
@@ -43,6 +47,9 @@ export default function App() {
           <Route path="/CastleHelp3" element={<CastleHelp3 />}/>
           <Route path="/CastleHelp4" element={<CastleHelp4 />}/>
           <Route path="/CastleHelp5" element={<CastleHelp5 />}/>
+          <Route path="/testDisclaimer" element={<TestDisclaimer />}/>
+          <Route path="/castleTest" element={<CastleTest />}/>
+          <Route path="/testReview" element={<TestReview />}/>
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
