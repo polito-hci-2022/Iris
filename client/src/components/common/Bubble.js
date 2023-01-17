@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const rightArrow = {
   position: "absolute",
-  backgroundColor: "#0078fe",
+  backgroundColor: "#33658a",
   width: 20,
   height: 25,
   bottom: 0,
@@ -23,7 +23,7 @@ const rightArrowOverlap = {
 
 const leftArrow = {
   position: "absolute",
-  backgroundColor: "#0078fe",
+  backgroundColor: "#33658a",
   width: 20,
   height: 25,
   bottom: 0,
@@ -47,7 +47,7 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
     const vertical = top ? {top:top} : {bottom:bottom}
     const horizontal = right ? {right:right} : {left:left}
     const partial_style = {
-      backgroundColor: "#0078fe",
+      backgroundColor: "#fec601",
       padding:10,
       marginRight: '45%',
       borderRadius: 5,
@@ -63,12 +63,13 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
         <Container style={style}>
-            <p style={{
+            <a style={{
                 fontSize: 16,
                 color: "#fff",
+                backgroundColor: "#33658a",
                 }}>
                 {text}
-            </p>
+            </a>
             <Container style={arrow_style}/>
             <Container style={overlap_style}/>
         </Container>
