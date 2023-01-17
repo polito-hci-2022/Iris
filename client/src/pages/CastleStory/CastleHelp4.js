@@ -8,8 +8,9 @@ import RabbitModel from '../../models/RabbitModel'
 function CastleHelp4() {
     // 'You meet a rabbit. He will show you the entry for the castle!'
     return (
-      <Container fluid>
-        <Row>
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
             <Col>
                 <CastleModel position={[100,30,0]}/>
                 <RabbitModel
@@ -107,6 +108,7 @@ function CastleHelp4() {
           </Col>
         </Row>
       </Container>
+      </div>
     );
 }
 

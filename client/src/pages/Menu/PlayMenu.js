@@ -4,38 +4,41 @@ import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 
-const PlayMenu = ({ navigation }) => {
+const PlayMenu = () => {
 
   return (
-    <Container style={{ flex: 1 }}>
-      <Row>
-        <Col>
-          <h1>Play</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Bubble text="In this page you can find a lot of funny games!" />
-          <IrisModel scale={3} top={175} left={0} />
-          <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
+    <div style={{backgroundColor: "#c4baff"}}>
+      <Container fluid className="vh-100 d-flex">
+        <Row className="h-100">
+          <Col>
+            <h1>Play</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+          </Col>
+          <Col>
+            <Bubble text="In this page you can find a lot of funny games!" color={'#c4baff'} />
+            <IrisModel scale={3} top={'12%'} left={'45%'}/>
+          </Col>
+        </Row>
+        <Row style={{position: 'absolute', top:'45%'}}>
+          <Col>
+            <h2> Games </h2>
+            <RoundButton dimension={100} link={"/tutorialMemoryChoice"} title={"Memory"} text={"Memory"} />
+          </Col>
+        </Row>
+        <Row style={{position: 'absolute', top:'65%'}}>
+          <Col>
+            <h2>Stories</h2>
+            <RoundButton dimension={100} link={"/castleStory1"} title={"Castle"} text={"The Castle"} />
 
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h2> Games </h2>
-          <RoundButton dimension={75} link={"/tutorialMemoryChoice"} title={"Memory"} text={"Memory"} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h2>Stories</h2>
-          <RoundButton dimension={75} link={"/castleStory"} title={"Castle"} text={"Castle Story"} />
-
-        </Col>
-      </Row>
-    </Container>
-
+          </Col>
+        </Row>
+      </Container>
+    </div>
+    
   );
 }
 

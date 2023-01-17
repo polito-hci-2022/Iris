@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from "react";
-import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import { Routes, Route, Outlet, Link, useNavigate, BrowserRouter } from "react-router-dom";
 import Home from './pages/Menu/Home'
 import PlayMenu from "./pages/Menu/PlayMenu";
 import StudyMenu from "./pages/Menu/StudyMenu";
@@ -24,7 +25,6 @@ import TutorialMemory from "./pages/Memory/TutorialMemory";
 import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
 import Exercise from "./pages/Exercise/Exercise"
 import API from './API'
-import './App.css'
  
 /** palette colori
  * ["ebf5df","bad4aa","d4d4aa","edb458","e8871e"]
@@ -69,7 +69,8 @@ export default function App() {
 
 
   return (
-      <div>
+
+    <div>
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
@@ -104,7 +105,6 @@ export default function App() {
         </Route>
       </Routes>
     </div>
-    
   );
 }
 

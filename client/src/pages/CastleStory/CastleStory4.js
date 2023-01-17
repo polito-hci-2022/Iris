@@ -8,8 +8,9 @@ import RabbitModel from '../../models/RabbitModel'
 
 function CastleStory4() {
     return (
-      <Container fluid>
-        <Row>
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
             <Col>
               <CastleModel position={[100,30,0]}/>
               <RabbitModel
@@ -44,6 +45,8 @@ function CastleStory4() {
               orientation='right'
               bottom={250}
               right={10}
+              color={"#c4baff"}
+
             />
           </Col>
           <Col>
@@ -75,6 +78,7 @@ function CastleStory4() {
           </Col>
         </Row>
       </Container>
+      </div>
     );
 }
 

@@ -7,10 +7,11 @@ import RoundButton from '../../components/common/RoundButton';
 
 function CastleStory1() {
     return (
-      <Container fluid>
-        <Row>
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
             <Col><CastleModel position={[0,35,120]}/></Col>
-        </Row>
+          </Row>
         <Row>
           <Col>
             <RoundButton
@@ -35,6 +36,7 @@ function CastleStory1() {
               orientation='right'
               bottom={250}
               right={10}
+              color={"#c4baff"}
             />
           </Col>
           <Col>
@@ -66,6 +68,7 @@ function CastleStory1() {
           </Col>
         </Row>
       </Container>
+    </div>
     );
 }
 

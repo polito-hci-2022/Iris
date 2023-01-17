@@ -21,7 +21,8 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
         height: dimension,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "grey",
+        backgroundColor: "#e8871e",
+        borderColor: "#e8871e",
         position: position,
         disabled: disabled,
       }
@@ -38,7 +39,7 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
             }}
             icon={icons[title]}
             />
-            <h3>{text}</h3>
+            <h5>{text}</h5>
         </Button>
         </Link>
     );

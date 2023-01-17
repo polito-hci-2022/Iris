@@ -9,8 +9,9 @@ import SquareButton from '../../components/common/SquareButton';
 
 function CastleStory5() {
     return (
-      <Container fluid>
-        <Row>
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
             <Col>
               <CastleModel position={[0,30,30]}/>
               <RabbitModel
@@ -45,6 +46,8 @@ function CastleStory5() {
               orientation='right'
               bottom={250}
               right={10}
+              color={"#c4baff"}
+
             />
             <SquareButton
               text='Again'
@@ -85,6 +88,7 @@ function CastleStory5() {
           </Col>
         </Row>
       </Container>
+      </div>
     );
 }
 

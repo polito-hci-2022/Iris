@@ -17,9 +17,10 @@ const icons = {
 }
 
 const dimension_icons = {
+    150: 100,
     125: 75,
     100: 50,
-    75: 40
+    75: 20
 }
 
 const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false, onClick }) => {
@@ -29,7 +30,6 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
     const partial_style = {
         width: dimension,
         height: dimension,
-
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 100,
@@ -48,13 +48,14 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
             <Icon style={{
                 resizeMode:"contain",
                 height: dimension_icons[dimension],
-                width:dimension_icons[dimension],
+                width: dimension_icons[dimension],
                 color: "black"
             }}
             icon={icons[title]}
             />
-            <h3 style={{color: "black"}}>{text}</h3>
+            <h6 style={{color: "black"}}>{text}</h6>
         </Button>
+        
         </Link>
     );
 

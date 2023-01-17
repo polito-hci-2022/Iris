@@ -23,7 +23,6 @@ function Box() {
 
 function CastleModel({position}) {
       return (
-        <>
         <div style={{   
             width:'100%',
             height: 400, 
@@ -35,7 +34,6 @@ function CastleModel({position}) {
             <Suspense fallback={null}><Castle /></Suspense>
           </Canvas>                                                 
         </div>
-        </>
       );
 }
 

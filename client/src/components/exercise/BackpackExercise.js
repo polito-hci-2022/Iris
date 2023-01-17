@@ -1,8 +1,8 @@
 import { GiBookCover, GiPaintBucket, GiCakeSlice, GiEntryDoor, GiFruitTree, GiPencil } from "react-icons/gi";
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Figure, Button, Modal } from 'react-bootstrap';
-import StudyButton from '../common/StudyButton';
 import backpack from './backpack.png';
+import RoundButton from "../common/RoundButton";
 
 const BackpackExercise = (props) => {
 
@@ -95,7 +95,7 @@ const BackpackExercise = (props) => {
             <Modal show={finish}>
                 <Modal.Body>
                     Esercizio completato. Hai trovato {state.score}/2 oggetti.
-                    <StudyButton style={buttonStudyCompact} iconStyle={iconStyle} />
+                    <RoundButton dimension={75} link={"/studyTime"} title={"Back"} text={"Back"} />
                 </Modal.Body>
             </Modal>
         </>

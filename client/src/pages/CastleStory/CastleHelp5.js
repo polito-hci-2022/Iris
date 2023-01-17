@@ -9,8 +9,9 @@ import SquareButton from '../../components/common/SquareButton';
 function CastleHelp5() {
     // Look! He is next to the door, we are arrived!
     return (
-      <Container fluid>
-        <Row>
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
             <Col>
             <CastleModel position={[0,30,30]}/>
               <RabbitModel
@@ -99,6 +100,7 @@ function CastleHelp5() {
           </Col>
         </Row>
       </Container>
+      </div>
     );
 }
 

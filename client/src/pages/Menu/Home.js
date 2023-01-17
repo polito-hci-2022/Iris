@@ -6,21 +6,21 @@ import Bubble from "../../components/common/Bubble";
 
 function Home() {
     return (
-      <div>
-       <Container fluid style={{backgroundColor: "#bde0fe"}}>
-            <Row>
+      <div style={{backgroundColor: "#bde0fe"}}>
+       <Container fluid className="vh-100 d-flex">
+            <Row className="h-100">
               <Col>
               <Bubble text={"Ciao Filippo, sono Iris!"}/>
-              <IrisModel scale={3} left={0}></IrisModel>
+              <IrisModel scale={4} top={'12%'} left={'45%'}></IrisModel>
               </Col>
             </Row>
            {/*end top part*/}
             <Row>
               <Col>
-                <RoundButton dimension={125} top={450} left={10} link={"/play"} title={"Play"} text={"Play"} />
+                <RoundButton dimension={150} top={'75%'} left={'10%'} link={"/play"} title={"Play"} text={"Play"} />
               </Col>
               <Col>
-                <RoundButton dimension={125} top={450} left={180} link={"/studyTime"} title={"Study"} text={"Study"} />
+                <RoundButton dimension={150} top={'75%'} left={'20%'} link={"/studyTime"} title={"Study"} text={"Study"} />
               </Col>
             </Row>
         </Container>
