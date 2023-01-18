@@ -109,7 +109,7 @@ app.delete("/api/test", async (req, res) => {
 
 app.put("api/test/result", (request, response) => {
   dao
-    .saveTest(request.answer1, request.answer2)
+    .saveTest(request.body.answer1, request.body.answer2)
     .then(() => response.status(200).json({}).end())
     .catch(() => response.status(500).end());
 });

@@ -65,6 +65,19 @@ function getTest() {
   )
 }
 
+function getTestResults() {
+  return getJson(
+    fetch("http://localhost:3001/api/test/results",{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(),
+    })
+  );
+}
+
 function addMemory() {
   return getJson(
     fetch("http://localhost:3001/api/memory",{
@@ -100,6 +113,19 @@ function addTest() {
       },
       credentials: 'include',
       body: JSON.stringify({}),
+    })
+  )
+}
+
+function saveTestResults(ans1, ans2) {
+  return getJson(
+    fetch("http://localhost:3001/api/test/results",{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ answer1:ans1, answer2:ans2}),
     })
   )
 }
@@ -144,5 +170,5 @@ const deleteTest = async () => {
 }
 
 
-const API = { getMemory, getPageCastleStory, getTest, addMemory, addPageCastleStory, addTest, deleteMemory, deletePageCastleStory, deleteTest};
+const API = { getMemory, getPageCastleStory, getTest, getTestResults, addMemory, addPageCastleStory, addTest, deleteMemory, deletePageCastleStory, deleteTest};
 export default API;
