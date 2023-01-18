@@ -7,6 +7,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Memory  = () => { 
 
+
+  
     return (
       <div style={{backgroundColor: "#c4baff"}}>
         <Container fluid className="vh-100 d-flex">
