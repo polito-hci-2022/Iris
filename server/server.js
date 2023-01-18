@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const dao = require("./dao");
 const cors = require("cors");
 const { body, validationResult, param } = require("express-validator");
+const { request, response } = require("express");
 
 // init express
 const app = express();
@@ -45,6 +46,13 @@ app.get("/api/test",(request, response) => {
     .catch(() => response.status(500).end());
 });
 
+app.get("/api/test/results", (request, response) => {
+  dao
+    .getTestResults()
+    .then((res) => response.status(200).json(res))
+    .catch(() => response.status(500).end());
+});
+
 app.post("/api/memory", (request, response) => {
   dao
     .addMemory()
@@ -58,7 +66,6 @@ app.post("/api/page", (request, response) => {
     .then(() => response.status(200).json({}).end())
     .catch(() => response.status(500).end());
 });
-
 
 app.post("/api/test", (request, response) => {
   dao
@@ -98,6 +105,13 @@ app.delete("/api/test", async (req, res) => {
     console.error(err);
     res.status(503).json({ error: `Database error while updating ${id}.` });
   }
+});
+
+app.put("api/test/result", (request, response) => {
+  dao
+    .saveTest(request.answer1, request.answer2)
+    .then(() => response.status(200).json({}).end())
+    .catch(() => response.status(500).end());
 });
 
 // activate the server
