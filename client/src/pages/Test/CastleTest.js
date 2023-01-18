@@ -1,10 +1,9 @@
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import Test1 from '../../components/test/Test1';
 import Test2 from '../../components/test/Test2';
-import { useNavigate } from 'react-router-dom';
 import RoundButton from '../../components/common/RoundButton';
 import SquareButton from '../../components/common/SquareButton';
 
@@ -12,8 +11,6 @@ const textQuestion1 = "Come si dice 'CASTELLO' in inglese?";
 const textQuestion2 = "Ti ricordi il CONIGLIO che ci ha accompagnati al castello? Come si dice in inglese?";
 
 const CastleTest = (props) => {
-
-    const navigate = useNavigate();
 
     const [message, setMessage] = useState(textQuestion1);
     const [question1, setQuestion1] = useState(true);
@@ -31,10 +28,6 @@ const CastleTest = (props) => {
     const moveBack = () => {
         setMessage(textQuestion1);
         setQuestion1(true);
-    }
-
-    const submit = () => {
-        navigate('/studytime');
     }
 
     return (
@@ -73,7 +66,7 @@ const CastleTest = (props) => {
                         {
                             question1
                                 ? <SquareButton onClick={() => moveNext()} text="Avanti" position='absolute' dimension={100} bottom={10} left={'60%'} />
-                                : <SquareButton onClick={() => submit()} text="Fine" position='absolute' dimension={100} bottom={10} left={'60%'} />
+                                : <SquareButton link={"/studytime"} text="Fine" position='absolute' dimension={100} bottom={10} left={'60%'} />
                         }
                     </Col>
                 </Row>

@@ -26,6 +26,7 @@ const dimension_icons = {
 const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false, onClick }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
+    const color = disabled ? "#f1b26f" : "#e8871e"
     
     const partial_style = {
         width: dimension,
@@ -33,7 +34,7 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 100,
-        backgroundColor: "#e8871e",
+        backgroundColor: color,
         borderColor: "#e8871e",
         position: position,
         disabled: disabled,
