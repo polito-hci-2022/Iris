@@ -17,10 +17,10 @@ function Home() {
            {/*end top part*/}
             <Row>
               <Col>
-                <RoundButton dimension={150} top={'75%'} left={'10%'} link={"/play"} title={"Play"} text={"Play"} />
+                <RoundButton dimension={150} top={'75%'} left={'10%'} link={"/play"} title={"Play"} text={"Gioca"} />
               </Col>
               <Col>
-                <RoundButton dimension={150} top={'75%'} left={'20%'} link={"/studyTime"} title={"Study"} text={"Study"} />
+                <RoundButton dimension={150} top={'75%'} left={'20%'} link={"/studyTime"} title={"Study"} text={"Studia"} />
               </Col>
             </Row>
         </Container>

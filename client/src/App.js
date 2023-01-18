@@ -25,6 +25,7 @@ import TutorialMemory from "./pages/Memory/TutorialMemory";
 import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
 import Exercise from "./pages/Exercise/Exercise"
 import API from './API'
+import './App.css'
  
 /** palette colori
  * ["ebf5df","bad4aa","d4d4aa","edb458","e8871e"]
@@ -97,6 +98,8 @@ export default function App() {
   return (
 
     <div>
+      <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bubblegum+Sans"></link>
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
