@@ -1,5 +1,5 @@
 "use strict";
-/* Data Access Object (DAO) module for accessing exams */
+/* Data Access Object (DAO) module for accessing db */
 
 const { db } = require("./db");
 
@@ -38,6 +38,19 @@ exports.getTest = () => {
         reject(err);
       } else {
         resolve(rows);
+      }
+    });
+  });
+};
+
+exports.getTestResults = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT Answer1, Answer2 FROM test WHERE User=1";
+    db.get(sql, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
       }
     });
   });
