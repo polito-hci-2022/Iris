@@ -1,10 +1,11 @@
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import { Button, Container, Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Test1 from '../../components/test/Test1';
 import Test2 from '../../components/test/Test2';
 import { useNavigate } from 'react-router-dom';
+import RoundButton from '../../components/common/RoundButton';
 
 const textQuestion1 = "Come si dice 'CASTELLO' in inglese?";
 const textQuestion2 = "Ti ricordi il CONIGLIO che ci ha accompagnati al castello? Come si dice in inglese?";
@@ -15,6 +16,11 @@ const CastleTest = (props) => {
 
     const [message, setMessage] = useState(textQuestion1);
     const [question1, setQuestion1] = useState(true);
+
+    useEffect(() => {
+        //first time entered in the test: the test is considered done
+        props.setTest(1);
+    }, []);
 
     const moveNext = () => {
         setMessage(textQuestion2);

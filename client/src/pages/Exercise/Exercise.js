@@ -10,8 +10,8 @@ const Exercise = () => {
     const [message, setMessage] = useState("Cosa mettiamo nello zaino?");
 
     return (
-        <div style={{backgroundColor: "#7cb518"}}>
-            <Container fluid className="vh-100 d-flex">
+        <>
+            <Container fluid className="vh-100 d-flex" style={{backgroundColor: "#7cb518"}}>
                 <Row className="h-100">
                     <Col>
                         <Bubble text={message} right={'0%'} color={'#7cb518'}/>
@@ -28,7 +28,7 @@ const Exercise = () => {
             </Container>
 
             {/* BOTTOM SECTION: Exercise */}
-        </div>
+        </>
     );
 }
 

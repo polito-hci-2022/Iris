@@ -6,29 +6,31 @@ const TestDisclaimer = () => {
     const disclaimerText = "Il test può essere effettuato una sola volta. Se esci o consegni non potrai più modificare le tue risposte."
 
     return (
-        <>
+        <Container fluid className="vh-100" style={{ backgroundColor: "#7cb518" }}>
             {/* message */}
-            <Container>
-                <h2>ATTENZIONE!</h2>
-                <p>{disclaimerText}</p>
-                <p>Vuoi iniziare il test?</p>
-            </Container>
+            <Row>
+                <Col xs={12} style={{ width: '100%' }}>
+                    <h2>ATTENZIONE!</h2>
+                    <h4>{disclaimerText}</h4>
+                    <h4>Vuoi iniziare il test?</h4>
+                </Col>
+            </Row>
 
             {/* actions */}
-            <Container>
-                <Row>
-                    <Col>
-                        {/* back button */}
-                        <RoundButton dimension={100} link={"/studytime"} title={"Indietro"} text={"Torna indietro"} />
 
-                    </Col>
-                    <Col>
-                        {/* start test button */}
-                        <RoundButton dimension={100} link={"/castleTest"} title={"CastleTest"} text={"Inizia il test"} />
-                    </Col>
-                </Row>
-            </Container>
-        </>
+            <Row>
+                <Col className="col-6">
+                    {/* back button */}
+                    <RoundButton dimension={100} top={'50%'} left={'30%'} link={"/studytime"} title={"Indietro"} text={"Torna indietro"} />
+
+                </Col>
+                <Col className="col-6">
+                    {/* start test button */}
+                    <RoundButton dimension={100} top={'50%'} left={'10%'} link={"/castleTest"} title={"CastleTest"} text={"Inizia il test"} />
+                </Col>
+            </Row>
+
+        </Container>
     );
 }
 

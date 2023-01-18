@@ -36,7 +36,7 @@ export default function App() {
   const navigate = useNavigate();
   
   const [memory, setMemory] = React.useState(0);
-  const [test, setTest] = React.useState(0);
+  const [test, setTest] = React.useState(false);
   const [page, setPage] = React.useState();
   const [testResults, setTestResults] = React.useState();
 
@@ -89,7 +89,8 @@ export default function App() {
 
 
   React.useEffect(() => {
-    API.saveTestResults(testResults.Answer1, testResults.Answer2);
+    if(testResults)
+      API.saveTestResults(testResults.Answer1, testResults.Answer2);
   }, [testResults]);
 
 
