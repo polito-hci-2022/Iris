@@ -73,6 +73,9 @@ export default function App() {
     const getTestResults = async () => {
       let res = await API.getTestResults();
       setTestResults(res[0]);
+      if(res[0].Answer1 !== "" || res[0].Answer2 !== ""){
+        setTest(true);
+      }
     }
     getTestResults();
   }, []);
