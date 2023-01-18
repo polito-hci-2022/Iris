@@ -45,12 +45,12 @@ exports.getTest = () => {
 
 exports.getTestResults = () => {
   return new Promise((resolve, reject) => {
-    const sql = "SELECT Answer1, Answer2 FROM test WHERE User=1";
-    db.get(sql, (err, res) => {
+    const sql = "SELECT Answer1, Answer2 FROM test";
+    db.all(sql, [], (err, rows) => {
       if (err) {
         reject(err);
       } else {
-        resolve(res);
+        resolve(rows);
       }
     });
   });

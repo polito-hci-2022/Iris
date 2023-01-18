@@ -72,14 +72,10 @@ export default function App() {
   React.useEffect(() => {
     const getTestResults = async () => {
       let res = await API.getTestResults();
-      setTestResults(res);
+      setTestResults(res[0]);
     }
-    if(test){
-      /*getTestResults();*/ setTestResults({ Answer1:"", Answer2:"" });
-    }else{
-      setTestResults({ Answer1:"", Answer2:"" });
-    }
-  }, [test]);
+    getTestResults();
+  }, []);
 
   React.useEffect(() => {
     if(test){
@@ -87,12 +83,12 @@ export default function App() {
     }
   }, [test]);
 
-/*
+
   React.useEffect(() => {
     if(testResults)
       API.saveTestResults(testResults.Answer1, testResults.Answer2);
   }, [testResults]);
-*/
+
 
 
   return (
