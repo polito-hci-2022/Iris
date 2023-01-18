@@ -75,7 +75,7 @@ export default function App() {
       setTestResults(res);
     }
     if(test){
-      getTestResults();
+      /*getTestResults();*/ setTestResults({ Answer1:"", Answer2:"" });
     }else{
       setTestResults({ Answer1:"", Answer2:"" });
     }
@@ -87,12 +87,12 @@ export default function App() {
     }
   }, [test]);
 
-
+/*
   React.useEffect(() => {
     if(testResults)
       API.saveTestResults(testResults.Answer1, testResults.Answer2);
   }, [testResults]);
-
+*/
 
 
   return (
