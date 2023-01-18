@@ -17,7 +17,7 @@ const Memory  = () => {
           </Row>
           <Row>
             <Col>
-              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/play"} title={"Back"} text={"Back"} />
             </Col>
             <Col>        
               <Bubble text={"Here there's the memory"} color={'#c4baff'} />

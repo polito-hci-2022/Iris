@@ -9,36 +9,24 @@ import { useNavigate } from 'react-router-dom';
 const textQuestion1 = "Come si dice 'CASTELLO' in inglese?";
 const textQuestion2 = "Ti ricordi il CONIGLIO che ci ha accompagnati al castello? Come si dice in inglese?";
 
-const CastleTest = ({ navigation }) => {
+const CastleTest = (props) => {
 
     const navigate = useNavigate();
 
-    const [testResults, setTestResults] = useState({
-        done: true,
-        res1: "",
-        res2: ""
-    });
     const [message, setMessage] = useState(textQuestion1);
     const [question1, setQuestion1] = useState(true);
 
     const moveNext = () => {
-        //save progresses
-        //API.add...
         setMessage(textQuestion2);
         setQuestion1(false);
     }
 
     const moveBack = () => {
-        //save progresses
-        //API.add...
         setMessage(textQuestion1);
         setQuestion1(true);
     }
 
-    //this function is called also by the round button used to leave the test
     const submit = () => {
-        //save progresses
-        //API.add...
         navigate('/studytime');
     }
 
@@ -50,7 +38,7 @@ const CastleTest = ({ navigation }) => {
                     <Col>
                         <Bubble text={message} />
                         <IrisModel scale={3} top={175} left={0} />
-                        {/*<RoundButton navigation={navigation} />*/}
+                        <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/studytime"} title={"Back"} text={"Back"} />
                     </Col>
                 </Row>
             </Container>
@@ -59,8 +47,8 @@ const CastleTest = ({ navigation }) => {
             <Container>
                 {
                     question1
-                        ? <Test1 testResults={testResults} setTestResults={setTestResults} />
-                        : <Test2 testResults={testResults} setTestResults={setTestResults} />
+                        ? <Test1 testResults={props.testResults} setTestResults={props.setTestResults} />
+                        : <Test2 testResults={props.testResults} setTestResults={props.setTestResults} />
                 }
             </Container>
 

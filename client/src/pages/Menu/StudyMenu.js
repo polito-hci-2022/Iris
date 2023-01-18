@@ -4,7 +4,7 @@ import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 
-const StudyMenu = () => {
+const StudyMenu = (props) => {
   return (
     <div style={{backgroundColor: "#7cb518"}}>
      <Container fluid className="vh-100 d-flex">
@@ -32,7 +32,11 @@ const StudyMenu = () => {
         <Row  style={{position: 'absolute', top:'65%'}}>
           <Col>
             <h2>Test</h2>
-            <RoundButton dimension={100} link={"/castleStoryTest"} title={"Castle"} text={"Castle Test"} />
+            {
+              props.testDone 
+                ? <RoundButton dimension={100} link={"/testReview"} title={"Castle"} text={"Castle Test"} />
+                : <RoundButton dimension={100} link={"/testDisclaimer"} title={"Castle"} text={"Castle Test"} />
+            }     
           </Col>
         </Row>
       </Container>

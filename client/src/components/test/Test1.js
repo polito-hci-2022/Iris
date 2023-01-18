@@ -4,11 +4,11 @@ import { BsFillBackspaceFill } from "react-icons/bs";
 
 const Test1 = (props) => {
 
-    const [answer, setAnswer] = useState(props.testResults.res1);
+    const [answer, setAnswer] = useState(props.testResults.Answer1);
 
     useEffect(() => {
         const res = props.testResults;
-        res.res1 = answer;
+        res.Answer1 = answer;
         props.setTestResults(res);
     }, [answer]);
 

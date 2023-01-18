@@ -36,8 +36,10 @@ export default function App() {
   const navigate = useNavigate();
   
   const [memory, setMemory] = React.useState(0);
-  const [test, setTest] = React.useState();
+  const [test, setTest] = React.useState(0);
   const [page, setPage] = React.useState();
+  const [testResults, setTestResults] = React.useState();
+
 
   React.useEffect(() => {
     const checkMemory = async () => {
@@ -67,6 +69,30 @@ export default function App() {
   })
 
 
+  React.useEffect(() => {
+    const getTestResults = async () => {
+      let res = await API.getTestResults();
+      setTestResults(res);
+    }
+    if(test){
+      getTestResults();
+    }else{
+      setTestResults({ Answer1:"", Answer2:"" });
+    }
+  }, [test]);
+
+  React.useEffect(() => {
+    if(test){
+      API.addTest();
+    }
+  }, [test]);
+
+
+  React.useEffect(() => {
+    API.saveTestResults(testResults.Answer1, testResults.Answer2);
+  }, [testResults]);
+
+
 
   return (
 
@@ -78,7 +104,7 @@ export default function App() {
         <Route path="/" >
           <Route index element={<Home />} />
           <Route path="/play" element={<PlayMenu navigation={navigate} />} />
-          <Route path="/studytime" element={<StudyMenu />} />
+          <Route path="/studytime" element={<StudyMenu testDone={test} />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
           <Route path="/CastleStory1" element={<CastleStory1 />} />
@@ -92,8 +118,8 @@ export default function App() {
           <Route path="/CastleHelp4" element={<CastleHelp4 />}/>
           <Route path="/CastleHelp5" element={<CastleHelp5 />}/>
           <Route path="/testDisclaimer" element={<TestDisclaimer />}/>
-          <Route path="/castleTest" element={<CastleTest />}/>
-          <Route path="/testReview" element={<TestReview />}/>
+          <Route path="/castleTest" element={<CastleTest setTest={setTest} testResults={testResults} setTestResults={setTestResults} />}/>
+          <Route path="/testReview" element={<TestReview testResults={testResults} />}/>
           <Route path="/memory" element={<Memory setMemory={setMemory} memory={memory}/>} />
           <Route path="/tutorialMemory" element={<TutorialMemory setMemory={setMemory} memory={memory}/>} />
           <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory} />} />

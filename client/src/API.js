@@ -170,5 +170,5 @@ const deleteTest = async () => {
 }
 
 
-const API = { getMemory, getPageCastleStory, getTest, getTestResults, addMemory, addPageCastleStory, addTest, deleteMemory, deletePageCastleStory, deleteTest};
+const API = { getMemory, getPageCastleStory, getTest, getTestResults, addMemory, addPageCastleStory, addTest, saveTestResults, deleteMemory, deletePageCastleStory, deleteTest};
 export default API;
