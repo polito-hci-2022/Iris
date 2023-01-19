@@ -26,7 +26,7 @@ const Test1 = (props) => {
         }
     }
 
-    const style = {backgroundColor: "#e8871e", borderColor: "#e8871e"};
+    const style = {backgroundColor: "#e8871e", borderColor: "#e8871e", color: "black" };
 
     return (
         <Container>
