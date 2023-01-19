@@ -19,7 +19,7 @@ const StudyMenu = (props) => {
             <IrisModel scale={3} top={'12%'} left={'45%'}/>
           </Col>
           <Col>
-            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Indietro"} />
+            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/"} title={"Back"} text={"Indietro"} />
           </Col>
         </Row>
         <Row style={{position: 'absolute', top:'45%'}}>

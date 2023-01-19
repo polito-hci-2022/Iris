@@ -22,7 +22,7 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#e8871e",
-        borderColor: "#e8871e",
+        borderColor: "black",
         position: position,
         disabled: disabled,
       }

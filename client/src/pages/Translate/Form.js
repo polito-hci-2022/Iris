@@ -1,12 +1,16 @@
 import Form from 'react-bootstrap/Form';
+import { Row, Container } from 'react-bootstrap'
 
 function BasicExample() {
   return (
+    <Container fluid>
     <Form>
-      <Form.Group >
-        <Form.Control type="text" placeholder="Type here" />
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Control as="textarea" rows={2} placeholder="Type here" />
       </Form.Group>
     </Form>
+    </Container>
+
   );
 }
 

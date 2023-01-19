@@ -1,8 +1,9 @@
 import { useEffect, useState, } from 'react';
-import { Modal, } from 'react-bootstrap'
+import { Modal, Button, Row, Col} from 'react-bootstrap'
 import CardGame from './CardGame.js'
 import RoundButton from '../common/RoundButton.js';
 import './Game.css'
+import SquareButton from '../common/SquareButton.js';
 
 const initialCards = [
   { "src": "/images/candy.jpg", matched: false, type: "image", name:"candy"},
@@ -97,8 +98,8 @@ function Game() {
   }, [choiceOne, choiceTwo]);
 
   return (
-    <div className='container'>
-      <button onClick={shuffleCards}>New Game</button>
+    <div>
+      
       <div className="grid">
         {cards.map(card => (
           <CardGame
@@ -110,8 +111,19 @@ function Game() {
             matched={card.matched}
           />
         ))}
+        
       </div>
-      <p>Score: {score}</p>
+      <Row>
+        <Col>
+          <RoundButton onClick={shuffleCards} text={score}></RoundButton>
+        </Col>
+      <Col>
+        <RoundButton dimension={75} left={'45%'}onClick={shuffleCards} text={'New Game'}></RoundButton>
+      </Col>
+      
+      </Row>
+
+      
        <Modal show={finish} className='vw-100'>
         <Modal.Body>
             Memory completato {score}
