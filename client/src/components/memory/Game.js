@@ -49,6 +49,8 @@ function Game() {
     setChoiceTwo(null)
     setCards(shuffledCards);
     setDisabled(false)
+    setFinish(false)
+    setScore(0)
     setStartFlip(true) /* preview griglia memory */
     setTimeout(() => {
       setStartFlip(false)
@@ -76,8 +78,9 @@ function Game() {
           return prevCards.map(card => {
             if (card.name === choiceOne.name) {
               setScore(score+1)
-              if(score === 6)
+              if(score === 5)
                 setFinish(true)
+              console.log(score, finish)
               return { ...card, matched: true }
             } else {
               return card
