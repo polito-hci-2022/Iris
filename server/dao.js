@@ -98,7 +98,7 @@ exports.addPageCastleStory = async () => {
 exports.addTest = async () => {
   return new Promise((resolve, reject) => {
     const sql =
-      "INSERT INTO db(test) VALUES(?)";
+      "UPDATE db SET test = ? WHERE test = ?";
     db.run(
       sql,
       [1],
@@ -113,9 +113,12 @@ exports.addTest = async () => {
 };
 
 exports.saveTest = async (answer1, answer2) => {
+
+console.log(answer1 + " " + answer2);
+
   return new Promise((resolve, reject) => {
-    const sql = "UPDATE test SET Answer1 = ?, Answer2 = ? WHERE User = ?";
-    db.run(sql, [answer1, answer2, 1], function (err) {
+    const sql = "UPDATE testResults SET Answer1=?, Answer2=?";
+    db.run(sql, [answer1, answer2], function (err) {
       if (err) {
         console.log(err)
         reject(err);
