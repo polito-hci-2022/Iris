@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { BsFillBackspaceFill } from "react-icons/bs";
+import API from "../../API"
 
 const Test1 = (props) => {
 
@@ -10,6 +11,7 @@ const Test1 = (props) => {
         const res = props.testResults;
         res.Answer1 = answer;
         props.setTestResults(res);
+        API.saveTestResults(res.Answer1, res.Answer2);
     }, [answer]);
 
     const addLetter = (newLetter) => {

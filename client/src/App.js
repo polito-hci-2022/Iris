@@ -59,17 +59,6 @@ export default function App() {
     checkPage()
   })
 
-  /*
-  React.useEffect(() => {
-    const checkTest = async () => {
-      let row = await API.getTest();
-      setTest(row[0].test)
-    }
-    checkTest()
-  })
-  
-
-
   React.useEffect(() => {
     const getTestResults = async () => {
       let res = await API.getTestResults();
@@ -80,20 +69,6 @@ export default function App() {
     }
     getTestResults();
   }, []);
-
-  React.useEffect(() => {
-    if(test){
-      API.addTest();
-    }
-  }, [test]);
-  
-
-
-  React.useEffect(() => {
-    if(testResults)
-      API.saveTestResults(testResults.Answer1, testResults.Answer2);
-  }, [testResults]);
-  */
 
 
 

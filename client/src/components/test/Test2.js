@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import RoundButton from "../common/RoundButton";
+import API from "../../API"
 
 const Test2 = (props) => {
 
@@ -10,6 +11,7 @@ const Test2 = (props) => {
         const res = props.testResults;
         res.Answer2 = answer;
         props.setTestResults(res);
+        API.saveTestResults(res.Answer1, res.Answer2);
     }, [answer]);
 
     return (

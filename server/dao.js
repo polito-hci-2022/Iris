@@ -45,7 +45,7 @@ exports.getTest = () => {
 
 exports.getTestResults = () => {
   return new Promise((resolve, reject) => {
-    const sql = "SELECT Answer1, Answer2 FROM test";
+    const sql = "SELECT Answer1, Answer2 FROM testResults";
     db.all(sql, [], (err, rows) => {
       if (err) {
         console.log(rows)
@@ -113,9 +113,6 @@ exports.addTest = async () => {
 };
 
 exports.saveTest = async (answer1, answer2) => {
-
-console.log(answer1 + " " + answer2);
-
   return new Promise((resolve, reject) => {
     const sql = "UPDATE testResults SET Answer1=?, Answer2=?";
     db.run(sql, [answer1, answer2], function (err) {
