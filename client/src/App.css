@@ -1,8 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans');
-
 body, html {
-    font-family: 'Bubblegum Sans';
+    font-family: 'roboto';
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
