@@ -17,7 +17,7 @@ const CastleTest = (props) => {
 
     useEffect(() => {
         //first time entered in the test: the test is considered done
-        props.setTest(1);
+        props.setTest(true);
     }, []);
 
     const moveNext = () => {
