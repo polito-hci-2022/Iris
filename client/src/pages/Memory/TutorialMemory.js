@@ -4,7 +4,7 @@ import RoundButton from '../../components/common/RoundButton';
 import IrisModel from '../../models/IrisModel';
 import Tutorial from '../../components/memory/Tutorial';
 import Bubble from '../../components/common/Bubble'
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import API from '../../API';
 
 const TutorialMemory  = ({setMemory, memory}) => {  
@@ -18,13 +18,30 @@ const TutorialMemory  = ({setMemory, memory}) => {
   const [message, setMessage] = useState("Lo scopo del gioco è quello di trovare tutte le coppie nome-immagine. Clicca avanti per continuare!");
   
     return (
-        <Container style={{ flex: 1}}>
-          <h1>Play</h1>
-          <Bubble text={message}/>
-          <IrisModel/>
-          <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
-          <Tutorial message={message} setMessage={setMessage} ></Tutorial>
-        </Container>
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
+            <Col>
+              <h1>Memory</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+            </Col>
+            <Col>        
+              <Bubble text={message} color={'#c4baff'} />
+              <IrisModel scale={3}  top={'12%'} left={'45%'}/>
+            </Col>
+          </Row>
+          <Row style={{position: 'absolute', top:'45%'}}>
+            <Col>
+            <Tutorial message={message} setMessage={setMessage} ></Tutorial>
+
+            </Col>
+          </Row>
+        </Container>   
+      </div>
     );
   }
 

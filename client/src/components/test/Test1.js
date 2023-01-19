@@ -4,11 +4,11 @@ import { BsFillBackspaceFill } from "react-icons/bs";
 
 const Test1 = (props) => {
 
-    const [answer, setAnswer] = useState(props.testResults.res1);
+    const [answer, setAnswer] = useState(props.testResults.Answer1);
 
     useEffect(() => {
         const res = props.testResults;
-        res.res1 = answer;
+        res.Answer1 = answer;
         props.setTestResults(res);
     }, [answer]);
 
@@ -25,6 +25,8 @@ const Test1 = (props) => {
             setAnswer(ans);
         }
     }
+
+    const style = {backgroundColor: "#e8871e", borderColor: "#e8871e"};
 
     return (
         <Container>
@@ -55,56 +57,52 @@ const Test1 = (props) => {
                     <Col className="col-3" />
                     <Col className="col-2">
                         {/* A */}
-                        <Button onClick={() => addLetter('A')} >A</Button>
+                        <Button onClick={() => addLetter('A')} style={style} className="mt-4" >A</Button>
                     </Col>
                     <Col className="col-2" />
                     <Col className="col-2">
                         {/* K */}
-                        <Button onClick={() => addLetter('K')} >K</Button>
+                        <Button onClick={() => addLetter('K')} style={style} className="mt-4" >K</Button>
                     </Col>
                     <Col className="col-3" />
                 </Row>
                 <Row>
                     <Col className="col-2">
                         {/* E */}
-                        <Button onClick={() => addLetter('E')} >E</Button>
+                        <Button onClick={() => addLetter('E')} style={style} className="mt-5" >E</Button>
                     </Col>
                     <Col className="col-8" />
                     <Col className="col-2">
                         {/* S */}
-                        <Button onClick={() => addLetter('S')} >S</Button>
+                        <Button onClick={() => addLetter('S')} style={style} className="mt-5" >S</Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col className="col-2">
                         {/* L */}
-                        <Button onClick={() => addLetter('L')} >L</Button>
+                        <Button onClick={() => addLetter('L')} style={style} className="mt-5" >L</Button>
                     </Col>
-                    <Col className="col-8" />
+                    <Col className="col-8 justify-item-center">
+                        <Button onClick={() => deleteLetter()} style={style} className="ms-5 pe-3" > <BsFillBackspaceFill /> Cancella</Button>
+                    </Col>
                     <Col className="col-2">
                         {/* C */}
-                        <Button onClick={() => addLetter('C')} >C</Button>
+                        <Button onClick={() => addLetter('C')} style={style} className="mt-5" >C</Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col className="col-3" />
                     <Col className="col-2">
                         {/* T */}
-                        <Button onClick={() => addLetter('T')} >T</Button>
+                        <Button onClick={() => addLetter('T')} style={style} className="mt-5" >T</Button>
                     </Col>
                     <Col className="col-2" />
                     <Col className="col-2">
                         {/* F */}
-                        <Button onClick={() => addLetter('F')} >F</Button>
+                        <Button onClick={() => addLetter('F')} style={style} className="mt-5" >F</Button>
                     </Col>
                     <Col className="col-3" />
                 </Row>
-            </Row>
-            <Row>
-                <Col className="col-6" />
-                <Col>
-                    <Button onClick={() => deleteLetter()}><BsFillBackspaceFill /> Cancella</Button>
-                </Col>
             </Row>
         </Container>
     );

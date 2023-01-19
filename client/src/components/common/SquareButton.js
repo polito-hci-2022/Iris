@@ -13,7 +13,7 @@ const dimension_icons = {
     75: 40
 }
 
-const SquareButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false }) => {
+const SquareButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false, onClick }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
     const partial_style = {
@@ -21,7 +21,8 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
         height: dimension,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "grey",
+        backgroundColor: "#e8871e",
+        borderColor: "#e8871e",
         position: position,
         disabled: disabled,
       }
@@ -29,6 +30,7 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
     return (
         <Link to={link}>
         <Button
+            onClick={onClick}
             title={title}
             style={style}>
             <Icon style={{
@@ -38,7 +40,7 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
             }}
             icon={icons[title]}
             />
-            <h3>{text}</h3>
+            <h5>{text}</h5>
         </Button>
         </Link>
     );

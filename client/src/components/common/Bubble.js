@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const rightArrow = {
   position: "absolute",
-  backgroundColor: "#0078fe",
+  backgroundColor: "#fec601",
   width: 20,
   height: 25,
   bottom: 0,
@@ -13,7 +13,6 @@ const rightArrow = {
 
 const rightArrowOverlap = {
   position: "absolute",
-  backgroundColor: "#eeeeee",
   width: 20,
   height: 35,
   bottom: -6,
@@ -23,7 +22,7 @@ const rightArrowOverlap = {
 
 const leftArrow = {
   position: "absolute",
-  backgroundColor: "#0078fe",
+  backgroundColor: "#fec601",
   width: 20,
   height: 25,
   bottom: 0,
@@ -33,7 +32,6 @@ const leftArrow = {
 
 const leftArrowOverlap = {
   position: "absolute",
-  backgroundColor: "#eeeeee",
   width: 20,
   height: 35,
   bottom: -6,
@@ -41,13 +39,18 @@ const leftArrowOverlap = {
   left: -20
 }
 
-function Bubble({text, position='absolute', top, bottom, left, right, orientation='right'}) {
+function Bubble({text, position='absolute', top, bottom, left, right, orientation='right', color}) {
+    
     const arrow_style = orientation === 'right' ? rightArrow : leftArrow
     const overlap_style = orientation === 'right' ? rightArrowOverlap : leftArrowOverlap
+    const bgC = {backgroundColor: color}
+
+    const overlap_style_color = Object.assign({}, overlap_style, bgC)
+
     const vertical = top ? {top:top} : {bottom:bottom}
     const horizontal = right ? {right:right} : {left:left}
     const partial_style = {
-      backgroundColor: "#0078fe",
+      backgroundColor: "#fec601",
       padding:10,
       marginRight: '45%',
       borderRadius: 5,
@@ -63,14 +66,15 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
         <Container style={style}>
-            <p style={{
+            <a style={{
                 fontSize: 16,
-                color: "#fff",
+                color: "black",
+                backgroundColor: "#fec601",
                 }}>
                 {text}
-            </p>
+            </a>
             <Container style={arrow_style}/>
-            <Container style={overlap_style}/>
+            <Container style={overlap_style_color}/>
         </Container>
     );
 }

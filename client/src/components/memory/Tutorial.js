@@ -5,21 +5,21 @@ import './Game.css'
 import RoundButton from '../common/RoundButton.js';
 
 const initialCards = [
-  { "src": "/images/bulbasaur.png", matched: false, type: "image", name:"bulbasaur", id: 1},
-  { "src": "/images/butterfree.png", matched: false, type: "image", name:"butterfree", id: 2 },
-  { "src": "/images/charmander.png", matched: false, type: "image", name:"charmander", id: 3   },
-  { "src": "/images/pidgeotto.png", matched: false, type: "image", name:"pidgeotto", id: 4   },
-  { "src": "/images/pikachu.png", matched: false, type: "image", name:"pikachu", id: 5 },
-  { "src": "/images/squirtle.png", matched: false, type: "image", name:"squirtle", id: 6  },
+  { "src": "/images/candy.jpg", matched: false, type: "image", name:"candy", id:1},
+  { "src": "/images/dice.png", matched: false, type: "image", name:"dice", id:2 },
+  { "src": "/images/dog.jpg", matched: false, type: "image", name:"dog" , id:3  },
+  { "src": "/images/icecream.jpg", matched: false, type: "image", name:"icecream", id:4   },
+  { "src": "/images/tree.jpg", matched: false, type: "image", name:"tree", id:5 },
+  { "src": "/images/flower.png", matched: false, type: "image", name:"flower", id:6 },
 ];
 
 const initialTextCards = [
-  { "src": "bulbasaur", matched: false, type: "text", name:"bulbasaur", id: 7},
-  { "src": "butterfree", matched: false, type: "text", name:"butterfree", id: 8 },
-  { "src": "charmander", matched: false, type: "text", name: "charmander", id: 9 },
-  { "src": "pidgeotto", matched: false, type: "text", name: "pidgeotto", id: 10  },
-  { "src": "pikachu", matched: false, type: "text", name: "pikachu", id: 11 },
-  { "src": "squirtle", matched: false, type: "text", name: "squirtle", id: 12},
+  { "src": "candy", matched: false, type: "text", name:"candy", id:7},
+  { "src": "dice", matched: false, type: "text", name:"dice", id:8 },
+  { "src": "dog", matched: false, type: "text", name: "dog", id:9 },
+  { "src": "icecream", matched: false, type: "text", name: "icecream", id:10  },
+  { "src": "tree", matched: false, type: "text", name: "tree", id:11  },
+  { "src": "flower", matched: false, type: "text", name: "flower", id:12},
 ];
 
 function Tutorial(props) {

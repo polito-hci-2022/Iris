@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from "react";
-import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import { Routes, Route, Outlet, Link, useNavigate, BrowserRouter } from "react-router-dom";
 import Home from './pages/Menu/Home'
 import PlayMenu from "./pages/Menu/PlayMenu";
 import StudyMenu from "./pages/Menu/StudyMenu";
@@ -24,20 +25,27 @@ import TutorialMemory from "./pages/Memory/TutorialMemory";
 import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
 import Exercise from "./pages/Exercise/Exercise"
 import API from './API'
+import './App.css'
  
+/** palette colori
+ * ["ebf5df","bad4aa","d4d4aa","edb458","e8871e"]
+ * 
+ * @returns 
+ */
 
 export default function App() {
   const navigate = useNavigate();
   
   const [memory, setMemory] = React.useState(0);
-  const [test, setTest] = React.useState();
+  const [test, setTest] = React.useState(false);
   const [page, setPage] = React.useState();
+  const [testResults, setTestResults] = React.useState();
+
 
   React.useEffect(() => {
     const checkMemory = async () => {
       let row = await API.getMemory();
       setMemory(row[0].memory)
-      console.log(row);
     }
     checkMemory()
   })
@@ -61,9 +69,36 @@ export default function App() {
   })
 
 
+  React.useEffect(() => {
+    const getTestResults = async () => {
+      let res = await API.getTestResults();
+      setTestResults(res[0]);
+      if(res[0].Answer1 !== "" || res[0].Answer2 !== ""){
+        setTest(true);
+      }
+    }
+    getTestResults();
+  }, []);
+
+  React.useEffect(() => {
+    if(test){
+      API.addTest();
+    }
+  }, [test]);
+
+
+  React.useEffect(() => {
+    if(testResults)
+      API.saveTestResults(testResults.Answer1, testResults.Answer2);
+  }, [testResults]);
+
+
 
   return (
+
     <div>
+      <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bubblegum+Sans"></link>
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
@@ -71,7 +106,7 @@ export default function App() {
         <Route path="/" >
           <Route index element={<Home />} />
           <Route path="/play" element={<PlayMenu navigation={navigate} />} />
-          <Route path="/studytime" element={<StudyMenu />} />
+          <Route path="/studytime" element={<StudyMenu testDone={test} />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/resultTranslate" element={<ResultTranslate />} />
           <Route path="/CastleStory1" element={<CastleStory1 />} />
@@ -85,8 +120,8 @@ export default function App() {
           <Route path="/CastleHelp4" element={<CastleHelp4 />}/>
           <Route path="/CastleHelp5" element={<CastleHelp5 />}/>
           <Route path="/testDisclaimer" element={<TestDisclaimer />}/>
-          <Route path="/castleTest" element={<CastleTest />}/>
-          <Route path="/testReview" element={<TestReview />}/>
+          <Route path="/castleTest" element={<CastleTest setTest={setTest} testResults={testResults} setTestResults={setTestResults} />}/>
+          <Route path="/testReview" element={<TestReview testResults={testResults} />}/>
           <Route path="/memory" element={<Memory setMemory={setMemory} memory={memory}/>} />
           <Route path="/tutorialMemory" element={<TutorialMemory setMemory={setMemory} memory={memory}/>} />
           <Route path="/tutorialMemoryChoice" element={<TutorialMemoryChoice memory={memory} />} />
@@ -97,58 +132,6 @@ export default function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-    </div>
-  );
-}
-
-function Layout() {
-  return (
-    <div>
-      {/* A "layout route" is a good place to put markup you want to
-          share across all the pages on your site, like navigation. */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <hr />
-
-      {/* An <Outlet> renders whatever child route is currently active,
-          so you can think about this <Outlet> as a placeholder for
-          the child routes we defined above. */}
-      <Outlet />
-    </div>
-  );
-}
-
-
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-
     </div>
   );
 }

@@ -1,51 +1,36 @@
-import { useEffect, useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import TestReview from "./TestReview";
-//import API from '../../API'
+import { Col, Container, Row } from "react-bootstrap";
+import RoundButton from "../../components/common/RoundButton";
 
-const TestDisclaimer = ({ navigation }) => {
+const TestDisclaimer = () => {
 
     const disclaimerText = "Il test può essere effettuato una sola volta. Se esci o consegni non potrai più modificare le tue risposte."
 
-/*
-    useEffect(() => {
-        const getData = async () => {
-            const results = await API.getTest();
-            if (results.done) navigation.navigate(TestReview, { testResults: results });
-            return results;
-        }
-        const res = getData();
-    }, []);
-*/
-
     return (
-        <>
+        <Container fluid className="vh-100" style={{ backgroundColor: "#7cb518" }}>
             {/* message */}
-            <Container>
-                <h2>ATTENZIONE!</h2>
-                <p>{disclaimerText}</p>
-                <p>Vuoi iniziare il test?</p>
-            </Container>
+            <Row>
+                <Col xs={12} style={{ width: '100%' }}>
+                    <h2>ATTENZIONE!</h2>
+                    <h4>{disclaimerText}</h4>
+                    <h4>Vuoi iniziare il test?</h4>
+                </Col>
+            </Row>
 
             {/* actions */}
-            <Container>
-                <Row>
-                    <Col>
-                        {/* back button */}
-                        <Link to='/studytime'>
-                            <Button >Torna indietro</Button>
-                        </Link>
-                    </Col>
-                    <Col>
-                        {/* start test button */}
-                        <Link to='/castleTest'>
-                            <Button>Inizia il test</Button>
-                        </Link>
-                    </Col>
-                </Row>
-            </Container>
-        </>
+
+            <Row>
+                <Col className="col-6">
+                    {/* back button */}
+                    <RoundButton dimension={100} top={'50%'} left={'30%'} link={"/studytime"} title={"Indietro"} text={"Torna indietro"} />
+
+                </Col>
+                <Col className="col-6">
+                    {/* start test button */}
+                    <RoundButton dimension={100} top={'50%'} left={'10%'} link={"/castleTest"} title={"CastleTest"} text={"Inizia il test"} />
+                </Col>
+            </Row>
+
+        </Container>
     );
 }
 

@@ -1,8 +1,8 @@
 import { GiBookCover, GiPaintBucket, GiCakeSlice, GiEntryDoor, GiFruitTree, GiPencil } from "react-icons/gi";
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Figure, Button, Modal } from 'react-bootstrap';
-import StudyButton from '../common/StudyButton';
 import backpack from './backpack.png';
+import RoundButton from "../common/RoundButton";
 
 const BackpackExercise = (props) => {
 
@@ -12,37 +12,37 @@ const BackpackExercise = (props) => {
         score: 0,
         words: [
             {
-                id: 0, word: "book", translated: "un libro", correct: true, state: "standard", image: {
+                id: 0, word: "BOOK", translated: "un libro", correct: true, state: "standard", image: {
                     name: 'open-book',
                     color: 'green'
                 }
             },
             {
-                id: 1, word: "bucket", translated: "Un secchio", correct: false, state: "standard", image: {
+                id: 1, word: "BUCKET", translated: "Un secchio", correct: false, state: "standard", image: {
                     name: 'bucket',
                     color: 'red'
                 }
             },
             {
-                id: 2, word: "cake", translated: "Una torta", correct: false, state: "standard", image: {
+                id: 2, word: "CAKE", translated: "Una torta", correct: false, state: "standard", image: {
                     name: 'cake',
                     color: 'red'
                 }
             },
             {
-                id: 3, word: "door", translated: "Una porta", correct: false, state: "standard", image: {
+                id: 3, word: "DOOR", translated: "Una porta", correct: false, state: "standard", image: {
                     name: 'door',
                     color: 'red'
                 }
             },
             {
-                id: 4, word: "tree", translated: "Un albero", correct: false, state: "standard", image: {
+                id: 4, word: "TREE", translated: "Un albero", correct: false, state: "standard", image: {
                     name: 'tree',
                     color: 'red'
                 }
             },
             {
-                id: 5, word: "pencil", translated: "una matita", correct: true, state: "standard", image: {
+                id: 5, word: "PENCIL", translated: "una matita", correct: true, state: "standard", image: {
                     name: 'edit',
                     color: 'green'
                 }
@@ -89,13 +89,13 @@ const BackpackExercise = (props) => {
                     </Col>
                 </Row>
                 <Row>
-                    <Button onClick={() => setFinish(true)}>Fatto</Button>
+                    <RoundButton onClick={() => setFinish(true)} dimension={75} title={'Yes'} text={"Fatto"} bottom={"30%"} left={"75%"} />
                 </Row>
             </Container>
-            <Modal show={finish}>
+            <Modal show={finish} className='vw-100'>
                 <Modal.Body>
                     Esercizio completato. Hai trovato {state.score}/2 oggetti.
-                    <StudyButton style={buttonStudyCompact} iconStyle={iconStyle} />
+                    <RoundButton dimension={75} link={"/studyTime"} title={"Back"} text={"Esci"} />
                 </Modal.Body>
             </Modal>
         </>
@@ -104,29 +104,29 @@ const BackpackExercise = (props) => {
 
 const Words = (props) => {
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <Word word={props.words[0]} current={props.current === 0} select={() => props.select(0)} />
+        <Container fluid>
+            <Row className='vw-100'>
+                <Col className="col-6">
+                    <Word word={props.words[0]} current={props.current === 0} select={() => props.select(0)} className="ms-5 my-3" />
                 </Col>
-                <Col>
-                    <Word word={props.words[1]} current={props.current === 1} select={() => props.select(1)} />
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Word word={props.words[2]} current={props.current === 2} select={() => props.select(2)} />
-                </Col>
-                <Col>
-                    <Word word={props.words[3]} current={props.current === 3} select={() => props.select(3)} />
+                <Col className="col-6">
+                    <Word word={props.words[1]} current={props.current === 1} select={() => props.select(1)} className="me-3 my-3" />
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                    <Word word={props.words[4]} current={props.current === 4} select={() => props.select(4)} />
+            <Row className='vw-100'>
+                <Col className="col-6">
+                    <Word word={props.words[2]} current={props.current === 2} select={() => props.select(2)} className="ms-2 my-3" />
                 </Col>
-                <Col>
-                    <Word word={props.words[5]} current={props.current === 5} select={() => props.select(5)} />
+                <Col className="col-6">
+                    <Word word={props.words[3]} current={props.current === 3} select={() => props.select(3)} className="ms-3 my-3" />
+                </Col>
+            </Row>
+            <Row className='vw-100'>
+                <Col className="col-6">
+                    <Word word={props.words[4]} current={props.current === 4} select={() => props.select(4)} className="ms-3 my-3" />
+                </Col>
+                <Col className="col-6">
+                    <Word word={props.words[5]} current={props.current === 5} select={() => props.select(5)} className="me-1 my-3" />
                 </Col>
             </Row>
         </Container>
@@ -135,7 +135,7 @@ const Words = (props) => {
 
 const Word = (props) => {
 
-    const [variant, setVariant] = useState("primary");
+    const [variant, setVariant] = useState("dark");
     const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
@@ -152,7 +152,7 @@ const Word = (props) => {
     }, [props.word.state, props.current, props.word.correct])
 
     return (
-        <Button variant={variant} active={props.current} onClick={() => props.select()} disabled={disabled}>{props.word.word}</Button>
+        <Button variant={variant} active={props.current} onClick={() => props.select()} disabled={disabled} className={props.className}>{props.word.word}</Button>
     );
 
 }
@@ -161,9 +161,8 @@ const Current = (props) => {
 
     const image = props.word.image;
     return (
-        <Container>
+        <Container className="ms-4 mt-4">
             <Img id={props.word.id} color={image.color} />
-            <p>{props.word.word}</p>
         </Container>
     );
 }
@@ -195,12 +194,12 @@ const buttonStudyCompact = {
     borderRadius: 100,
     backgroundColor: "grey",
     marginTop: 0
-  }
-  
-  const iconStyle = {
+}
+
+const iconStyle = {
     resizeMode: "contain",
     height: 50,
     width: 50,
-  }
+}
 
 export default BackpackExercise;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import RoundButton from '../../components/common/RoundButton';
 import Bubble from '../../components/common/Bubble'
@@ -12,14 +12,30 @@ const TutorialMemoryChoice  = ({memory}) => {
   else
     text="You are new here, do you need the tutorial? "
     return (
-        <Container>
-          <h1>Play</h1>
-          <Bubble text={text}/>
-          <IrisModel scale={3} top={175} left={0} />
-          <RoundButton dimension={75} link={"/"} title={"Back"} text={"Back"} />
-          <RoundButton dimension={125} top={125} left={125} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
-          <RoundButton dimension={125} top={125} left={125} link={"/Memory"} title={"No"} text={"No"} />
+      <div style={{backgroundColor: "#c4baff"}}>
+        <Container fluid className="vh-100 d-flex">
+          <Row className="h-100">
+            <Col>
+              <h1>Memory</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+            </Col>
+            <Col>        
+              <Bubble text={text} color={'#c4baff'} />
+              <IrisModel scale={3}  top={'12%'} left={'45%'}/>
+            </Col>
+          </Row>
+          <Row style={{position: 'absolute', top:'45%'}}>
+            <Col>
+              <RoundButton dimension={125} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
+              <RoundButton dimension={125} link={"/Memory"} title={"No"} text={"No"} />
+            </Col>
+          </Row>
         </Container>   
+      </div>
     );
   }
 

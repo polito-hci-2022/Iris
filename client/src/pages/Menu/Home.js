@@ -6,23 +6,22 @@ import Bubble from "../../components/common/Bubble";
 
 function Home() {
     return (
-      <div>
-       <Container fluid>
-        <h1>Homepage</h1>
-            <Row>
+      <div style={{backgroundColor: "#bde0fe"}}>
+       <Container fluid className="vh-100 d-flex">
+            <Row className="h-100">
               <Col>
-              <Bubble text={"jfsaoudhasoudhaso"}/>
-              <IrisModel scale={3} top={175} left={0}></IrisModel>
+              <Bubble text={"Ciao Filippo, sono Iris!"} color={"#bde0fe"}/>
+              <IrisModel scale={4} top={'12%'} left={'45%'}></IrisModel>
               </Col>
             </Row>
            {/*end top part*/}
             <Row>
-              <Col></Col>
               <Col>
-                <RoundButton dimension={125} top={125} left={125} link={"/play"} title={"Play"} text={"Play"} />
-                <RoundButton dimension={125} top={125} left={125} link={"/studyTime"} title={"Study"} text={"Study"} />
+                <RoundButton dimension={150} top={'75%'} left={'10%'} link={"/play"} title={"Play"} text={"Gioca"} />
               </Col>
-              <Col></Col>
+              <Col>
+                <RoundButton dimension={150} top={'75%'} left={'20%'} link={"/studyTime"} title={"Study"} text={"Studia"} />
+              </Col>
             </Row>
         </Container>
       </div>

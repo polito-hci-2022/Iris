@@ -1,23 +1,25 @@
 import { useEffect, useState, } from 'react';
+import { Modal, } from 'react-bootstrap'
 import CardGame from './CardGame.js'
+import RoundButton from '../common/RoundButton.js';
 import './Game.css'
 
 const initialCards = [
-  { "src": "/images/bulbasaur.png", matched: false, type: "image", name:"bulbasaur"},
-  { "src": "/images/butterfree.png", matched: false, type: "image", name:"butterfree" },
-  { "src": "/images/charmander.png", matched: false, type: "image", name:"charmander"   },
-  { "src": "/images/pidgeotto.png", matched: false, type: "image", name:"pidgeotto"   },
-  { "src": "/images/pikachu.png", matched: false, type: "image", name:"pikachu" },
-  { "src": "/images/squirtle.png", matched: false, type: "image", name:"squirtle"  },
+  { "src": "/images/candy.jpg", matched: false, type: "image", name:"candy"},
+  { "src": "/images/dice.png", matched: false, type: "image", name:"dice" },
+  { "src": "/images/dog.jpg", matched: false, type: "image", name:"dog"   },
+  { "src": "/images/icecream.jpg", matched: false, type: "image", name:"icecream"   },
+  { "src": "/images/tree.jpg", matched: false, type: "image", name:"tree" },
+  { "src": "/images/flower.png", matched: false, type: "image", name:"flower"  },
 ];
 
 const initialTextCards = [
-  { "src": "bulbasaur", matched: false, type: "text", name:"bulbasaur"},
-  { "src": "butterfree", matched: false, type: "text", name:"butterfree" },
-  { "src": "charmander", matched: false, type: "text", name: "charmander" },
-  { "src": "pidgeotto", matched: false, type: "text", name: "pidgeotto"  },
-  { "src": "pikachu", matched: false, type: "text", name: "pikachu"  },
-  { "src": "squirtle", matched: false, type: "text", name: "squirtle"},
+  { "src": "candy", matched: false, type: "text", name:"candy"},
+  { "src": "dice", matched: false, type: "text", name:"dice" },
+  { "src": "dog", matched: false, type: "text", name: "dog" },
+  { "src": "icecream", matched: false, type: "text", name: "icecream"  },
+  { "src": "tree", matched: false, type: "text", name: "tree"  },
+  { "src": "flower", matched: false, type: "text", name: "flower"},
 ];
 
 function Game() {
@@ -27,6 +29,8 @@ function Game() {
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(true);
   const [startFlip, setStartFlip] = useState(true);
+  const [finish, setFinish] = useState(false);
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -45,6 +49,8 @@ function Game() {
     setChoiceTwo(null)
     setCards(shuffledCards);
     setDisabled(false)
+    setFinish(false)
+    setScore(0)
     setStartFlip(true) /* preview griglia memory */
     setTimeout(() => {
       setStartFlip(false)
@@ -71,6 +77,10 @@ function Game() {
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.name === choiceOne.name) {
+              setScore(score+1)
+              if(score === 5)
+                setFinish(true)
+              console.log(score, finish)
               return { ...card, matched: true }
             } else {
               return card
@@ -102,6 +112,12 @@ function Game() {
         ))}
       </div>
       <p>Score: {score}</p>
+       <Modal show={finish} className='vw-100'>
+        <Modal.Body>
+            Memory completato {score}
+            <RoundButton dimension={75} link={"/play"} title={"Back"} text={"Esci"} />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

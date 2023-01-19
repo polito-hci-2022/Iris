@@ -1,5 +1,5 @@
 "use strict";
-/* Data Access Object (DAO) module for accessing exams */
+/* Data Access Object (DAO) module for accessing db */
 
 const { db } = require("./db");
 
@@ -7,9 +7,9 @@ exports.getMemory = () => {
   return new Promise((resolve, reject) => {
     const sql = "SELECT memory FROM db";
     db.all(sql, [], (err, rows) => {
-      if (err){
+      if (err) {
         console.log(err);
-        reject(err);  
+        reject(err);
       } else {
         resolve(rows);
       }
@@ -24,7 +24,7 @@ exports.getPageCastleStory = () => {
       if (err) {
         reject(err);
       } else {
-          resolve(rows);
+        resolve(rows);
       }
     });
   });
@@ -43,57 +43,87 @@ exports.getTest = () => {
   });
 };
 
+exports.getTestResults = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT Answer1, Answer2 FROM test";
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    });
+  });
+};
+
 exports.addMemory = async () => {
   return new Promise((resolve, reject) => {
-      const sql =
+    const sql =
       "UPDATE db SET memory = ? WHERE memory = ?";
-      db.run(
-        sql,
-        [1, 0],
-        function (err) {
-          if (err) {
-            console.log(err)
-            reject(err);}
-          else {
-            console.log(this)
-            resolve(this);
-          }
+    db.run(
+      sql,
+      [1, 0],
+      function (err) {
+        if (err) {
+          console.log(err)
+          reject(err);
         }
-      );
+        else {
+          console.log(this)
+          resolve(this);
+        }
+      }
+    );
   });
 };
 
 exports.addPageCastleStory = async () => {
   return new Promise((resolve, reject) => {
-      const sql =
+    const sql =
       "INSERT INTO db(pageCastleStory) VALUES(?)";
-      db.run(
-        sql,
-        [1],
-        function (err) {
-          if (err) reject(err);
-          else {
-            resolve(this.lastID);
-          }
+    db.run(
+      sql,
+      [1],
+      function (err) {
+        if (err) reject(err);
+        else {
+          resolve(this.lastID);
         }
-      );
+      }
+    );
   });
 };
 
 exports.addTest = async () => {
   return new Promise((resolve, reject) => {
-      const sql =
+    const sql =
       "INSERT INTO db(test) VALUES(?)";
-      db.run(
-        sql,
-        [1],
-        function (err) {
-          if (err) reject(err);
-          else {
-            resolve(this.lastID);
-          }
+    db.run(
+      sql,
+      [1],
+      function (err) {
+        if (err) reject(err);
+        else {
+          resolve(this.lastID);
         }
-      );
+      }
+    );
+  });
+};
+
+exports.saveTest = async (answer1, answer2) => {
+  return new Promise((resolve, reject) => {
+    const sql = "UPDATE test SET Answer1 = ?, Answer2 = ? WHERE User = ?";
+    db.run(sql, [answer1, answer2, 1], function (err) {
+      if (err) {
+        console.log(err)
+        reject(err);
+      }
+      else {
+        console.log(this)
+        resolve(this);
+      }
+    });
   });
 };
 
