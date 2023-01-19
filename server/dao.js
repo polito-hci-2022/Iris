@@ -48,6 +48,7 @@ exports.getTestResults = () => {
     const sql = "SELECT Answer1, Answer2 FROM test";
     db.all(sql, [], (err, rows) => {
       if (err) {
+        console.log(rows)
         reject(err);
       } else {
         resolve(rows);
