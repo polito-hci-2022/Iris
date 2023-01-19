@@ -46,7 +46,6 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
     const bgC = {backgroundColor: color}
 
     const overlap_style_color = Object.assign({}, overlap_style, bgC)
-    console.log(overlap_style_color)
 
     const vertical = top ? {top:top} : {bottom:bottom}
     const horizontal = right ? {right:right} : {left:left}

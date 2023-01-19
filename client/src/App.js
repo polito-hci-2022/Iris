@@ -46,7 +46,6 @@ export default function App() {
     const checkMemory = async () => {
       let row = await API.getMemory();
       setMemory(row[0].memory)
-      console.log(row);
     }
     checkMemory()
   })
