@@ -15,11 +15,11 @@ const Exercise = () => {
                 <Row className="h-100">
                     <Col>
                         <Bubble text={message} right={'0%'} color={'#7cb518'} />
-                        <IrisModel scale={3} top={'12%'} left={'45%'} />
-                        <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'1%'} link={"/studyTime"} title={"Back"} text={"Esci"} />
+                        <IrisModel scale={3} top={'10%'} left={'45%'} />
+                        <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/studyTime"} title={"Back"} text={"Esci"} />
                     </Col>
                 </Row>
-                <Row style={{ position: 'absolute', top: '45%' }}>
+                <Row style={{ position: 'absolute', top: '41%' }}>
                     <Col>
                         <BackpackExercise setMessage={setMessage} />
                     </Col>

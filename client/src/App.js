@@ -39,7 +39,7 @@ export default function App() {
   const [memory, setMemory] = React.useState(0);
   const [test, setTest] = React.useState(false);
   const [page, setPage] = React.useState();
-  const [testResults, setTestResults] = React.useState();
+  const [testResults, setTestResults] = React.useState({ Answer1:"", Answer2:""});
 
 
   React.useEffect(() => {
@@ -59,16 +59,6 @@ export default function App() {
     checkPage()
   })
 
-  
-  React.useEffect(() => {
-    const checkTest = async () => {
-      let row = await API.getTest();
-      setTest(row[0].test)
-    }
-    checkTest()
-  })
-
-
   React.useEffect(() => {
     const getTestResults = async () => {
       let res = await API.getTestResults();
@@ -79,18 +69,6 @@ export default function App() {
     }
     getTestResults();
   }, []);
-
-  React.useEffect(() => {
-    if(test){
-      API.addTest();
-    }
-  }, [test]);
-
-
-  React.useEffect(() => {
-    if(testResults)
-      API.saveTestResults(testResults.Answer1, testResults.Answer2);
-  }, [testResults]);
 
 
 

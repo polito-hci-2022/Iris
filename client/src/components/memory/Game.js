@@ -1,25 +1,26 @@
 import { useEffect, useState, } from 'react';
-import { Modal, } from 'react-bootstrap'
+import { Modal, Button, Row, Col } from 'react-bootstrap'
 import CardGame from './CardGame.js'
 import RoundButton from '../common/RoundButton.js';
 import './Game.css'
+import SquareButton from '../common/SquareButton.js';
 
 const initialCards = [
-  { "src": "/images/candy.jpg", matched: false, type: "image", name:"candy"},
-  { "src": "/images/dice.png", matched: false, type: "image", name:"dice" },
-  { "src": "/images/dog.jpg", matched: false, type: "image", name:"dog"   },
-  { "src": "/images/icecream.jpg", matched: false, type: "image", name:"icecream"   },
-  { "src": "/images/tree.jpg", matched: false, type: "image", name:"tree" },
-  { "src": "/images/flower.png", matched: false, type: "image", name:"flower"  },
+  { "src": "/images/candy.jpg", matched: false, type: "image", name: "candy" },
+  { "src": "/images/dice.png", matched: false, type: "image", name: "dice" },
+  { "src": "/images/dog.jpg", matched: false, type: "image", name: "dog" },
+  { "src": "/images/icecream.jpg", matched: false, type: "image", name: "icecream" },
+  { "src": "/images/tree.jpg", matched: false, type: "image", name: "tree" },
+  { "src": "/images/flower.png", matched: false, type: "image", name: "flower" },
 ];
 
 const initialTextCards = [
-  { "src": "candy", matched: false, type: "text", name:"candy"},
-  { "src": "dice", matched: false, type: "text", name:"dice" },
+  { "src": "candy", matched: false, type: "text", name: "candy" },
+  { "src": "dice", matched: false, type: "text", name: "dice" },
   { "src": "dog", matched: false, type: "text", name: "dog" },
-  { "src": "icecream", matched: false, type: "text", name: "icecream"  },
-  { "src": "tree", matched: false, type: "text", name: "tree"  },
-  { "src": "flower", matched: false, type: "text", name: "flower"},
+  { "src": "icecream", matched: false, type: "text", name: "icecream" },
+  { "src": "tree", matched: false, type: "text", name: "tree" },
+  { "src": "flower", matched: false, type: "text", name: "flower" },
 ];
 
 function Game() {
@@ -43,7 +44,7 @@ function Game() {
     //setCards(null)
     const shuffledCards = [...initialCards, ...initialTextCards]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random()}));
+      .map((card) => ({ ...card, id: Math.random() }));
 
     setChoiceOne(null)
     setChoiceTwo(null)
@@ -77,10 +78,9 @@ function Game() {
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.name === choiceOne.name) {
-              setScore(score+1)
-              if(score === 5)
+              setScore(score + 1)
+              if (score === 5)
                 setFinish(true)
-              console.log(score, finish)
               return { ...card, matched: true }
             } else {
               return card
@@ -97,9 +97,9 @@ function Game() {
   }, [choiceOne, choiceTwo]);
 
   return (
-    <div className='container'>
-      <button onClick={shuffleCards}>New Game</button>
-      <div className="grid">
+    <div>
+
+      <div className="grid mt-5 ms-3">
         {cards.map(card => (
           <CardGame
             key={card.id}
@@ -110,13 +110,27 @@ function Game() {
             matched={card.matched}
           />
         ))}
+
       </div>
-      <p>Score: {score}</p>
-       <Modal show={finish} className='vw-100'>
+      <Row>
+        <Col>
+          <RoundButton dimension={75} text={"Score: " + score} top={10} left={15} ></RoundButton>
+        </Col>
+        <Col>
+          <RoundButton dimension={75} left={'48%'} top={10} onClick={shuffleCards} text={'Nuova Partita'}></RoundButton>
+        </Col>
+
+      </Row>
+
+
+      <Modal show={finish} className='vw-100'>
         <Modal.Body>
-            Memory completato {score}
-            <RoundButton dimension={75} link={"/play"} title={"Back"} text={"Esci"} />
+          Memory completato! Punteggio: {score}
         </Modal.Body>
+        <Modal.Footer>
+          <RoundButton dimension={75} link={"/play"} title={"Back"} text={"Esci"} />
+          <RoundButton dimension={75} onClick={shuffleCards} title={"Memory"} text={"Gioca Ancora"} />
+        </Modal.Footer>
       </Modal>
     </div>
   );

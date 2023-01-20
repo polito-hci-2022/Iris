@@ -11,7 +11,7 @@ function Card(props) {
               : <div>
                   <a className={`front ${props.card.matched ? "matched" : ''}`} >{props.card.src}</a>
                 </div>}
-                <Image className='back' src="/images/card_back.png" alt="card back" />
+                <Image className='back' src="/images/card_back.jpg" alt="card back" />
             </div>
         </div>
     );

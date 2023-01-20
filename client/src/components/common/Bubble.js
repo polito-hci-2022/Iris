@@ -55,7 +55,7 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
       marginRight: '45%',
       borderRadius: 5,
       marginBottom: 15,
-      marginTop: 95,
+      marginTop: 55,
       marginLeft: "5%",
       maxWidth: '50%',
       alignSelf: 'flex-end',
@@ -66,13 +66,13 @@ function Bubble({text, position='absolute', top, bottom, left, right, orientatio
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
         <Container style={style}>
-            <a style={{
-                fontSize: 16,
+            <h5 style={{
+                fontSize: 23,
                 color: "black",
                 backgroundColor: "#fec601",
                 }}>
                 {text}
-            </a>
+            </h5>
             <Container style={arrow_style}/>
             <Container style={overlap_style_color}/>
         </Container>

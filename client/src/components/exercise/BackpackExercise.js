@@ -68,6 +68,54 @@ const BackpackExercise = (props) => {
         setState(() => newState);
     }
 
+    
+    const restart = () => {
+        setState({
+            current: undefined,
+            score: 0,
+            words: [
+                {
+                    id: 0, word: "BOOK", translated: "un libro", correct: true, state: "standard", image: {
+                        name: 'open-book',
+                        color: 'green'
+                    }
+                },
+                {
+                    id: 1, word: "BUCKET", translated: "Un secchio", correct: false, state: "standard", image: {
+                        name: 'bucket',
+                        color: 'red'
+                    }
+                },
+                {
+                    id: 2, word: "CAKE", translated: "Una torta", correct: false, state: "standard", image: {
+                        name: 'cake',
+                        color: 'red'
+                    }
+                },
+                {
+                    id: 3, word: "DOOR", translated: "Una porta", correct: false, state: "standard", image: {
+                        name: 'door',
+                        color: 'red'
+                    }
+                },
+                {
+                    id: 4, word: "TREE", translated: "Un albero", correct: false, state: "standard", image: {
+                        name: 'tree',
+                        color: 'red'
+                    }
+                },
+                {
+                    id: 5, word: "PENCIL", translated: "una matita", correct: true, state: "standard", image: {
+                        name: 'edit',
+                        color: 'green'
+                    }
+                }
+            ]
+        });
+        props.setMessage("Cosa mettiamo nello zaino?");
+        setFinish(false);
+    };
+
     return (
         <>
             <Container>
@@ -95,8 +143,11 @@ const BackpackExercise = (props) => {
             <Modal show={finish} className='vw-100'>
                 <Modal.Body>
                     Esercizio completato. Hai trovato {state.score}/2 oggetti.
-                    <RoundButton dimension={75} link={"/studyTime"} title={"Back"} text={"Esci"} />
                 </Modal.Body>
+                <Modal.Footer>
+                    <RoundButton dimension={75} link={"/studyTime"} title={"Back"} text={"Esci"} />
+                    <RoundButton dimension={75} onClick={() => restart()} title={"Backpack"} text={"Riprova"} />
+                </Modal.Footer>
             </Modal>
         </>
     );
@@ -139,6 +190,8 @@ const Word = (props) => {
     const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
+        setVariant("dark");
+        setDisabled(false);
         if (props.word.state === "selected") {
             if (props.word.correct) {
                 setVariant("outline-success");
@@ -152,7 +205,7 @@ const Word = (props) => {
     }, [props.word.state, props.current, props.word.correct])
 
     return (
-        <Button variant={variant} active={props.current} onClick={() => props.select()} disabled={disabled} className={props.className}>{props.word.word}</Button>
+        <Button variant={variant} size="lg" active={props.current} onClick={() => props.select()} disabled={disabled} className={props.className}>{props.word.word}</Button>
     );
 
 }
