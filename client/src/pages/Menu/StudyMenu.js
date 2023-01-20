@@ -46,7 +46,7 @@ const StudyMenu = (props) => {
         </Row>
         <Row style={{ position: 'absolute', top: '45%' }}>
           <hr />
-          <h2> Exercises </h2>
+          <h2> Esercizi </h2>
           <Col md="auto">
             <RoundButton
               dimension={100}

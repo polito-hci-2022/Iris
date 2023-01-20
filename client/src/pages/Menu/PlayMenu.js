@@ -47,7 +47,7 @@ const PlayMenu = () => {
         <Row style={{ position: 'absolute', top: '45%' }} className="vw-100" >
           <hr />
           <Col>
-            <h2>Games</h2>
+            <h2>Giochi</h2>
             <RoundButton
               dimension={100}
               link={"/tutorialMemoryChoice"}
@@ -59,7 +59,7 @@ const PlayMenu = () => {
         <Row style={{ position: 'absolute', top: '65%' }} className="vw-100" >
           <hr className='mt-5' />
           <Col>
-            <h2>Stories</h2>
+            <h2>Storie</h2>
             <RoundButton
               dimension={100}
               link={"/castleStory1"}
