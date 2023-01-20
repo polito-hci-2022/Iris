@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import home from './home.png'
@@ -9,13 +9,18 @@ import RoundButton from '../../components/common/RoundButton';
 
 
 const Translate = () => {
+
+  const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
+
   return (
     <div style={{ backgroundColor: "#FFF8EA" }}>
-      <Container fluid className="vh-100 d-flex">
-        <Row className="h-100">
-          <Col>
-            <h1>Translate</h1>
+      <Container fluid className="vh-100">
+        <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
+          <Col sx={4} />
+          <Col sx={4}>
+            <h1>Traduttore</h1>
           </Col>
+          <Col sx={4} />
         </Row>
         <Row>
           <Col>
@@ -27,12 +32,25 @@ const Translate = () => {
           </Col>
           */}
           <Col>
-            <Bubble text="Ecco la traduzione di 'HOME'!" right={'0%'} />
+            <Bubble text="Ecco la traduzione di 'HOME'!" right={'0%'} top={'0%'} />
             <IrisModel scale={3} top={'12%'} left={'45%'} />
           </Col>
         </Row>
-        <Row style={{ position: 'absolute', top: '50%', alignItems: 'align-center' }}>
-          <h1>HOME = CASA</h1>
+        <Row style={{ position: 'absolute', top: '50%', alignItems: 'align-center' }} >
+          <Container fluid>
+            <Row>
+          <Col className="col-1" ></Col>
+          <Col className="col-7">
+            <Form.Control type="text" value={"HOME = CASA"} readOnly className="py-4 ms-1" />
+          </Col>
+          <Col className="col-3">
+            <RoundButton dimension={75} link={"/translate"} title={"Translate"} text={"Traduci ancora"} />
+          </Col>
+          <Col className="col-1" ></Col>
+          </Row>
+          </Container>
+        </Row>
+        <Row style={{ position: 'absolute', top: '60%', alignItems: 'align-center' }}>
           <Figure.Image
             src={home}
             width={300}

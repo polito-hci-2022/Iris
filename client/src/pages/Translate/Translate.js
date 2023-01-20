@@ -7,20 +7,25 @@ import Form from './Form'
 import RoundButton from '../../components/common/RoundButton';
 
 const Translate = () => {
+
+  const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
+
   return (
     <div style={{backgroundColor: "#FFF8EA"}} >
-     <Container fluid className="vh-100 d-flex">
-      <Row className="h-100">
-        <Col>
-            <h1>Translate</h1>
+     <Container fluid className="vh-100">
+      <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
+          <Col sx={4} />
+          <Col sx={4}>
+            <h1>Traduttore</h1>
           </Col>
-      </Row>
+          <Col sx={4} />
+        </Row>
       <Row>
         <Col>
           <RoundButton dimension={75}  position={'absolute'} top={'35%'} left={'3%'}  link={"/studyTime"} title={"Back"} text={"Esci"} />
         </Col>
         <Col>
-          <Bubble text="Scrivi qui la parola che non conosci. Ci penso io!" right={'0%'} />
+          <Bubble text="Scrivi qui la parola che non conosci. Ci penso io!" right={'0%'} top={'0%'} />
             <IrisModel  scale={3} top={'12%'} left={'45%'} />
         </Col>
       </Row>
