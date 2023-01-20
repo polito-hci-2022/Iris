@@ -97,7 +97,7 @@ function Tutorial(props) {
           />
         ))}
       </div>
-      <RoundButton text={"Score: " + score} top={10} left={15} ></RoundButton>
+      <RoundButton dimension={75} text={"Score: " + score} top={10} left={15} ></RoundButton>
     </div>
   );
 }

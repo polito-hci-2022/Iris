@@ -114,7 +114,7 @@ function Game() {
       </div>
       <Row>
         <Col>
-          <RoundButton text={"Score: " + score} top={10} left={15} ></RoundButton>
+          <RoundButton dimension={75} text={"Score: " + score} top={10} left={15} ></RoundButton>
         </Col>
         <Col>
           <RoundButton dimension={75} left={'48%'} top={10} onClick={shuffleCards} text={'Nuova Partita'}></RoundButton>

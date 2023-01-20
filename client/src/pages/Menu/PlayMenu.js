@@ -16,7 +16,7 @@ const PlayMenu = () => {
         </Row>
         <Row>
           <Col>
-            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/"} title={"Back"} text={"Indietro"} />
+            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/"} title={"Back"} text={"Esci"} />
           </Col>
           <Col>
             <Bubble text="In questa pagina puoi trovare un sacco di giochi divertenti!" right={'0%'} color={'#c4baff'} />
