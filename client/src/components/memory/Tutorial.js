@@ -1,5 +1,6 @@
 import { useEffect, useState, } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap'
 import Card from './Card.js'
 import './Game.css'
 import RoundButton from '../common/RoundButton.js';
@@ -86,7 +87,6 @@ function Tutorial(props) {
 
   return (
     <div className='container'>
-      <RoundButton dimension={75} left={250} title={"Next"} text={"Avanti"} onClick={step === 5 ? navigate('/memory') : next} bottom={10} />
       <div className="grid ms-3">
         {cards.map(card => (
           <Card
@@ -97,7 +97,14 @@ function Tutorial(props) {
           />
         ))}
       </div>
-      <RoundButton dimension={75} text={"Score: " + score} top={10} left={15} ></RoundButton>
+      <Row>
+        <Col>
+          <RoundButton dimension={75} text={"Score: " + score} top={10} left={15} ></RoundButton>
+        </Col>
+        <Col>
+          <RoundButton dimension={75} left={'48%'} top={10} title={"Next"} text={"Avanti"} onClick={step === 5 ? navigate('/memory') : next} bottom={10} />
+        </Col>
+      </Row>
     </div>
   );
 }

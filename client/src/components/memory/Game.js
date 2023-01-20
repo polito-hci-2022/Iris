@@ -119,7 +119,6 @@ function Game() {
         <Col>
           <RoundButton dimension={75} left={'48%'} top={10} onClick={shuffleCards} text={'Nuova Partita'}></RoundButton>
         </Col>
-
       </Row>
 
 
