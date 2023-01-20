@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 
 const icons = {
     'Play': 'mdi:puzzle',
+    'Restart': 'codicon:debug-restart',
+    'Left': 'material-symbols:turn-left-sharp',
+    'Right': 'material-symbols:turn-right-sharp'
 }
 
 const dimension_icons = {
@@ -24,7 +27,7 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
         backgroundColor: "#e8871e",
         borderColor: "#e8871e",
         position: position,
-        disabled: disabled,
+        disabled: disabled
       }
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
@@ -34,13 +37,13 @@ const SquareButton = ({ dimension, position='relative', top, left, right, bottom
             title={title}
             style={style}>
             <Icon style={{
-                  resizeMode:"contain",
+                    resizeMode:"contain",
                     height: dimension_icons[dimension],
                     width: dimension_icons[dimension],
-            }}
+                }}
             icon={icons[title]}
             />
-            <h5>{text}</h5>
+            <h6>{text}</h6>
         </Button>
         </Link>
     );

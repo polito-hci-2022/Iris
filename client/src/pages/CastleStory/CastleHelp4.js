@@ -25,11 +25,12 @@ function CastleHelp4() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               disabled={true}
               bottom={10}
               left={10}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -87,11 +88,11 @@ function CastleHelp4() {
               right={10}
               title='Play'
               link='/play'
-              text='Exit'
+              text='Esci'
             />
             <RoundButton
               dimension={75}
-              text={'Done'}
+              text={'Fatto'}
               position={'absolute'}
               link='/CastleStory4'
               right={10}
@@ -99,11 +100,12 @@ function CastleHelp4() {
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               position={'absolute'}
               link='/CastleStory5'
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>

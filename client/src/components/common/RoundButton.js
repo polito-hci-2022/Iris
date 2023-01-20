@@ -13,7 +13,10 @@ const icons = {
     'Translate': 'mdi:translate',
     'Yes': 'dashicons:yes',
     'No': 'mdi:alpha-x',
-    'Back': 'tabler:arrow-back-up'
+    'Back': 'tabler:arrow-back-up',
+    'Prev': 'material-symbols:keyboard-double-arrow-left-rounded',
+    'Next': 'material-symbols:keyboard-double-arrow-right-rounded',
+    'Help': 'mdi:help'
 }
 
 const dimension_icons = {

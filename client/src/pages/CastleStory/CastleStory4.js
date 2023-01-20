@@ -25,11 +25,12 @@ function CastleStory4() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               link={'/CastleStory2'}
               bottom={10}
               left={10}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -61,19 +62,21 @@ function CastleStory4() {
             />
             <RoundButton
               dimension={75}
-              text={'Help'}
+              text={'Aiuto'}
               position={'absolute'}
               link='/CastleHelp4'
               right={10}
               bottom={150}
+              title='Help'
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               position={'absolute'}
               link='/CastleStory5'
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>

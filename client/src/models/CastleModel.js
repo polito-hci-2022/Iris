@@ -10,23 +10,14 @@ function Castle() {
   return <primitive object={gltf.scene} position={[0,0,0]} scale={1} />
 }
 
-/*
-function Box() {
-  return (
-    <mesh scale={1}>
-      <meshStandardMaterial attach="material" transparent opacity={0.5} />
-    </mesh>
-  )
-}
-*/
-
-
 function CastleModel({position}) {
       return (
         <div style={{   
             width:'100%',
             height: 400, 
-            position: 'absolute'
+            position: 'absolute',
+            top: 0,
+            left: 0
             }}>
         <Canvas camera={{position: position}} >
             <ambientLight intensity={0.5} />

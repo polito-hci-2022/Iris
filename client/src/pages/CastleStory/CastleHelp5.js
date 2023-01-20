@@ -26,11 +26,12 @@ function CastleHelp5() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               disabled={true}
               bottom={10}
               left={10}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -62,16 +63,16 @@ function CastleHelp5() {
             left={30}
           />
           <SquareButton
-              text='Again'
+              text='Ancora'
               position='absolute'
               dimension={75}
               bottom={10}
               left={100}
               link={'/CastleStory1'}
-              title={'CastleStory1'}
+              title={'Restart'}
             />
             <SquareButton
-              text='Exit'
+              text='Esci'
               position='absolute'
               dimension={75}
               bottom={10}
@@ -83,7 +84,7 @@ function CastleHelp5() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Done'}
+              text={'Fatto'}
               position={'absolute'}
               link='/CastleStory5'
               right={10}
@@ -91,11 +92,12 @@ function CastleHelp5() {
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               position={'absolute'}
               disabled={true}
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>

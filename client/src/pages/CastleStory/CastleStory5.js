@@ -26,11 +26,12 @@ function CastleStory5() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               link={'/CastleStory2'}
               bottom={10}
               left={10}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -50,16 +51,16 @@ function CastleStory5() {
 
             />
             <SquareButton
-              text='Again'
+              text='Ancora'
               position='absolute'
               dimension={75}
               bottom={10}
               left={100}
               link={'/CastleStory1'}
-              title={'CastleStory1'}
+              title={'Restart'}
             />
             <SquareButton
-              text='Exit'
+              text='Esci'
               position='absolute'
               dimension={75}
               bottom={10}
@@ -71,19 +72,21 @@ function CastleStory5() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Help'}
+              text={'Aiuto'}
               position={'absolute'}
               link='/CastleHelp5'
               right={10}
               bottom={150}
+              title='Help'
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               position={'absolute'}
               disabled={true}
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>
