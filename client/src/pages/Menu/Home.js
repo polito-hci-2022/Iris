@@ -10,7 +10,7 @@ function Home() {
        <Container fluid className="vh-100 d-flex">
             <Row className="h-100">
               <Col>
-              <Bubble text={"Ciao Filippo, sono Iris!"}/>
+              <Bubble text={"Ciao Filippo, sono Iris, l'assistente della tua maestra di Inglese!"} color={"#bde0fe"} left={'0%'} />
               <IrisModel scale={4} top={'12%'} left={'45%'}></IrisModel>
               </Col>
             </Row>

@@ -2,6 +2,9 @@ import * as React from 'react';
 import { Container } from 'react-bootstrap';
 
 function Bubble({text, position='absolute', top, bottom, left, right}) {
+
+    const arrow_style = rightArrow;
+
     const vertical = top ? {top:top} : {bottom:bottom}
     const horizontal = right ? {right:right} : {left:left}
     const partial_style = {
@@ -20,6 +23,7 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
     }
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
+        <>
         <Container style={style}>
             <a style={{
                 fontSize: 16,
@@ -27,8 +31,33 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
                 }}>
                 {text}
             </a>
+            <Container style={arrow_style}>
+            </Container>
         </Container>
+        
+        
+        </>
     );
 }
+
+const rightArrow = {
+    position: "relative",
+    backgroundColor: "#594545",
+    width: 20,
+    height: 25,
+    bottom: -34,
+    borderBottomLeftRadius: 25,
+    right: -50
+  }
+
+  const leftArrow = {
+    position: "relative",
+    backgroundColor: "#594545",
+    width: 20,
+    height: 25,
+    bottom: -34,
+    borderBottomRightRadius: 25,
+    left: -50
+  }
 
 export default Bubble;
