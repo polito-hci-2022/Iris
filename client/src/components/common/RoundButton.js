@@ -35,7 +35,7 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
         alignItems: "center",
         borderRadius: 100,
         backgroundColor: color,
-        borderColor: "#e8871e",
+        borderColor: "black",
         position: position,
         disabled: disabled,
       }

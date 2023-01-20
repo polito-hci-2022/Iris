@@ -21,17 +21,19 @@ const TutorialMemoryChoice  = ({memory}) => {
           </Row>
           <Row>
             <Col>
-              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+              <RoundButton dimension={75}  position={'absolute'} top={'27%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
             </Col>
             <Col>        
-              <Bubble text={text} color={'#c4baff'} />
               <IrisModel scale={3}  top={'12%'} left={'45%'}/>
             </Col>
           </Row>
-          <Row style={{position: 'absolute', top:'45%'}}>
+          <Row>
+            <Bubble text={text} color={'#c4baff'} top={'30%'} left={'10%'}/>
+          </Row>
+          <Row style={{position: 'absolute', top:'55%'}}>
             <Col>
-              <RoundButton dimension={125} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
-              <RoundButton dimension={125} link={"/Memory"} title={"No"} text={"No"} />
+              <RoundButton dimension={125} left={'5%'} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
+              <RoundButton dimension={125} left={'20%'} link={"/Memory"} title={"No"} text={"No"} />
             </Col>
           </Row>
         </Container>   

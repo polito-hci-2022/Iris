@@ -8,29 +8,29 @@ import RoundButton from '../../components/common/RoundButton';
 
 const Translate = () => {
   return (
-    <div style={{backgroundColor: "#7cb518"}}>
+    <div style={{backgroundColor: "#7cb518"}} >
      <Container fluid className="vh-100 d-flex">
       <Row className="h-100">
-          <Col>
+        <Col>
             <h1>Translate</h1>
           </Col>
       </Row>
       <Row>
         <Col>
-          <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'}  link={"/studyTime"} title={"Back"} text={"Back"} />
+          <RoundButton dimension={75}  position={'absolute'} top={'35%'} left={'1%'}  link={"/studyTime"} title={"Back"} text={"Back"} />
         </Col>
         <Col>
-          <Bubble text="Right here, there are the assigned homeworks, I'm here to help you!" />
+          <Bubble text="Right here, there are the assigned homeworks, I'm here to help you!" right={'0%'} />
             <IrisModel  scale={3} top={'12%'} left={'45%'} />
         </Col>
       </Row>
-        <Row style={{position: 'absolute', top:'45%'}}>
-          <Col>
+        <Row style={{position: 'absolute', top:'50%', width: '100%'}}>
             <Form></Form>
-          </Col>
-          <Link to={"/resultTranslate"}>
-          <Button title="Translate">Translate</Button>
-        </Link>
+        </Row>
+        <Row>
+        <Col>          
+          <RoundButton dimension={125}  position={'absolute'} left={'30%'} top={'65%'} link={"/resultTranslate"} title={"resultTranslate"} text={"Translate"} />
+        </Col>
         </Row>
       </Container>
     </div>

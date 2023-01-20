@@ -19,14 +19,14 @@ const Memory  = () => {
           </Row>
           <Row>
             <Col>
-              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/play"} title={"Back"} text={"Back"} />
+              <RoundButton dimension={75}  position={'absolute'} top={'20%'} left={'3%'} link={"/play"} title={"Back"} text={"Back"} />
             </Col>
             <Col>        
-              <Bubble text={"Here there's the memory"} color={'#c4baff'} />
-              <IrisModel scale={3}  top={'12%'} left={'45%'}/>
+              <Bubble text={"Here there's the memory"} color={'#c4baff'} left={'0%'}/>
+              <IrisModel scale={3}  top={'8%'} left={'45%'}/>
             </Col>
           </Row>
-          <Row style={{position: 'absolute', top:'45%'}}>
+          <Row style={{position: 'absolute', top:'35%'}}>
             <Col>
               <Game/>
             </Col>

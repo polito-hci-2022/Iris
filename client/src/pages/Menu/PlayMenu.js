@@ -10,16 +10,16 @@ const PlayMenu = () => {
     <div style={{backgroundColor: "#c4baff"}}>
       <Container fluid className="vh-100 d-flex">
         <Row className="h-100">
-          <Col>
+          <Col className="text-center">
             <h1>Play</h1>
           </Col>
         </Row>
         <Row>
           <Col>
-            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Indietro"} />
+            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/"} title={"Back"} text={"Indietro"} />
           </Col>
           <Col>
-            <Bubble text="In questa pagina puoi trovare un sacco di giochi divertenti!" color={'#c4baff'} />
+            <Bubble text="In questa pagina puoi trovare un sacco di giochi divertenti!" right={'0%'} color={'#c4baff'} />
             <IrisModel scale={3} top={'12%'} left={'45%'}/>
           </Col>
         </Row>
