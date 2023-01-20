@@ -27,10 +27,10 @@ const TutorialMemory  = ({setMemory, memory}) => {
           </Row>
           <Row>
             <Col>
-              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+              <RoundButton dimension={75}  position={'absolute'} top={'35%'} left={'3%'} link={"/play"} title={"Back"} text={"Esci"} />
             </Col>
             <Col>        
-              <Bubble text={message} color={'#c4baff'} />
+              <Bubble text={message} color={'#c4baff'} left={'0%'} />
               <IrisModel scale={3}  top={'12%'} left={'45%'}/>
             </Col>
           </Row>

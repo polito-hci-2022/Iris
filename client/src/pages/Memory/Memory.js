@@ -19,10 +19,10 @@ const Memory  = () => {
           </Row>
           <Row>
             <Col>
-              <RoundButton dimension={75}  position={'absolute'} top={'20%'} left={'3%'} link={"/play"} title={"Back"} text={"Back"} />
+              <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'3%'} link={"/play"} title={"Back"} text={"Esci"} />
             </Col>
             <Col>        
-              <Bubble text={"Here there's the memory"} color={'#c4baff'} left={'0%'}/>
+              <Bubble text={"Ecco il memory!"} color={'#c4baff'} left={'0%'}/>
               <IrisModel scale={3}  top={'8%'} left={'45%'}/>
             </Col>
           </Row>
