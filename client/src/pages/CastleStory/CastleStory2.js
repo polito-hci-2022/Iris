@@ -8,7 +8,7 @@ import SquareButton from '../../components/common/SquareButton';
 
 function CastleStory2(){
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col><CastleModel position={[0,35,120]}/></Col>

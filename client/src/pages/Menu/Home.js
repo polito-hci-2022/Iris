@@ -6,11 +6,11 @@ import Bubble from "../../components/common/Bubble";
 
 function Home() {
     return (
-      <div style={{backgroundColor: "#bde0fe"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
        <Container fluid className="vh-100 d-flex">
             <Row className="h-100">
               <Col>
-              <Bubble text={"Ciao Filippo, sono Iris!"} color={"#bde0fe"}/>
+              <Bubble text={"Ciao Filippo, sono Iris!"}/>
               <IrisModel scale={4} top={'12%'} left={'45%'}></IrisModel>
               </Col>
             </Row>

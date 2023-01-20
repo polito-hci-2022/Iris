@@ -19,13 +19,14 @@ const dimension_icons = {
 const SquareButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false, onClick }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
+    const color = disabled ? "#DFD3C3" : "#9E7676"
     const partial_style = {
         width: dimension,
         height: dimension,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#e8871e",
-        borderColor: "#e8871e",
+        backgroundColor: color,
+        borderColor: "#594545",
         position: position,
         disabled: disabled
       }

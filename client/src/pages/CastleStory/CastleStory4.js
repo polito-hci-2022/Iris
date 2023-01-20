@@ -8,7 +8,7 @@ import RabbitModel from '../../models/RabbitModel'
 
 function CastleStory4() {
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>

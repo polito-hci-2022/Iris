@@ -8,7 +8,7 @@ import RabbitModel from '../../models/RabbitModel'
 function CastleHelp3() {
     // 'You meet a rabbit. He will show you the entry for the castle!'
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>

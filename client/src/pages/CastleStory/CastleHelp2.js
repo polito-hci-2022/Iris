@@ -8,7 +8,7 @@ import HelpTile from '../../components/story/HelpTile';
 function CastleHelp2(){
     // 'You need to enter in the castle. Where do you go?'
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col><CastleModel position={[0,35,120]}/></Col>

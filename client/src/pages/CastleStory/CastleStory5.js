@@ -9,7 +9,7 @@ import SquareButton from '../../components/common/SquareButton';
 
 function CastleStory5() {
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>
