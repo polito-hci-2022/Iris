@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import RoundButton from '../../components/common/RoundButton';
-import Bubble from '../../components/common/Bubble'
 
 let text="";
 
@@ -12,7 +11,7 @@ const TutorialMemoryChoice  = ({memory}) => {
   else
     text="Ciao, è la prima volta che giochi: vuoi fare un tutorial?"
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100">
           <Row>
             <Col>

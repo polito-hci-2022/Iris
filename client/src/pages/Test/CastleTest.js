@@ -35,7 +35,7 @@ const CastleTest = (props) => {
     }
 
     return (
-        <Container fluid className="vh-100 vw-100" style={{ backgroundColor: "#7cb518" }}>
+        <Container fluid className="vh-100 vw-100" style={{ backgroundColor: "#FFF8EA" }}>
             {/* UPPER PART: Iris, Bubble and Back button */}
             <Container>
                 <Row>

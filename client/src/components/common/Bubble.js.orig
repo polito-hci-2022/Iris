@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
 
-function Bubble({text, position='absolute', top, bottom, left, right}) {
+function Bubble({text, position='absolute', top, bottom, left, right, orientation='right', color}) {
     const vertical = top ? {top:top} : {bottom:bottom}
     const horizontal = right ? {right:right} : {left:left}
     const partial_style = {
@@ -10,7 +10,7 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
       marginRight: '45%',
       borderRadius: 5,
       marginBottom: 15,
-      marginTop: 95,
+      marginTop: 55,
       marginLeft: "5%",
       maxWidth: '50%',
       alignSelf: 'flex-end',
@@ -21,12 +21,24 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
     const style = Object.assign({}, partial_style, vertical, horizontal)
     return (
         <Container style={style}>
+<<<<<<< HEAD
+            <h5 style={{
+                fontSize: 23,
+                color: "black",
+                backgroundColor: "#fec601",
+                }}>
+                {text}
+            </h5>
+            <Container style={arrow_style}/>
+            <Container style={overlap_style_color}/>
+=======
             <a style={{
                 fontSize: 16,
                 color: "#FFF8EA",
                 }}>
                 {text}
             </a>
+>>>>>>> feature/fixMicheleV
         </Container>
     );
 }

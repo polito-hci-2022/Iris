@@ -11,10 +11,10 @@ const Exercise = () => {
 
     return (
         <>
-            <Container fluid className="vh-100 vw-100 d-flex" style={{ backgroundColor: "#7cb518" }}>
+            <Container fluid className="vh-100 vw-100 d-flex" style={{ backgroundColor: "#FFF8EA" }}>
                 <Row className="h-100">
                     <Col>
-                        <Bubble text={message} right={'0%'} color={'#7cb518'} />
+                        <Bubble text={message} right={'0%'}/>
                         <IrisModel scale={3} top={'10%'} left={'45%'} />
                         <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/studyTime"} title={"Back"} text={"Esci"} />
                     </Col>

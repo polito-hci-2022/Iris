@@ -10,7 +10,7 @@ import RoundButton from '../../components/common/RoundButton';
 
 const Translate = () => {
   return (
-    <div style={{ backgroundColor: "#7cb518" }}>
+    <div style={{ backgroundColor: "#FFF8EA" }}>
       <Container fluid className="vh-100 d-flex">
         <Row className="h-100">
           <Col>
