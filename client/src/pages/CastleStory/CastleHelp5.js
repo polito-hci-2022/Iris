@@ -37,7 +37,7 @@ function CastleHelp5() {
           </Col>
           <Col>
           <HelpTile
-            text_en={'We are arrived'}
+            text_en={'We have arrived'}
             text_it={'Siamo arrivati'}
             position='absolute'
             width={100}
