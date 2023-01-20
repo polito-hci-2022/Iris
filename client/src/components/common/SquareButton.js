@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const icons = {
     'Play': 'mdi:puzzle',
+    'Back': 'tabler:arrow-back-up',
     'Restart': 'codicon:debug-restart',
     'Left': 'material-symbols:turn-left-sharp',
     'Right': 'material-symbols:turn-right-sharp'

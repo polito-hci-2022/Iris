@@ -5,6 +5,8 @@ function HelpTile ({text_it, text_en, width, height, position, top, bottom, left
     const [text, setText] = useState(text_en);
     const [translated, setTranslated] = useState(false);
     const partial_style = {
+        backgroundColor: "#594545",
+        borderColor: "#594545",
         position: position,
         width: width,
         height: height,

@@ -78,7 +78,7 @@ function CastleHelp5() {
               bottom={10}
               left={200}
               link={'/Play'}
-              title={'Play'}
+              title={'Back'}
             />
           </Col>
           <Col>

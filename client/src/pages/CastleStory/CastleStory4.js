@@ -56,9 +56,9 @@ function CastleStory4() {
               position={'absolute'}
               bottom={300}
               right={10}
-              title='Play'
+              title='Back'
               link='/play'
-              text='Exit'
+              text='Esci'
             />
             <RoundButton
               dimension={75}
