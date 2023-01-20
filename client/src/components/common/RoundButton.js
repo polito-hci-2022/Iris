@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button } from 'react-bootstrap';
 import { Icon } from "@iconify/react";
 import { Link } from 'react-router-dom';
+import { Palette } from '../../Palette';
 
 const icons = {
     'Play': 'mdi:puzzle',
@@ -30,7 +31,7 @@ const dimension_icons = {
 const RoundButton = ({ dimension, position='relative', top, left, right, bottom, link, title, text, disabled=false, onClick }) => {
     const vertical = top ? {top:top}:{bottom:bottom}
     const horizontal = left ? {left:left}:{right:right}
-    const color = disabled ? "#DFD3C3" : "#9E7676"
+    const color = disabled ? Palette.disabledButtonColor : Palette.buttonColor
     
     const partial_style = {
         width: dimension,
@@ -39,7 +40,7 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
         alignItems: "center",
         borderRadius: 100,
         backgroundColor: color,
-        borderColor: "#594545",
+        borderColor: Palette.buttonBorderColor,
         position: position,
         disabled: disabled,
       }
@@ -54,11 +55,11 @@ const RoundButton = ({ dimension, position='relative', top, left, right, bottom,
                 resizeMode:"contain",
                 height: dimension_icons[dimension],
                 width: dimension_icons[dimension],
-                color: "#FEFCF3"
+                color: Palette.buttonTextColor
             }}
             icon={icons[title]}
             />
-            <h6 style={{color: "#FEFCF3"}}>{text}</h6>
+            <h6 style={{color: Palette.buttonTextColor}} >{text}</h6>
         </Button>
         
         </Link>

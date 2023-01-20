@@ -13,7 +13,7 @@ function CardGame(props) {
               {props.card.type === "image" ?
                <Image className={`front ${props.card.matched ? "matched" : ''}`} src={props.card.src} alt="card front" />
               : <div>
-                  <a className={`front ${props.card.matched ? "matched" : ''}`} >{props.card.src}</a>
+                  <h6 className={`front ${props.card.matched ? "matched py-4 px-3" : 'py-4 px-3'}`} >{props.card.src}</h6>
                 </div>}
                 <Image className='back' src="/images/card_back.jpg" alt="card back" onClick={() => handleChoice()} />
             </div>

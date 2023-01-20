@@ -4,14 +4,15 @@ import CastleModel from '../../models/CastleModel'
 import RoundButton from '../../components/common/RoundButton';
 import SquareButton from '../../components/common/SquareButton';
 import HelpTile from '../../components/story/HelpTile';
+import { Palette } from '../../Palette';
 
-function CastleHelp2(){
-    // 'You need to enter in the castle. Where do you go?'
-    return (
-      <div style={{backgroundColor: "#FFF8EA"}}>
-        <Container fluid className="vh-100 d-flex">
-          <Row className="h-100">
-            <Col><CastleModel position={[0,35,120]}/></Col>
+function CastleHelp2() {
+  // 'You need to enter in the castle. Where do you go?'
+  return (
+    <div style={{ backgroundColor: Palette.backgroundColor }}>
+      <Container fluid className="vh-100 d-flex">
+        <Row className="h-100">
+          <Col><CastleModel position={[0, 35, 120]} /></Col>
         </Row>
         <Row>
           <Col>
@@ -26,50 +27,50 @@ function CastleHelp2(){
             />
           </Col>
           <Col>
-            <HelpTile 
-                text_en={'You need to enter'}
-                text_it={'Devi entrare'}
-                position='absolute'
-                width={100}
-                height={120}
-                bottom={300}
-                left={30}
+            <HelpTile
+              text_en={'You need to enter'}
+              text_it={'Devi entrare'}
+              position='absolute'
+              width={100}
+              height={120}
+              bottom={300}
+              left={30}
             />
             <HelpTile
-                text_en={'in the castle'}
-                text_it={'nel castello'}
-                position='absolute'
-                width={140}
-                height={120}
-                bottom={300}
-                left={150}
+              text_en={'in the castle'}
+              text_it={'nel castello'}
+              position='absolute'
+              width={140}
+              height={120}
+              bottom={300}
+              left={150}
             />
             <HelpTile
-                text_en={'Right'}
-                text_it={'Destra'}
-                position='absolute'
-                width={100}
-                height={50}
-                bottom={230}
-                left={30}
+              text_en={'Right'}
+              text_it={'Destra'}
+              position='absolute'
+              width={100}
+              height={50}
+              bottom={230}
+              left={30}
             />
             <HelpTile
-                text_en={'Left'}
-                text_it={'Sinistra'}
-                position='absolute'
-                width={100}
-                height={80}
-                bottom={130}
-                left={30}
+              text_en={'Left'}
+              text_it={'Sinistra'}
+              position='absolute'
+              width={100}
+              height={80}
+              bottom={130}
+              left={30}
             />
             <HelpTile
-                text_en={'Where do you go?'}
-                text_it={'Dove vai?'}
-                position='absolute'
-                width={140}
-                height={150}
-                bottom={130}
-                left={150}
+              text_en={'Where do you go?'}
+              text_it={'Dove vai?'}
+              position='absolute'
+              width={140}
+              height={150}
+              bottom={130}
+              left={150}
             />
             <SquareButton
               text='Left'
@@ -121,9 +122,9 @@ function CastleHelp2(){
           </Col>
         </Row>
       </Container>
-      </div>
-    );
-   
+    </div>
+  );
+
 }
 
 export default CastleHelp2;

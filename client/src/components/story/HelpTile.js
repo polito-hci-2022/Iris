@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap';
+import { Palette } from '../../Palette';
 
 function HelpTile ({text_it, text_en, width, height, position, top, bottom, left, right}) {
     const [text, setText] = useState(text_en);
     const [translated, setTranslated] = useState(false);
     const partial_style = {
-        backgroundColor: "#594545",
-        borderColor: "#594545",
+        backgroundColor: Palette.tileColor,
+        borderColor: Palette.tileColor,
         position: position,
         width: width,
         height: height,

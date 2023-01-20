@@ -5,13 +5,13 @@ import Bubble from '../../components/common/Bubble'
 import { Link } from 'react-router-dom';
 import Form from './Form'
 import RoundButton from '../../components/common/RoundButton';
+import { Palette } from '../../Palette';
+
+const navbarStyle = Palette.navbarStyle;
 
 const Translate = () => {
-
-  const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
-
   return (
-    <div style={{ backgroundColor: "#FFF8EA" }} >
+    <div style={{ backgroundColor: Palette.backgroundColor }} >
       <Container fluid className="vh-100">
         <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
           <Col sx={4} />
@@ -41,26 +41,5 @@ const Translate = () => {
     </div>
   );
 }
-
-/*
-const buttonStudyCompact = {
-  width: 75,
-  height: 75,
-  justifyContent: "center",
-  alignItems: "center",
-  padding: 10,
-  borderRadius: 100,
-  backgroundColor: "grey",
-  position: "relative",
-  marginLeft: 300,
-  marginTop: 0
-}
-
-const iconStyle = {
-  resizeMode: "contain",
-  height: 50,
-  width: 50,
-}
-*/
 
 export default Translate;

@@ -4,16 +4,17 @@ import BackpackExercise from "../../components/exercise/BackpackExercise";
 import IrisModel from "../../models/IrisModel";
 import Bubble from "../../components/common/Bubble";
 import RoundButton from "../../components/common/RoundButton";
+import { Palette } from '../../Palette';
+
+const navbarStyle = Palette.navbarStyle;
 
 const Exercise = () => {
 
-    {/* TOP SECTION: IRIS, message and RoundButton Back */ }
     const [message, setMessage] = useState("Cosa mettiamo nello zaino?");
-    const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
 
     return (
         <>
-            <Container fluid className="vh-100 vw-100" style={{ backgroundColor: "#FFF8EA" }}>
+            <Container fluid className="vh-100 vw-100" style={{ backgroundColor: Palette.backgroundColor }}>
                 <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
                     <Col sx={4} />
                     <Col sx={4}>
@@ -36,25 +37,6 @@ const Exercise = () => {
             </Container>
         </>
     );
-}
-
-const buttonStudyCompact = {
-    width: 75,
-    height: 75,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: "grey",
-    position: "relative",
-    marginLeft: 300,
-    marginTop: 0
-}
-
-const iconStyle = {
-    resizeMode: "contain",
-    height: 50,
-    width: 50,
 }
 
 export default Exercise;

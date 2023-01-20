@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
+import { Palette } from '../../Palette';
 
 function Bubble({text, position='absolute', top, bottom, left, right}) {
 
@@ -8,7 +9,7 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
     const vertical = top ? {top:top} : {bottom:bottom}
     const horizontal = right ? {right:right} : {left:left}
     const partial_style = {
-      backgroundColor: "#594545",
+      backgroundColor: Palette.bubbleColor,
       padding:10,
       marginRight: '45%',
       borderRadius: 5,
@@ -27,7 +28,7 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
         <Container style={style}>
             <a style={{
                 fontSize: 16,
-                color: "#FFF8EA",
+                color: Palette.bubbleTextColor,
                 }}>
                 {text}
             </a>
@@ -42,7 +43,7 @@ function Bubble({text, position='absolute', top, bottom, left, right}) {
 
 const rightArrow = {
     position: "relative",
-    backgroundColor: "#594545",
+    backgroundColor: Palette.bubbleColor,
     width: 20,
     height: 25,
     bottom: -34,
@@ -52,7 +53,7 @@ const rightArrow = {
 
   const leftArrow = {
     position: "relative",
-    backgroundColor: "#594545",
+    backgroundColor: Palette.bubbleColor,
     width: 20,
     height: 25,
     bottom: -34,

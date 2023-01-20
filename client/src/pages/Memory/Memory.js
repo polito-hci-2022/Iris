@@ -1,17 +1,19 @@
 import * as React from 'react';
+import { useState } from 'react';
 import IrisModel from '../../models/IrisModel';
 import Game from '../../components/memory/Game';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 import { Container, Row, Col, Modal } from 'react-bootstrap';
+import { Palette } from '../../Palette';
 
-const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
+const navbarStyle = Palette.navbarStyle;
 
 const Memory = () => {
 
-  const [finish, setFinish] = React.useState(false);
+  const [finish, setFinish] = useState(false);
   return (
-    <div style={{ backgroundColor: "#FFF8EA" }}>
+    <div style={{ backgroundColor: Palette.backgroundColor }}>
       <Container fluid className="vh-100">
         <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
           <Col sx={4} />

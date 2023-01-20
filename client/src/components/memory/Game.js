@@ -18,7 +18,7 @@ const initialTextCards = [
   { "src": "candy", matched: false, type: "text", name: "candy" },
   { "src": "dice", matched: false, type: "text", name: "dice" },
   { "src": "dog", matched: false, type: "text", name: "dog" },
-  { "src": "icecream", matched: false, type: "text", name: "icecream" },
+  { "src": "ice\ncream", matched: false, type: "text", name: "icecream" },
   { "src": "tree", matched: false, type: "text", name: "tree" },
   { "src": "flower", matched: false, type: "text", name: "flower" },
 ];

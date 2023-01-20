@@ -26,12 +26,6 @@ import TutorialMemoryChoice from "./pages/Memory/TutorialMemoryChoice";
 import Exercise from "./pages/Exercise/Exercise"
 import API from './API'
 import './App.css'
- 
-/** palette colori
- * ["ebf5df","bad4aa","d4d4aa","edb458","e8871e"]
- * 
- * @returns 
- */
 
 export default function App() {
   const navigate = useNavigate();

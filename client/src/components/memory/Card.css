@@ -4,19 +4,17 @@
     }
     
     .card .front{
-        background-color: white;
+        background-color: #FFF8EA;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
-        border: 2px solid black;
         position: absolute;
         transform: rotateY(90deg);
         transition: all ease-in 0.2s;
     }
     
     .card .front.matched{
-        background-color:  #70ff6b;
+        background-color: #FFF8EA;
     }
     
     .flipped .front {
@@ -25,12 +23,12 @@
     }
     
     .card .back{
-        background-color: white;
+        background-color: #FFF8EA;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 5px;
-        border: 2px solid white;
+        border: 2px solid #FFF8EA;
         transition: all ease-in 0.2s;
         transition-delay: 0.2s;
     }

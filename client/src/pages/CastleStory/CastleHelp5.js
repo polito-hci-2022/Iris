@@ -5,11 +5,12 @@ import RoundButton from '../../components/common/RoundButton';
 import HelpTile from '../../components/story/HelpTile';
 import RabbitModel from '../../models/RabbitModel'
 import SquareButton from '../../components/common/SquareButton';
+import { Palette } from '../../Palette';
 
 function CastleHelp5() {
     // Look! He is next to the door, we are arrived!
     return (
-      <div style={{backgroundColor: "#FFF8EA"}}>
+      <div style={{backgroundColor: Palette.backgroundColor}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>

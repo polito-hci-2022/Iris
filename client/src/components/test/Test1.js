@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { BsFillBackspaceFill } from "react-icons/bs";
 import API from "../../API"
+import { Palette } from "../../Palette";
 
 const Test1 = (props) => {
 
@@ -28,7 +29,7 @@ const Test1 = (props) => {
         }
     }
 
-    const style = { backgroundColor: "#594545", borderColor: "#594545", color: "white" };
+    const style = { backgroundColor: Palette.tileColor, borderColor: Palette.tileColor, color: Palette.lightColor };
 
     return (
         <Container>

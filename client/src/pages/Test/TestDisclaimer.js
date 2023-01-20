@@ -1,11 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 import RoundButton from "../../components/common/RoundButton";
 import IrisModel from "../../models/IrisModel"
+import { Palette } from '../../Palette';
 
 const TestDisclaimer = () => {
 
     return (
-        <Container fluid className="vh-100" style={{ backgroundColor: "#FFF8EA" }}>
+        <Container fluid className="vh-100" style={{ backgroundColor: Palette.backgroundColor }}>
             {/* message */}
             <Row>
                 <Col xs={12} style={{ width: '90%' }} className="mt-5 ms-4 ps-2 me-3" >
@@ -31,7 +32,7 @@ const TestDisclaimer = () => {
 
             {/* Iris */}
             <Row>
-                <IrisModel scale={4}  top={'48%'} left={'25%'} />
+                <IrisModel scale={4} top={'48%'} left={'25%'} />
             </Row>
 
         </Container>

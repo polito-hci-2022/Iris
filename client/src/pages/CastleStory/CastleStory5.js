@@ -6,10 +6,11 @@ import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
 import RabbitModel from '../../models/RabbitModel'
 import SquareButton from '../../components/common/SquareButton';
+import { Palette } from '../../Palette';
 
 function CastleStory5() {
     return (
-      <div style={{backgroundColor: "#FFF8EA"}}>
+      <div style={{backgroundColor: Palette.backgroundColor}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>

@@ -59,6 +59,4 @@ const Test2 = (props) => {
     );
 }
 
-//<RoundButton dimension={100} top={'50%'} left={'30%'} link={"/studytime"} title={"Indietro"} text={"Torna indietro"} />
-
 export default Test2;

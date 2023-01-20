@@ -4,11 +4,12 @@ import CastleModel from '../../models/CastleModel'
 import RoundButton from '../../components/common/RoundButton';
 import HelpTile from '../../components/story/HelpTile';
 import RabbitModel from '../../models/RabbitModel'
+import { Palette } from '../../Palette';
 
 function CastleHelp4() {
     // 'You meet a rabbit. He will show you the entry for the castle!'
     return (
-      <div style={{backgroundColor: "#FFF8EA"}}>
+      <div style={{backgroundColor: Palette.backgroundColor}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>

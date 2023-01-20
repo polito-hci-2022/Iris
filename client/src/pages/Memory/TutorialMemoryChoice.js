@@ -2,9 +2,10 @@ import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import RoundButton from '../../components/common/RoundButton';
+import { Palette } from '../../Palette';
 
 let text = "";
-const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
+const navbarStyle = Palette.navbarStyle;
 
 const TutorialMemoryChoice = ({ memory }) => {
   if (memory === 1)
@@ -12,7 +13,7 @@ const TutorialMemoryChoice = ({ memory }) => {
   else
     text = "Ciao, è la prima volta che giochi: vuoi fare un tutorial?"
   return (
-    <div style={{ backgroundColor: "#FFF8EA" }}>
+    <div style={{ backgroundColor: Palette.backgroundColor }}>
       <Container fluid className="vh-100">
         <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
           <Col sx={4} />
@@ -28,7 +29,7 @@ const TutorialMemoryChoice = ({ memory }) => {
         </Row>
         <Row>
           <Col>
-            <RoundButton dimension={75} position={'absolute'} top={'27%'} left={'3%'} link={"/"} title={"Back"} text={"Esci"} />
+            <RoundButton dimension={75} position={'absolute'} top={'27%'} left={'3%'} link={"/play"} title={"Back"} text={"Esci"} />
           </Col>
           <Col>
             <IrisModel scale={4} top={'55%'} left={'25%'} />

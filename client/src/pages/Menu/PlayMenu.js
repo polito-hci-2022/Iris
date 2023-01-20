@@ -3,13 +3,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import IrisModel from '../../models/IrisModel';
 import Bubble from '../../components/common/Bubble'
 import RoundButton from '../../components/common/RoundButton';
+import { Palette } from '../../Palette';
+
+const navbarStyle = Palette.navbarStyle;
 
 const PlayMenu = () => {
-
-  const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
-
   return (
-    <div style={{ backgroundColor: "#FFF8EA" }}>
+    <div style={{ backgroundColor: Palette.backgroundColor }}>
       <Container fluid className="vh-100">
         <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
           <Col sx={4} />
@@ -35,7 +35,6 @@ const PlayMenu = () => {
               text="In questa pagina puoi trovare un sacco di giochi divertenti!"
               right={'0%'}
               top={'0%'}
-              color={'#7cb518'}
             />
             <IrisModel
               scale={3}

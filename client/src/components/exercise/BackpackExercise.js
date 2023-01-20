@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Container, Row, Col, Figure, Button, Modal } from 'react-bootstrap';
 import backpack from './backpack.png';
 import RoundButton from "../common/RoundButton";
+import { Palette } from "../../Palette";
 
 const BackpackExercise = (props) => {
 
@@ -193,7 +194,7 @@ const Word = (props) => {
     useEffect(() => {
         setVariant("dark");
         setDisabled(false);
-        setStyle({backgroundColor:"#594545", color:"white"})
+        setStyle({backgroundColor:Palette.darkColor, color:"white"})
         if (props.word.state === "selected") {
             if (props.word.correct) {
                 setVariant("outline-success");
@@ -202,7 +203,7 @@ const Word = (props) => {
             }
             if (!props.current) {
                 setDisabled(true); //button disabled if the word has already been selected (not if it is currently active)
-                setStyle({backgroundColor:"#FFF8EA"})
+                setStyle({backgroundColor:Palette.backgroundColor})
             }
         }
     }, [props.word.state, props.current, props.word.correct])
@@ -239,23 +240,6 @@ const Img = (props) => {
             return <GiPencil color={props.color} size={100} />
         default: break;
     }
-}
-
-const buttonStudyCompact = {
-    width: 75,
-    height: 75,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: "grey",
-    marginTop: 0
-}
-
-const iconStyle = {
-    resizeMode: "contain",
-    height: 50,
-    width: 50,
 }
 
 export default BackpackExercise;

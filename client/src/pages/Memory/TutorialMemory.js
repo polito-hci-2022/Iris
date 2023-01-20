@@ -6,8 +6,9 @@ import Tutorial from '../../components/memory/Tutorial';
 import Bubble from '../../components/common/Bubble'
 import { Container, Row, Col } from 'react-bootstrap';
 import API from '../../API';
+import { Palette } from '../../Palette';
 
-const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
+const navbarStyle = Palette.navbarStyle;
 
 const TutorialMemory = ({ setMemory, memory }) => {
 
@@ -20,7 +21,7 @@ const TutorialMemory = ({ setMemory, memory }) => {
   const [message, setMessage] = useState("Lo scopo del gioco è quello di trovare tutte le coppie nome-immagine. Clicca avanti per continuare!");
 
   return (
-    <div style={{ backgroundColor: "#FFF8EA" }}>
+    <div style={{ backgroundColor: Palette.backgroundColor }}>
       <Container fluid className="vh-100">
         <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
           <Col sx={4} />

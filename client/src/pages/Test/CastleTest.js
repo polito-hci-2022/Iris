@@ -5,10 +5,11 @@ import { useEffect, useState } from 'react';
 import Test1 from '../../components/test/Test1';
 import Test2 from '../../components/test/Test2';
 import RoundButton from '../../components/common/RoundButton';
+import { Palette } from '../../Palette';
 
 const textQuestion1 = "Come si dice 'CASTELLO' in inglese?";
 const textQuestion2 = "Ti ricordi il CONIGLIO che ci ha accompagnati al castello? Come si dice in inglese?";
-const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
+const navbarStyle = Palette.navbarStyle;
 
 const CastleTest = (props) => {
 
@@ -36,7 +37,7 @@ const CastleTest = (props) => {
     }
 
     return (
-        <Container fluid className="vh-100 vw-100" style={{ backgroundColor: "#FFF8EA" }}>
+        <Container fluid className="vh-100 vw-100" style={{ backgroundColor: Palette.backgroundColor }}>
             <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
                 <Col className="col-3" />
                 <Col className="col-6 ms-1" >
