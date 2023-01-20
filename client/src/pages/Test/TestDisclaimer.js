@@ -21,18 +21,18 @@ const TestDisclaimer = () => {
             <Row>
                 <Col className="col-6">
                     {/* back button */}
-                    <RoundButton dimension={100} top={'50%'} left={'30%'} link={"/studytime"} title={"Back"} text={"Torna indietro"} />
+                    <RoundButton dimension={125} top={'40%'} left={'20%'} link={"/studytime"} title={"Back"} text={"Torna indietro"} />
 
                 </Col>
                 <Col className="col-6">
                     {/* start test button */}
-                    <RoundButton dimension={100} top={'50%'} left={'10%'} link={"/castleTest"} title={"Castle"} text={"Inizia il test"} />
+                    <RoundButton dimension={125} top={'40%'} left={'5%'} link={"/castleTest"} title={"Castle"} text={"Inizia il test"} />
                 </Col>
             </Row>
 
             {/* Iris */}
             <Row>
-                <IrisModel scale={4} top={'48%'} left={'25%'} />
+                <IrisModel scale={4} top={'50%'} left={'25%'} />
             </Row>
 
         </Container>
