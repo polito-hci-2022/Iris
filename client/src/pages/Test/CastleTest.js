@@ -8,6 +8,7 @@ import RoundButton from '../../components/common/RoundButton';
 
 const textQuestion1 = "Come si dice 'CASTELLO' in inglese?";
 const textQuestion2 = "Ti ricordi il CONIGLIO che ci ha accompagnati al castello? Come si dice in inglese?";
+const navbarStyle = { backgroundColor: "#9E7676", borderColor: "#9E7676", color: "white" };
 
 const CastleTest = (props) => {
 
@@ -36,19 +37,27 @@ const CastleTest = (props) => {
 
     return (
         <Container fluid className="vh-100 vw-100" style={{ backgroundColor: "#FFF8EA" }}>
+            <Row className="vw-100 vh-10 pt-2" style={navbarStyle}>
+                <Col className="col-3" />
+                <Col className="col-6 ms-1" >
+                    <h1>Castle Test</h1>
+                </Col>
+                <Col className="col-3" />
+            </Row>
+
             {/* UPPER PART: Iris, Bubble and Back button */}
             <Container>
                 <Row>
                     <Col>
-                        <Bubble text={message} />
-                        <IrisModel scale={3}  top={'12%'} left={'45%'} />
-                        <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'3%'} onClick={() => submit()} title={"Back"} text={"Esci"} />
+                        <Bubble text={message} right={"0%"} top={"0%"} />
+                        <IrisModel scale={3} top={'12%'} left={'45%'} />
+                        <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} onClick={() => submit()} title={"Back"} text={"Esci"} />
                     </Col>
                 </Row>
             </Container>
 
             {/* LOWER PART: body */}
-            <Container style={{ position:'absolute', top:"45%"}}>
+            <Container style={{ position: 'absolute', top: "45%" }}>
                 {
                     question1
                         ? <Test1 testResults={props.testResults} setTestResults={props.setTestResults} />

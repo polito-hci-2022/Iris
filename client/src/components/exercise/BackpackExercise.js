@@ -188,10 +188,12 @@ const Word = (props) => {
 
     const [variant, setVariant] = useState("dark");
     const [disabled, setDisabled] = useState(false);
+    const [style, setStyle] = useState({backgroundColor:"#594545" })
 
     useEffect(() => {
         setVariant("dark");
         setDisabled(false);
+        setStyle({backgroundColor:"#594545", color:"white"})
         if (props.word.state === "selected") {
             if (props.word.correct) {
                 setVariant("outline-success");
@@ -200,12 +202,13 @@ const Word = (props) => {
             }
             if (!props.current) {
                 setDisabled(true); //button disabled if the word has already been selected (not if it is currently active)
+                setStyle({backgroundColor:"#FFF8EA"})
             }
         }
     }, [props.word.state, props.current, props.word.correct])
 
     return (
-        <Button variant={variant} size="lg" active={props.current} onClick={() => props.select()} disabled={disabled} className={props.className}>{props.word.word}</Button>
+        <Button variant={variant} style={style} size="lg" active={props.current} onClick={() => props.select()} disabled={disabled} className={props.className}>{props.word.word}</Button>
     );
 
 }
