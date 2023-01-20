@@ -89,6 +89,7 @@ function CastleHelp5() {
               link='/CastleStory5'
               right={10}
               bottom={150}
+              title='Done'
             />
             <RoundButton
               dimension={75}

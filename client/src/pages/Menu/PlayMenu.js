@@ -16,7 +16,15 @@ const PlayMenu = () => {
         </Row>
         <Row>
           <Col>
-            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'1%'} link={"/"} title={"Back"} text={"Indietro"} />
+            <RoundButton
+              dimension={75}
+              position={'absolute'}
+              top={'30%'}
+              left={'1%'}
+              link={"/"}
+              title={"Back"}
+              text={"Indietro"}
+            />
           </Col>
           <Col>
             <Bubble text="In questa pagina puoi trovare un sacco di giochi divertenti!" color={'#c4baff'} />
@@ -25,7 +33,7 @@ const PlayMenu = () => {
         </Row>
         <Row style={{position: 'absolute', top:'45%'}}>
           <Col>
-            <h2> Games </h2>
+            <h2>Games</h2>
             <RoundButton dimension={100} link={"/tutorialMemoryChoice"} title={"Memory"} text={"Memory"} />
           </Col>
         </Row>

@@ -16,7 +16,8 @@ const icons = {
     'Back': 'tabler:arrow-back-up',
     'Prev': 'material-symbols:keyboard-double-arrow-left-rounded',
     'Next': 'material-symbols:keyboard-double-arrow-right-rounded',
-    'Help': 'mdi:help'
+    'Help': 'mdi:help',
+    'Done': 'mdi:done'
 }
 
 const dimension_icons = {
