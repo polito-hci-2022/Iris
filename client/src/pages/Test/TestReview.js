@@ -18,15 +18,15 @@ const TestReview = (props) => {
             <Container>
                 <Row>
                     <Col>
-                        <Bubble text={message} />
+                        <Bubble text={message} left={'0%'} />
                         <IrisModel scale={3}  top={'12%'} left={'45%'} />
-                        <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} link={"/studytime"} title={"Back"} text={"Esci"} />
+                        <RoundButton dimension={75}  position={'absolute'} top={'35%'} left={'3%'} link={"/studytime"} title={"Back"} text={"Esci"} />
                     </Col>
                 </Row>
             </Container>
 
             {/* LOWER PART: test results */}
-            <Container style={{ position:'absolute', top:"45%" }} className="ms-2 pe-5" >
+            <Container style={{ position:'absolute', top:"48%", left:"2.5%", width:"95%" }} >
                 <Row>
                     <h3>Domanda 1: {textQuestion1}</h3>
                 </Row>

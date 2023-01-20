@@ -81,7 +81,6 @@ function Game() {
               setScore(score + 1)
               if (score === 5)
                 setFinish(true)
-              console.log(score, finish)
               return { ...card, matched: true }
             } else {
               return card

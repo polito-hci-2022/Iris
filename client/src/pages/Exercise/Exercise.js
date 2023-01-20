@@ -16,7 +16,7 @@ const Exercise = () => {
                     <Col>
                         <Bubble text={message} right={'0%'} color={'#7cb518'} />
                         <IrisModel scale={3} top={'10%'} left={'45%'} />
-                        <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'1%'} link={"/studyTime"} title={"Back"} text={"Esci"} />
+                        <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/studyTime"} title={"Back"} text={"Esci"} />
                     </Col>
                 </Row>
                 <Row style={{ position: 'absolute', top: '41%' }}>

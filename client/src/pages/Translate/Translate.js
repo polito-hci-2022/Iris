@@ -17,10 +17,10 @@ const Translate = () => {
       </Row>
       <Row>
         <Col>
-          <RoundButton dimension={75}  position={'absolute'} top={'35%'} left={'1%'}  link={"/studyTime"} title={"Back"} text={"Back"} />
+          <RoundButton dimension={75}  position={'absolute'} top={'35%'} left={'3%'}  link={"/studyTime"} title={"Back"} text={"Esci"} />
         </Col>
         <Col>
-          <Bubble text="Right here, there are the assigned homeworks, I'm here to help you!" right={'0%'} />
+          <Bubble text="Scrivi qui la parola che non conosci. Ci penso io!" right={'0%'} />
             <IrisModel  scale={3} top={'12%'} left={'45%'} />
         </Col>
       </Row>
@@ -29,7 +29,7 @@ const Translate = () => {
         </Row>
         <Row>
         <Col>          
-          <RoundButton dimension={125}  position={'absolute'} left={'30%'} top={'65%'} link={"/resultTranslate"} title={"resultTranslate"} text={"Translate"} />
+          <RoundButton dimension={125}  position={'absolute'} left={'35%'} top={'65%'} link={"/resultTranslate"} title={"Translate"} text={"Traduci"} />
         </Col>
         </Row>
       </Container>

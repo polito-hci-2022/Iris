@@ -42,7 +42,7 @@ const CastleTest = (props) => {
                     <Col>
                         <Bubble text={message} />
                         <IrisModel scale={3}  top={'12%'} left={'45%'} />
-                        <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'1%'} onClick={() => submit()} title={"Back"} text={"Esci"} />
+                        <RoundButton dimension={75}  position={'absolute'} top={'30%'} left={'3%'} onClick={() => submit()} title={"Back"} text={"Esci"} />
                     </Col>
                 </Row>
             </Container>
