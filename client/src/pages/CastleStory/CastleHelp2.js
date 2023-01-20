@@ -8,7 +8,7 @@ import HelpTile from '../../components/story/HelpTile';
 function CastleHelp2(){
     // 'You need to enter in the castle. Where do you go?'
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col><CastleModel position={[0,35,120]}/></Col>
@@ -17,11 +17,12 @@ function CastleHelp2(){
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               bottom={10}
               left={10}
               link={'/CastleStory1'}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -97,23 +98,25 @@ function CastleHelp2(){
               right={10}
               title='Play'
               link='/play'
-              text='Exit'
+              text='Esci'
             />
             <RoundButton
               dimension={75}
-              text={'Done'}
+              text={'Fatto'}
               position={'absolute'}
               link='/CastleStory2'
               right={10}
               bottom={150}
+              title='Done'
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               disabled={true}
               position={'absolute'}
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>

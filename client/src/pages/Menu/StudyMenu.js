@@ -6,7 +6,7 @@ import RoundButton from '../../components/common/RoundButton';
 
 const StudyMenu = (props) => {
   return (
-    <div style={{backgroundColor: "#7cb518"}}>
+    <div style={{backgroundColor: "#FFF8EA"}}>
      <Container fluid className="vh-100 d-flex">
      <Row className="h-100">
           <Col>
@@ -15,18 +15,45 @@ const StudyMenu = (props) => {
         </Row>
         <Row>
           <Col>
-            <Bubble text="In questa pagina ci sono i compiti assegnati, sono qui per aiutarti!" right={'0%'} color={'#7cb518'}/>
-            <IrisModel scale={3} top={'12%'} left={'45%'}/>
+            <Bubble
+              text="In questa pagina ci sono i compiti assegnati, sono qui per aiutarti!"
+              right={'0%'}
+              color={'#7cb518'}
+              />
+            <IrisModel
+              scale={3}
+              top={'12%'}
+              left={'45%'}
+              />
           </Col>
           <Col>
-            <RoundButton dimension={75} position={'absolute'} top={'30%'} left={'3%'} link={"/"} title={"Back"} text={"Esci"} />
+            <RoundButton
+              dimension={75}
+              position={'absolute'}
+              top={'30%'}
+              left={13}
+              link={"/"}
+              title={"Back"}
+              text={"Indietro"}
+              />
           </Col>
         </Row>
         <Row style={{position: 'absolute', top:'45%'}}>
           <h2> Exercises </h2>
           <Col md="auto">
-            <RoundButton dimension={100} link={"/translate"} title={"Translate"} text={"Traduttore"} />
-            <RoundButton dimension={100} left={'10%'} link={"/backpack"} title={"Backpack"} text={"Lo Zaino"} />
+            <RoundButton
+              dimension={100}
+              link={"/translate"}
+              title={"Translate"}
+              text={"Traduttore"}
+              />
+            <RoundButton
+              dimension={100}
+              left={'10%'}
+              link={"/backpack"}
+              title={"Backpack"}
+              text={"Lo Zaino"}
+              />
           </Col>
         </Row>
         <Row  style={{position: 'absolute', top:'65%'}}>
@@ -43,46 +70,5 @@ const StudyMenu = (props) => {
     </div>
   );
 }
-
-/*
-const buttonTranslate = {
-  width: 75,
-  height: 75,
-  justifyContent: "center",
-  alignItems: "center",
-  padding: 10,
-  borderRadius: 100,
-  backgroundColor: "grey",
-  marginLeft: 20,
-}
-
-const buttonBackpack = {
-  width: 75,
-  height: 75,
-  justifyContent: "center",
-  alignItems: "center",
-  padding: 10,
-  borderRadius: 100,
-  backgroundColor: "grey",
-  marginLeft: 20
-}
-
-const buttonCastleTest = {
-  width: 75,
-  height: 75,
-  justifyContent: "center",
-  alignItems: "center",
-  padding: 10,
-  borderRadius: 100,
-  backgroundColor: "grey",
-  marginLeft: 20,
-}
-
-const iconStyle={
-  resizeMode:"contain",
-  height: 50,
-  width: 50,
-}
-*/
 
 export default StudyMenu;

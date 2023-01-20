@@ -8,7 +8,7 @@ import RabbitModel from '../../models/RabbitModel'
 function CastleHelp3() {
     // 'You meet a rabbit. He will show you the entry for the castle!'
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col>
@@ -25,11 +25,12 @@ function CastleHelp3() {
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               disabled={true}
               bottom={10}
               left={10}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -87,23 +88,25 @@ function CastleHelp3() {
               right={10}
               title='Play'
               link='/play'
-              text='Exit'
+              text='Esci'
             />
             <RoundButton
               dimension={75}
-              text={'Done'}
+              text={'Fatto'}
               position={'absolute'}
               link='/CastleStory3'
               right={10}
               bottom={150}
+              title='Done'
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               position={'absolute'}
               link='/CastleStory5'
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>

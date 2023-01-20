@@ -8,7 +8,7 @@ import SquareButton from '../../components/common/SquareButton';
 
 function CastleStory2(){
     return (
-      <div style={{backgroundColor: "#c4baff"}}>
+      <div style={{backgroundColor: "#FFF8EA"}}>
         <Container fluid className="vh-100 d-flex">
           <Row className="h-100">
             <Col><CastleModel position={[0,35,120]}/></Col>
@@ -17,11 +17,12 @@ function CastleStory2(){
           <Col>
             <RoundButton
               dimension={75}
-              text={'Prev'}
+              text={'Indietro'}
               position={'absolute'}
               bottom={10}
               left={10}
               link={'/CastleStory1'}
+              title='Prev'
             />
           </Col>
           <Col>
@@ -47,7 +48,7 @@ function CastleStory2(){
               bottom={10}
               left={100}
               link={'/CastleStory3'}
-              title={'CastleStory3'}
+              title={'Left'}
             />
             <SquareButton
               text='Right'
@@ -56,7 +57,7 @@ function CastleStory2(){
               bottom={10}
               left={200}
               link={'/CastleStory4'}
-              title={'CastleStory4'}
+              title={'Right'}
             />
           </Col>
           <Col>
@@ -67,23 +68,25 @@ function CastleStory2(){
               right={10}
               title='Play'
               link='/play'
-              text='Exit'
+              text='Esci'
             />
             <RoundButton
               dimension={75}
-              text={'Help'}
+              text={'Aiuto'}
               position={'absolute'}
               link='/CastleHelp2'
               right={10}
               bottom={150}
+              title='Help'
             />
             <RoundButton
               dimension={75}
-              text={'Next'}
+              text={'Avanti'}
               disabled={true}
               position={'absolute'}
               bottom={10}
               right={10}
+              title='Next'
             />
           </Col>
         </Row>
