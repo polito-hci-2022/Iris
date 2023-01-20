@@ -8,34 +8,39 @@ let text="";
 
 const TutorialMemoryChoice  = ({memory}) => { 
   if(memory === 1)
-    text= "You already did the memory, you want to do the tutorial?"
+    text= "Hai già giocato a Memory, vuoi rifare il tutorial?"
   else
-    text="You are new here, do you need the tutorial? "
+    text="Ciao, è la prima volta che giochi: vuoi fare un tutorial?"
     return (
       <div style={{backgroundColor: "#c4baff"}}>
-        <Container fluid className="vh-100 d-flex">
-          <Row className="h-100">
+        <Container fluid className="vh-100">
+          <Row>
             <Col>
               <h1>Memory</h1>
             </Col>
           </Row>
           <Row>
+                <Col xs={12} style={{ width: '90%' }} className="mt-5 ms-4 ps-2 me-3" >
+                    <h4>{text}</h4>
+                </Col>
+            </Row>
+          <Row>
             <Col>
-              <RoundButton dimension={75}  position={'absolute'} top={'27%'} left={'1%'} link={"/"} title={"Back"} text={"Back"} />
+              <RoundButton dimension={75}  position={'absolute'} top={'27%'} left={'3%'} link={"/"} title={"Back"} text={"Esci"} />
             </Col>
             <Col>        
-              <IrisModel scale={3}  top={'12%'} left={'45%'}/>
+              <IrisModel scale={4}  top={'55%'} left={'25%'} />
             </Col>
           </Row>
           <Row>
-            <Bubble text={text} color={'#c4baff'} top={'30%'} left={'10%'}/>
-          </Row>
-          <Row style={{position: 'absolute', top:'55%'}}>
-            <Col>
-              <RoundButton dimension={125} left={'5%'} link={"/tutorialMemory"} title={"Yes"} text={"Yes"} />
-              <RoundButton dimension={125} left={'20%'} link={"/Memory"} title={"No"} text={"No"} />
-            </Col>
-          </Row>
+                <Col className="col-6">
+                    <RoundButton dimension={125} left={'20%'} top={"150%"} link={"/tutorialMemory"} title={"Yes"} text={"Sì"} />
+
+                </Col>
+                <Col className="col-6">
+                    <RoundButton dimension={125} left={'5%'} top={"150%"} link={"/Memory"} title={"No"} text={"No"} />
+                </Col>
+            </Row>
         </Container>   
       </div>
     );
