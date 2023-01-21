@@ -54,29 +54,21 @@ function CastleHelp3() {
               left={150}
             />
             <HelpTile
-              text_en={'the entry'}
+              text_en={'the entrance'}
               text_it={"l'entrata"}
               position='absolute'
               width={100}
-              height={50}
-              bottom={230}
+              height={70}
+              bottom={220}
               left={30}
             />
-            <HelpTile
-              text_en={'a party'}
-              text_it={'una festa'}
-              position='absolute'
-              width={100}
-              height={80}
-              bottom={130}
-              left={30}
-            />
+
             <HelpTile
               text_en={'for the castle'}
               text_it={'per il castello'}
               position='absolute'
               width={140}
-              height={150}
+              height={160}
               bottom={130}
               left={150}
             />

@@ -85,6 +85,11 @@ function Tutorial(props) {
 
   }
 
+  function goToGame(){
+    cards.map(card => card.matched = false); 
+    navigate('/memory')
+  }
+
   return (
     <div className='container'>
       <div className="grid ms-3">
@@ -102,7 +107,7 @@ function Tutorial(props) {
           <RoundButton dimension={75} text={"Score: " + score} top={10} left={15} ></RoundButton>
         </Col>
         <Col>
-          <RoundButton dimension={75} left={'48%'} top={10} title={"Next"} text={"Avanti"} onClick={step === 5 ? navigate('/memory') : next} bottom={10} />
+          <RoundButton dimension={75} left={'48%'} top={10} title={"Next"} text={"Avanti"} onClick={step === 5 ? goToGame() : next} bottom={10} />
         </Col>
       </Row>
     </div>

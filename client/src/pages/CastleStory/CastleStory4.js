@@ -42,7 +42,7 @@ function CastleStory4() {
               position='absolute'
             />
             <Bubble
-              text='You meet a rabbit. He will show you the entry for the castle!'
+              text='You meet a rabbit. He will show you the entrance for the castle!'
               position='absolute'
               orientation='right'
               bottom={250}

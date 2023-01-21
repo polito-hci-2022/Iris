@@ -124,7 +124,7 @@ const BackpackExercise = (props) => {
                     <Words words={state.words} current={state.current} select={select} />
                 </Row>
                 <Row>
-                    <Col className='col-6'>
+                    <Col className='col-6'> 
                         {
                             state.words[state.current]
                                 ? <Current word={state.words[state.current]} />
@@ -198,8 +198,10 @@ const Word = (props) => {
         if (props.word.state === "selected") {
             if (props.word.correct) {
                 setVariant("outline-success");
+                setStyle({})
             } else {
                 setVariant("outline-danger");
+                setStyle({})
             }
             if (!props.current) {
                 setDisabled(true); //button disabled if the word has already been selected (not if it is currently active)

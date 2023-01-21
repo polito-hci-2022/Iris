@@ -54,21 +54,12 @@ function CastleHelp4() {
             left={150}
           />
           <HelpTile
-            text_en={'the entry'}
+            text_en={'the entrance'}
             text_it={"l'entrata"}
             position='absolute'
             width={100}
-            height={50}
-            bottom={230}
-            left={30}
-          />
-          <HelpTile
-            text_en={'a party'}
-            text_it={'una festa'}
-            position='absolute'
-            width={100}
-            height={80}
-            bottom={130}
+            height={70}
+            bottom={220}
             left={30}
           />
           <HelpTile
@@ -76,7 +67,7 @@ function CastleHelp4() {
             text_it={'per il castello'}
             position='absolute'
             width={140}
-            height={150}
+            height={160}
             bottom={130}
             left={150}
           />
@@ -90,15 +81,6 @@ function CastleHelp4() {
               title='Back'
               link='/play'
               text='Esci'
-            />
-            <RoundButton
-              dimension={75}
-              text={'Fatto'}
-              position={'absolute'}
-              link='/CastleStory4'
-              right={10}
-              bottom={150}
-              title='Done'
             />
             <RoundButton
               dimension={75}
