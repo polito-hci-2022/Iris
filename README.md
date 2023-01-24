@@ -1,8 +1,12 @@
+# Workflow
+
+follow the git-flow
+
 # IRIS
 
-Human-Computer-Interaction
-
 Politecnico di Torino
+
+Human-Computer Interaction
 
 - Simone Formica
 - Fabio Orazio Mirto
