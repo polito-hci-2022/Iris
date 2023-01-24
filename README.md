@@ -1,6 +1,6 @@
 # Workflow
 
-follow the git-flow
+Following the <a href="https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development">Trunk-based development</a> guidelines
 
 # IRIS
 
